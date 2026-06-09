@@ -187,7 +187,7 @@ if (!_embed) (function() {
     '        <span class="footer-logo">per<span>llogarit</span></span>\n' +
     '      </div>\n' +
     '      <p class="footer-tagline">Llogaritjet financiare për shqiptarët, nga paga te taksat dhe shumë të tjera, gjithmonë falas e pa regjistrim.</p>\n' +
-    '      <a class="kofi-btn" href="https://ko-fi.com/vensi" target="_blank" rel="noopener"><img src="' + r + 'icons/zg/ic-kofi.png" alt="" class="kofi-icon"> NA BLI NJE KAFE</a>\n' +
+    '      <a class="kofi-btn" href="https://ko-fi.com/perllogarit" target="_blank" rel="noopener"><img src="' + r + 'icons/zg/ic-kofi.png" alt="" class="kofi-icon"> NA BLI NJE KAFE</a>\n' +
     '    </div>\n' +
     '    <div class="footer-cols">\n' +
     '      <div class="footer-col">\n' +
