@@ -113,6 +113,8 @@ document.addEventListener('click', function(e) {
 });
 
 /* ── Cookie consent banner (Consent Mode v2) ── */
+/* DISABLED: replaced by Google's certified CMP (IAB TCF required for personalized ads).
+   To restore: uncomment this block and the matching CSS section in style.css.
 (function() {
   var KEY = 'pl_consent';
   var stored = localStorage.getItem(KEY);
@@ -168,6 +170,7 @@ document.addEventListener('click', function(e) {
     banner.remove();
   });
 })();
+*/
 
 /* ── Shared footer ── */
 if (!_embed) (function() {

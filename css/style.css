@@ -759,7 +759,9 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
-/* -- Cookie consent banner --------------------------------- */
+/* -- Cookie consent banner ---------------------------------
+   DISABLED: JS in shared.js is commented out — Google's CMP handles consent now.
+   To restore: uncomment the banner block in shared.js (CSS here is harmless when inactive). */
 
 /* Base — desktop floating card (bottom-right) */
 #consent-banner {
