@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Llogaritësi i TVSH-së 2026 - perllogarit</title>
+  <meta name="description" content="Llogarit TVSH-në me normë 20% ose 6%. Shto ose zbrit tatimin nga çmimi i produktit apo shërbimit me rezultat të menjëhershëm.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://perllogarit.al/calculators/tvsh.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://perllogarit.al/calculators/tvsh.html">
+  <meta property="og:site_name" content="perllogarit">
+  <meta property="og:locale" content="sq_AL">
+  <meta property="og:title" content="Llogaritësi i TVSH-së 2026 - perllogarit">
+  <meta property="og:description" content="Llogarit TVSH-në me normë 20% ose 6%. Shto ose zbrit tatimin nga çmimi i produktit apo shërbimit me rezultat të menjëhershëm.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Llogaritësi i TVSH-së 2026 - perllogarit">
+  <meta name="twitter:description" content="Llogarit TVSH-në me normë 20% ose 6%. Shto ose zbrit tatimin nga çmimi i produktit apo shërbimit me rezultat të menjëhershëm.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/calc.css">
+  <link rel="stylesheet" href="../css/embed.css">
+  <script src="../js/shared.js" defer></script>
+  <script src="../js/analytics.js" defer></script>
+
+  <!-- Google Analytics 4 (G-28TE2F8NLS) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-28TE2F8NLS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-28TE2F8NLS');
+  </script>
+  <!-- Google AdSense —  ca-pub-1093058889887223 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1093058889887223" crossorigin="anonymous"></script>
+</head>
+<body>
+<script>if(new URLSearchParams(location.search).has('embed'))document.documentElement.classList.add('embed');</script>
+
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+<div class="bg-orb bg-orb-3"></div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <ul class="nav-links">
+      <li><a href="../index.html">Kryefaqe</a></li>
+      <li><a href="../llogaritesit.html">Llogaritësit</a></li>
+      <li><a href="../rreth-nesh.html">Rreth Nesh</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="fab-wrap">
+  <div class="fab-menu" id="nav-mobile">
+    <a href="../index.html" class="fab-item">
+      <span class="fab-label">Kryefaqe</span>
+      <span class="fab-btn"><i class="fi fi-br-home"></i></span>
+    </a>
+    <a href="../llogaritesit.html" class="fab-item nav-active">
+      <span class="fab-label">Llogaritësit</span>
+      <span class="fab-btn"><i class="fi fi-br-calculator"></i></span>
+    </a>
+    <a href="../rreth-nesh.html" class="fab-item">
+      <span class="fab-label">Rreth Nesh</span>
+      <span class="fab-btn"><i class="fi fi-br-info"></i></span>
+    </a>
+  </div>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <i class="fi fi-br-menu-burger" id="hamburger-icon"></i>
+  </button>
+</div>
+
+<div class="page-header">
+  <div class="page-header-inner" style="text-align:center">
+    <h1>LLOGARIT TVSH</h1>
+    <button type="button" class="embed-trigger" onclick="document.getElementById('embed-dialog').showModal()">
+      <i class="fi fi-br-code-simple"></i> Embed
+    </button>
+  </div>
+</div>
+
+<div class="calc-container">
+
+  <!-- ═══════════════════════════════════════════
+       CALCULATOR CARD
+  ═══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="card-body">
+
+      <!-- Rate toggle -->
+      <div class="year-wrap" style="margin-bottom:.9rem">
+        <button class="year-btn active" id="btn-20" onclick="setRate(0.20)">20% Standard</button>
+        <button class="year-btn"        id="btn-6"  onclick="setRate(0.06)">6% E reduktuar</button>
+      </div>
+
+      <!-- Direction toggle -->
+      <div class="toggle-wrap">
+        <button class="toggle-btn active" id="btn-add" onclick="setMode('add')">
+          Shto TVSH
+          <span>Keni çmimin pa TVSH</span>
+        </button>
+        <button class="toggle-btn" id="btn-sub" onclick="setMode('sub')">
+          Hiq TVSH
+          <span>Keni çmimin me TVSH</span>
+        </button>
+      </div>
+
+      <!-- Price input -->
+      <div class="ccy-label-row">
+        <label class="field-label" id="price-label">Çmimi pa TVSH</label>
+        <div class="ccy-pills">
+          <button class="ccy-pill active" id="opt-all" onclick="setCurrency('ALL')">ALL</button>
+          <button class="ccy-pill"        id="opt-eur" onclick="setCurrency('EUR')">EUR</button>
+        </div>
+      </div>
+      <div class="input-row input-row--ccy">
+        <input type="number" id="price-input" placeholder="p.sh. 67 420" min="0" oninput="calculate()">
+        <span class="input-ccy-unit" id="currency-unit">ALL</span>
+      </div>
+      <div class="quick-row" id="quick-amounts">
+        <span class="quick-lbl">Bjeri shkurt:</span>
+        <button class="quick-btn" onclick="setAmount(1000)">1,000</button>
+        <button class="quick-btn" onclick="setAmount(5000)">5,000</button>
+        <button class="quick-btn" onclick="setAmount(10000)">10,000</button>
+        <button class="quick-btn" onclick="setAmount(50000)">50,000</button>
+      </div>
+
+      <!-- Result: primary -->
+      <div class="result-box">
+        <div class="rl">
+          <div class="rl-title" id="res-green-title">ÇMIMI ME TVSH</div>
+          <div class="rl-sub"   id="res-green-sub">Çmimi total që paguan klienti</div>
+        </div>
+        <div class="rr">
+          <div class="rr-val" id="res-green-val"></div>
+        </div>
+      </div>
+
+      <!-- Result: tax -->
+      <div class="result-box result-tax">
+        <div class="rl">
+          <div class="rl-title" id="res-red-title">TVSH 20%</div>
+          <div class="rl-sub">Tatimi mbi vlerën e shtuar</div>
+        </div>
+        <div class="rr">
+          <div class="rr-val" id="res-red-val"></div>
+        </div>
+      </div>
+
+      <!-- Breakdown -->
+      <table class="breakdown">
+        <tbody id="breakdown-body"></tbody>
+      </table>
+
+      <div class="embed-badge">
+        <a href="https://perllogarit.al" target="_blank" rel="noopener noreferrer">perllogarit.al</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       INFO CARD
+  ═══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="card-header">
+      <i class="fi fi-br-info" style="display:flex; align-items:center; line-height:0;"></i>
+      <h2>Shpjegime</h2>
+    </div>
+    <div class="card-body">
+
+      <div class="rates-grid">
+        <div class="rate-item">
+          <div class="ri-lbl">Normë standarde</div>
+          <div class="ri-val">20%</div>
+          <span class="ri-who ri-tax">Shumica e mallrave</span>
+        </div>
+        <div class="rate-item">
+          <div class="ri-lbl">Normë e reduktuar</div>
+          <div class="ri-val">6%</div>
+          <span class="ri-who ri-tax">Akomodim &amp; botime</span>
+        </div>
+        <div class="rate-item">
+          <div class="ri-lbl">Pragu i regjistrimit</div>
+          <div class="ri-val ri-val--sm" style="font-size:1rem">10M ALL</div>
+          <span class="ri-who ri-law">Qarkullim vjetor</span>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <strong>Norma 20%</strong> aplikohet mbi shumicën e mallrave dhe shërbimeve në Shqipëri.<br><br>
+        <strong>Norma 6% (e reduktuar)</strong> aplikohet për shërbime akomodimi (hotele, bujtina), botime (libra, gazeta), si dhe disa mallra e shërbime të tjera sipas listës ligjore.<br><br>
+        <strong>Eksportet dhe shërbimet ndërkombëtare</strong> aplikojnë normë 0% (TVSH zero).
+      </div>
+
+      <div class="deduction-note">
+        <strong>Si llogaritet TVSH (Ligji nr. 92/2014):</strong><br>
+        Shto TVSH: &nbsp; Çmimi neto &times; (1 + norma) = Çmimi me TVSH<br>
+        Hiq TVSH: &nbsp; Çmimi bruto &divide; (1 + norma) = Çmimi pa TVSH<br><br>
+        <strong>Kush regjistrohet?</strong> Bizneset me qarkullim vjetor mbi <strong>10,000,000 ALL</strong> janë të detyruara të regjistrohen si tatimpagues TVSH. Bizneset nën këtë prag mund të regjistrohen vullnetarisht.<br><br>
+        <strong>Deklarimi:</strong> TVSH deklarohet çdo muaj (tatimpaguesit e mëdhenj) ose çdo tremujor, dhe derdhet pranë Administratës Tatimore Shqiptare (ATSH).
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div id="site-footer"></div>
+
+<script src="../js/tvsh.js" defer></script>
+
+<dialog id="embed-dialog" class="embed-dialog">
+  <h3>Incorporo llogaritësin</h3>
+  <p>Vendos kodin e mëposhtëm në faqen tënde:</p>
+  <pre id="embed-code">&lt;iframe
+  src="https://perllogarit.al/calculators/tvsh.html?embed=1"
+  width="420"
+  height="420"
+  style="border:none;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,.08);"
+  title="Llogarit TVSH · perllogarit"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</pre>
+  <div class="embed-dialog-actions">
+    <button type="button" onclick="var b=this;navigator.clipboard.writeText(document.getElementById('embed-code').textContent.trim()).then(function(){b.textContent='U kopjua ✓'})">Kopjo</button>
+    <button type="button" onclick="this.closest('dialog').close()">Mbyll</button>
+  </div>
+</dialog>
+</body>
+</html>

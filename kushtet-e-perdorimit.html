@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kushtet e Përdorimit - perllogarit</title>
+  <meta name="description" content="Kushtet e përdorimit të perllogarit. Llogaritjet janë informative dhe bazohen në ligjin shqiptar. Lexoni kushtet e plota para përdorimit të shërbimit.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://perllogarit.al/kushtet-e-perdorimit.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://perllogarit.al/kushtet-e-perdorimit.html">
+  <meta property="og:site_name" content="perllogarit">
+  <meta property="og:locale" content="sq_AL">
+  <meta property="og:title" content="Kushtet e Përdorimit - perllogarit">
+  <meta property="og:description" content="Kushtet e përdorimit të perllogarit. Llogaritjet janë informative dhe bazohen në ligjin shqiptar. Lexoni kushtet e plota para përdorimit të shërbimit.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Kushtet e Përdorimit - perllogarit">
+  <meta name="twitter:description" content="Kushtet e përdorimit të perllogarit. Llogaritjet janë informative dhe bazohen në ligjin shqiptar. Lexoni kushtet e plota para përdorimit të shërbimit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/shared.js" defer></script>
+  <script src="js/analytics.js" defer></script>
+  <style>
+    .legal-wrap {
+      margin: 2.5rem auto 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .legal-link {
+      color: var(--blue);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .legal-link:hover { text-decoration: underline; }
+
+    .mt-sm { margin-top: .75rem; }
+    .mt-md { margin-top: .85rem; }
+
+    .legal-card {
+      background: rgba(255,255,255,.45);
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
+      border: 1.5px solid rgba(255,255,255,.65);
+      border-radius: var(--r-lg);
+      padding: 2rem 2.25rem;
+    }
+
+    .legal-card-icon {
+      font-size: 1.4rem;
+      color: var(--blue);
+      margin-bottom: .75rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .legal-card-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: .65rem;
+      line-height: 1.25;
+    }
+
+    .legal-card-body {
+      font-size: .92rem;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    .legal-card-body p + p {
+      margin-top: .75rem;
+    }
+
+    .legal-card-body strong {
+      color: var(--navy);
+    }
+
+    .legal-card-body ul {
+      list-style: none;
+      padding: 0;
+      margin: .75rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: .45rem;
+    }
+
+    .legal-card-body ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: .55rem;
+      font-size: .88rem;
+      color: #555;
+      line-height: 1.55;
+    }
+
+    .legal-card-body ul li i {
+      color: var(--blue);
+      flex-shrink: 0;
+      line-height: 0;
+      display: inline-flex;
+      align-items: center;
+      margin-top: .2rem;
+    }
+
+    .legal-card-icon .fi {
+      line-height: 0;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .legal-meta {
+      font-size: .78rem;
+      color: var(--gray);
+      margin-bottom: 1.75rem;
+      opacity: .7;
+    }
+
+    .legal-disclaimer {
+      background: rgba(37,99,235,.06);
+      border: 1.5px solid rgba(37,99,235,.18);
+      border-radius: var(--r-lg);
+      padding: 1.5rem 2rem;
+      font-size: .88rem;
+      line-height: 1.75;
+      color: #444;
+    }
+
+    .legal-disclaimer strong {
+      color: var(--navy);
+    }
+
+    .legal-toc {
+      background: rgba(255,255,255,.35);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border: 1.5px solid rgba(255,255,255,.55);
+      border-radius: var(--r-lg);
+      padding: 1.5rem 2rem;
+    }
+
+    .legal-toc-title {
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: .85rem;
+    }
+
+    .legal-toc ol {
+      margin: 0;
+      padding-left: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: .3rem;
+    }
+
+    .legal-toc ol li {
+      font-size: .82rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .legal-toc ol li a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .legal-toc ol li a:hover {
+      text-decoration: underline;
+    }
+
+    .legal-card-body .note-box {
+      background: rgba(37,99,235,.05);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 8px 8px 0;
+      padding: .75rem 1rem;
+      margin-top: .85rem;
+      font-size: .85rem;
+      color: #555;
+      line-height: 1.65;
+    }
+
+    @media (max-width: 520px) {
+      .legal-card { padding: 1.5rem 1.25rem; }
+      .legal-disclaimer { padding: 1.25rem 1rem; }
+      .legal-toc { padding: 1.25rem 1rem; }
+    }
+  </style>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-28TE2F8NLS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-28TE2F8NLS');
+  </script>
+  <!-- Google AdSense ca-pub-1093058889887223 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1093058889887223" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+<div class="bg-orb bg-orb-3"></div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <ul class="nav-links">
+      <li><a href="index.html">Kryefaqe</a></li>
+      <li><a href="llogaritesit.html">Llogaritësit</a></li>
+      <li><a href="rreth-nesh.html">Rreth Nesh</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner" style="text-align:center">
+    <h1>KUSHTET E PËRDORIMIT</h1>
+  </div>
+</div>
+
+<div class="legal-wrap container">
+
+  <p class="legal-meta">Hyrë në fuqi: 1 Janar 2026 &nbsp;&middot;&nbsp; Versioni i fundit: Qershor 2026 &nbsp;&middot;&nbsp; Versioni: 2.0</p>
+
+  <!-- Disclaimer kryesor -->
+  <div class="legal-disclaimer">
+    <strong>Shënim i rëndësishëm:</strong> perllogarit ofron mjete llogaritëse me qëllim tërësisht <strong>informativ</strong>. Asnjë rezultat i gjeneruar nga kjo faqe nuk përbën këshillë ligjore, tatimore ose financiare profesionale. Normat tatimore dhe kontributeve i nënshtrohen ndryshimeve ligjore gjatë vitit gjithmonë verifikoni te burimet zyrtare dhe konsultohuni me një specialist të licencuar para çdo vendimi financiar.
+  </div>
+
+  <!-- Tabela e Përmbajtjes -->
+  <div class="legal-toc">
+    <div class="legal-toc-title">Tabela e Përmbajtjes</div>
+    <ol>
+      <li><a href="#pranimi">Pranimi i Kushteve</a></li>
+      <li><a href="#sherbimi">Përshkrimi i Shërbimit</a></li>
+      <li><a href="#llogaritjet">Metodologjia e Llogaritjeve</a></li>
+      <li><a href="#informativ">Qëllimi Informativ Jo Këshillë Profesionale</a></li>
+      <li><a href="#saktesia">Saktësia dhe Përditësimet</a></li>
+      <li><a href="#pergjegj">Kufizimi i Përgjegjësisë</a></li>
+      <li><a href="#pronesia">Pronësia Intelektuale</a></li>
+      <li><a href="#sjellja">Sjellja e Pranueshme</a></li>
+      <li><a href="#analitika">Analitika dhe Matja e Trafikut</a></li>
+      <li><a href="#reklamat">Reklamat dhe Palët e Treta Reklamuese</a></li>
+      <li><a href="#lidhjet">Lidhjet me Burime të Jashtme</a></li>
+      <li><a href="#privatesia">Privatësia dhe të Dhënat Personale</a></li>
+      <li><a href="#aksesueshmeria">Disponueshmëria e Shërbimit</a></li>
+      <li><a href="#ndryshimet">Ndryshimet e Kushteve</a></li>
+      <li><a href="#ligji">Ligji i Zbatueshëm dhe Jurisdiksioni</a></li>
+      <li><a href="#kontakti">Na Kontaktoni</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. Pranimi -->
+  <div class="legal-card" id="pranimi">
+    <div class="legal-card-icon"><i class="fi fi-br-handshake"></i></div>
+    <div class="legal-card-title">1. Pranimi i Kushteve</div>
+    <div class="legal-card-body">
+      <p>Duke aksesuar, shfletuar ose përdorur faqen <strong>perllogarit.al</strong> ("Faqja"), ju deklaroni se keni lexuar, kuptuar dhe pranuar plotësisht e pa rezerva këto Kushte të Përdorimit ("Kushtet"). Ky pranim është efektiv që nga momenti i parë i aksesimit.</p>
+      <p>Nëse nuk jeni dakord me ndonjë dispozitë të Kushteve, ju kërkohet të ndërprisni menjëherë përdorimin e Faqes. Pranimi juaj i vazhdueshëm i Faqes pas çdo modifikimi të Kushteve konsiderohet pranim i ndryshimeve të reja.</p>
+      <p>Këto Kushte rregullojnë të gjitha aspektet e marrëdhënies suaj me perllogarit dhe zbatohen për çdo vizitë, pavarësisht nga mjeti ose platforma e aksesimit (shfletues desktop, pajisje mobile, tablet, ose ndryshe). Ato plotësojnë dhe nuk zëvendësojnë Politikën tonë të Privatësisë, e cila rregullon veçanërisht trajtimin e të dhënave.</p>
+    </div>
+  </div>
+
+  <!-- 2. Shërbimi -->
+  <div class="legal-card" id="sherbimi">
+    <div class="legal-card-icon"><i class="fi fi-br-calculator"></i></div>
+    <div class="legal-card-title">2. Përshkrimi i Shërbimit</div>
+    <div class="legal-card-body">
+      <p>perllogarit vë në dispozicion <strong>falas dhe pa regjistrim</strong> një gamë llogaritësish financiarë të ndërtuar mbi legjislacionin tatimor dhe të punës shqiptar në fuqi. Aktualisht Faqja ofron llogaritësit e mëposhtëm:</p>
+      <ul>
+        <li><i class="fi fi-br-check"></i><span><strong>Llogaritësi i Pagës (Bruto → Neto / Neto → Bruto):</strong> Llogarit pagën neto nga bruto ose anasjelltas, duke aplikuar normat e tatimit mbi të ardhurat personale (TAAP), kontributeve të sigurimeve shoqërore (SS) dhe sigurimeve shëndetësore (SH) sipas shkallës progresive në fuqi.</span></li>
+        <li><i class="fi fi-br-check"></i><span><strong>Llogaritësi i Sigurimeve për të Vetëpunësuarit:</strong> Llogarit kontributet mujore të sigurimeve shoqërore dhe shëndetësore për personat e vetëpunësuar, bazuar në pagën minimale ose deklaratën e të ardhurave.</span></li>
+        <li><i class="fi fi-br-check"></i><span><strong>Llogaritësi i TVSH-së:</strong> Llogarit vlerën e shtuar të taksës mbi vlerën e shtuar (TVSH) për transaksione biznesi, duke mbështetur normën standarde dhe normën e reduktuar.</span></li>
+        <li><i class="fi fi-br-check"></i><span><strong>Llogaritësi i Qirasë:</strong> Llogarit tatimin mbi të ardhurat nga dhënia me qira e pasurive të paluajtshme sipas normave tatimore të aplikueshme, duke dalluar qiradhënësit individë nga personat juridikë.</span></li>
+        <li><i class="fi fi-br-check"></i><span><strong>Llogaritësi i Dividendave:</strong> Llogarit tatimin mbi dividendat e shpërndara nga shoqëritë tregtare sipas normës tatimore aktuale, duke marrë parasysh statusin e aksionarit.</span></li>
+        <li><i class="fi fi-br-check"></i><span><strong>Llogaritësi i Importit të Mjeteve Motorike:</strong> Llogarit detyrimet doganore, TVSH-në e importit, taksën e regjistrimit dhe kostot totale të sjelljes së një automjeti nga jashtë vendit, bazuar në grupmoshën, kapacitetin motorik dhe vlerën e deklaruar.</span></li>
+      </ul>
+      <p >Ne rezervojmë të drejtën të shtojmë llogaritës të rinj, të modifikojmë llogaritësit ekzistues ose t'i heqim ata, në çdo kohë dhe pa njoftim paraprak. Ndryshime të tilla mund të jenë të nevojshme si pasojë e ndryshimeve legjislative ose arsyeve teknike.</p>
+    </div>
+  </div>
+
+  <!-- 3. Metodologjia -->
+  <div class="legal-card" id="llogaritjet">
+    <div class="legal-card-icon"><i class="fi fi-br-chart-histogram"></i></div>
+    <div class="legal-card-title">3. Metodologjia e Llogaritjeve</div>
+    <div class="legal-card-body">
+      <p>Llogaritësit e perllogarit janë ndërtuar mbi bazën e legjislacionit tatimor dhe financiar shqiptar. Metodologjia jonë bazohet kryesisht në:</p>
+      <ul>
+        <li><i class="fi fi-br-document"></i><span>Ligjin Nr. 8438/1998 "Për Tatimin mbi të Ardhurat" dhe ndryshimet e mëvonshme, duke përfshirë Ligjin Nr. 29/2023</span></li>
+        <li><i class="fi fi-br-document"></i><span>Ligjin Nr. 7703/1993 "Për Sigurimet Shoqërore në RSH" dhe të gjitha aktet nënligjore përkatëse</span></li>
+        <li><i class="fi fi-br-document"></i><span>Ligjin Nr. 92/2014 "Për Tatimin mbi Vlerën e Shtuar" (TVSH)</span></li>
+        <li><i class="fi fi-br-document"></i><span>Kodin Doganor të Republikës së Shqipërisë dhe tarifare doganore të aplikueshme</span></li>
+        <li><i class="fi fi-br-document"></i><span>Udhëzimet e Drejtorisë së Përgjithshme të Tatimeve dhe burimet zyrtare si qbz.gov.al</span></li>
+      </ul>
+
+      <p><strong>Llogaritjet dhe monedha:</strong> Të gjitha llogaritjet kryhen tërësisht <strong>në lekë shqiptare (ALL)</strong>, sipas kërkesave të legjislacionit tatimor shqiptar. Nëse futni vlera në euro (EUR), sistemi i konverton automatikisht në ALL duke përdorur kursin e këmbimit të marrë nga burime publike financiare (p.sh. Banka e Shqipërisë), me vlerën fallback prej 95.30 ALL/EUR. Rezultati paraqitet në ALL si vlerë primare dhe EUR si ekuivalent tregues.</p>
+
+      <p><strong>Llogaritjet kryhen vetëm në shfletuesin tuaj:</strong> I gjithë kodi i llogaritjes ekzekutohet lokalisht në pajisjen tuaj (client-side). Asnjë e dhënë e futur pagë, të ardhura, vlera automjeti apo çdo parametër tjetër nuk dërgohet ose ruhet në serverët tanë. Kjo është një zgjedhje arkitekturore e qëllimshme për të mbrojtur konfidencialitetin e të dhënave financiare tuaja.</p>
+
+      <div class="note-box">Normat, pragjet dhe koeficientët e aplikuar pasqyrojnë legjislacionin aktual në momentin e përditësimit të fundit. Ndryshimet ligjore që hyjnë në fuqi pas kësaj date mund të mos pasqyrohen menjëherë. Rekomandojmë gjithmonë verifikimin te burimet zyrtare.</div>
+    </div>
+  </div>
+
+  <!-- 4. Qëllimi Informativ -->
+  <div class="legal-card" id="informativ">
+    <div class="legal-card-icon"><i class="fi fi-br-info"></i></div>
+    <div class="legal-card-title">4. Qëllimi Informativ Jo Këshillë Profesionale</div>
+    <div class="legal-card-body">
+      <p>Të gjitha llogaritjet dhe rezultatet e gjeneruara nga Faqja kanë <strong>ekskluzivisht karakter informativ dhe orientues</strong>. Ato nuk janë dhe nuk duhet të interpretohen si:</p>
+      <ul>
+        <li><i class="fi fi-br-cross-circle"></i><span>Këshillë juridike, tatimore, financiare ose kontabël e çfarëdo lloji</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Opinion zyrtar ose vendim i çfarëdo autoriteti publik shqiptar apo ndërkombëtar</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Zëvendësim i konsultimit me kontabilist, avokat tatimor, konsulent financiar ose specialist tjetër të licencuar</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Garanci për saktësinë e detyrimeve tatimore individuale, të cilat varen nga rrethana specifike të çdo personi</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Konfirmim i pranimit ose vlefshmërisë tatimore nga ana e autoriteteve kompetente</span></li>
+      </ul>
+      <p>Situata tatimore e çdo individi ose subjekti tregtar është unike dhe mund të ndikohet nga faktorë të shumtë si: statusi ligjor i punësimit, kontrata kolektive, përjashtime tatimore, transferta familjare, zbritje specifike dhe rrethana të tjera specifike. Rezultatet tona nuk marrin parasysh këta faktorë individualë.</p>
+      <p>Çdo vendim financiar, tatimor ose ligjor duhet të mbështetet domosdoshmërisht në konsultim me profesionistë të kualifikuar dhe të licencuar, si dhe në burimet zyrtare të autoriteteve kompetente shqiptare.</p>
+    </div>
+  </div>
+
+  <!-- 5. Saktësia -->
+  <div class="legal-card" id="saktesia">
+    <div class="legal-card-icon"><i class="fi fi-br-time-check"></i></div>
+    <div class="legal-card-title">5. Saktësia e të Dhënave dhe Përditësimet</div>
+    <div class="legal-card-body">
+      <p>Ekipi i perllogarit bën çdo përpjekje të arsyeshme për të mbajtur llogaritësit të përditësuar me normat dhe dispozitat e fundit ligjore. Megjithatë, duhet të keni parasysh:</p>
+      <ul>
+        <li><i class="fi fi-br-exclamation"></i><span>Legjislacioni tatimor shqiptar mund të ndryshojë me vendime qeveritare, urdhra ministrore ose udhëzime administrative gjatë vitit, ndonjëherë me efekt retroaktiv.</span></li>
+        <li><i class="fi fi-br-exclamation"></i><span>Kursi i këmbimit EUR/ALL ndryshon çdo ditë. Llogaritjet me euro janë indikative dhe nuk zëvendësojnë kursin zyrtar të Bankës së Shqipërisë.</span></li>
+        <li><i class="fi fi-br-exclamation"></i><span>Normat e kontributeve të sigurimeve shoqërore rishikohen periodikisht dhe mund të kenë efekte mbi llogaritjet e pagës.</span></li>
+        <li><i class="fi fi-br-exclamation"></i><span>Tarifat doganore dhe taksat e importit për automjetet mund të ndryshohen me akte nënligjore të Ministrisë së Financave ose Autoritetit Doganor.</span></li>
+      </ul>
+      <p>perllogarit <strong>nuk garanton</strong> që rezultatet janë gjithmonë sinkronizuar në kohë reale me ndryshimet ligjore. Faqja ofrohet <em>"siç është"</em> dhe <em>"sipas disponueshmërisë"</em>, pa asnjë garanci saktësie absolute. Burimet zyrtare si <strong>qbz.gov.al</strong>, <strong>tatime.gov.al</strong> dhe <strong>banka e Shqipërisë</strong> mbeten referenca autoritare.</p>
+    </div>
+  </div>
+
+  <!-- 6. Kufizimi i Përgjegjësisë -->
+  <div class="legal-card" id="pergjegj">
+    <div class="legal-card-icon"><i class="fi fi-br-shield-exclamation"></i></div>
+    <div class="legal-card-title">6. Kufizimi i Përgjegjësisë</div>
+    <div class="legal-card-body">
+      <p>Në masën maksimale të lejuar nga legjislacioni shqiptar në fuqi, perllogarit, operatorët dhe kontribuuesit e tij <strong>nuk mbajnë asnjë përgjegjësi</strong> direkte, indirekte, aksidentale, pasuese ose ndëshkuese për:</p>
+      <ul>
+        <li><i class="fi fi-br-cross-circle"></i><span>Humbje financiare, dëme ekonomike ose tatimore të shkaktuara si pasojë direkte ose indirekte e mbështetjes te rezultatet e llogaritësve</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Gabime, mospërputhje ose diferencë mes llogaritjeve të gjeneruara dhe detyrimeve zyrtare tatimore të llogaritura nga autoritetet kompetente</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Gjoba, interesa, ose sanksione tatimore të aplikuara si pasojë e deklaratave ose veprimeve bazuar në rezultatet e Faqes</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Ndërprerje teknike, vonesa, gabime serveri ose pamundësi e aksesimit të Faqes, pavarësisht nga shkaku</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Çdo vendim financiar, punësimi ose kontraktual i marrë nga përdoruesi bazuar në informacionin e gjeneruar nga Faqja</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Dëme të shkaktuara nga viruse kompjuterikë, malware ose softuere dëmtuese të cilat mund të transmetohen përmes aksesimit të Faqes</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Ndryshime ligjore pas datës së përditësimit të fundit të llogaritësve që ndikojnë saktësinë e rezultateve</span></li>
+      </ul>
+      <p>Duke qenë se perllogarit ofrohet plotësisht falas dhe pa asnjë pagesë nga ana e vizitorit, <strong>çdo detyrim eventual financiar i perllogarit ndaj çdo vizitori është i kufizuar shprehimisht në shumën zero (0) lekë</strong>, d.m.th. shumën e paguar nga vizitori për aksesimin e Faqes. Kjo vlen pavarësisht natyrës së pretendimit ose bazës ligjore të tij.</p>
+      <p>Kufizimi i mësipërm zbatohet pavarësisht nëse perllogarit kishte njohuri ose mund të kishte parashikuar mundësinë e dëmeve të tilla. Në vendet ku ligji nuk lejon kufizime të caktuara të përgjegjësisë, ky kufizim zbatohet në masën maksimale të lejuar.</p>
+    </div>
+  </div>
+
+  <!-- 7. Pronësia Intelektuale -->
+  <div class="legal-card" id="pronesia">
+    <div class="legal-card-icon"><i class="fi fi-br-copyright"></i></div>
+    <div class="legal-card-title">7. Pronësia Intelektuale</div>
+    <div class="legal-card-body">
+      <p>I gjithë përmbajtja e Faqes duke përfshirë, por pa u kufizuar, tekstin, dizajnin grafik, logon, ndërfaqen vizuale, strukturën e faqes, kodin burimor JavaScript dhe HTML/CSS, algoritmet e llogaritjes, bazën e të dhënave tatimore dhe çdo element tjetër është pronë ekskluzive e <strong>perllogarit</strong> dhe mbrohet nga Ligji Nr. 35/2016 "Për të Drejtat e Autorit dhe të Drejtat e Tjera të Lidhura me To" dhe nga traktatet ndërkombëtare të pronësisë intelektuale.</p>
+      <p><strong>Lejohet pa leje paraprake:</strong></p>
+      <ul>
+        <li><i class="fi fi-br-check"></i><span>Përdorimi personal, jotregtar dhe individual i llogaritësve për nevoja personale</span></li>
+        <li><i class="fi fi-br-check"></i><span>Shpërndarja e lidhjeve (URL) drejtpërdrejt drejt Faqes me atribut të qartë burimi</span></li>
+        <li><i class="fi fi-br-check"></i><span>Citimi i rezultateve me referencë të qartë te perllogarit.al si burim informativ (jo zyrtar)</span></li>
+      </ul>
+      <p ><strong>Ndalohet rreptësisht pa leje të shkruar paraprake:</strong></p>
+      <ul>
+        <li><i class="fi fi-br-cross-circle"></i><span>Kopjimi, riprodhimi, shpërndarja ose publikimi i kodit burimor, algoritmeve ose çdo elementi tjetër të Faqes</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Krijimi i veprave derivative, faqeve të ngjashme ose shërbimeve konkurruese bazuar në dizajnin ose logjikën e llogaritësve tanë</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Integrimi, embedding ose iframe i llogaritësve ose çdo pjese të Faqes në platforma, aplikacione ose faqe të tjera</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Heqja ose modifikimi i njoftimeve të të drejtave të autorit ose markave tregtare</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Shitja, licencimi ose transferimi i çdo elementi të Faqes tek palë të treta</span></li>
+      </ul>
+      <p>Shkelja e të drejtave të pronësisë intelektuale mund të çojë në veprime ligjore civile dhe/ose penale sipas legjislacionit shqiptar dhe ndërkombëtar.</p>
+    </div>
+  </div>
+
+  <!-- 8. Sjellja -->
+  <div class="legal-card" id="sjellja">
+    <div class="legal-card-icon"><i class="fi fi-br-user-check"></i></div>
+    <div class="legal-card-title">8. Sjellja e Pranueshme e Përdoruesit</div>
+    <div class="legal-card-body">
+      <p>Duke përdorur Faqen, ju merrni përsipër shprehimisht se do t'i respektoni rregullat e mëposhtme të sjelljes:</p>
+      <ul>
+        <li><i class="fi fi-br-cross-circle"></i><span>Nuk do të tentoni të aksesoni, sondoni, skanoni ose testoni dobësitë e infrastrukturës teknike të Faqes pa leje eksplicite të shkruar</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Nuk do të përdorni mjete automatike (bot, scraper, spider, crawler ose instrumente të ngjashme) për të aksesuar ose kopjuar përmbajtjen e Faqes pa leje paraprake. <strong>Përjashtim:</strong> robotët e motorëve zyrtarë të kërkimit (si Googlebot, Bingbot, DuckDuckBot etj.) mund të indeksojnë Faqen sipas direktivave të skedarit <code>robots.txt</code> pa nevojë leje të veçantë të shkruar.</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Nuk do të kryeni sulme DDoS, injeksion SQL, cross-site scripting (XSS) ose çdo tentativë tjetër për të dëmtuar ose kompromentuar sistemet tona</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Nuk do të shpërndani ose prezantoni rezultate të Faqes në mënyrë që i paraqit ato gabimisht si vendime zyrtare tatimore ose si konfirmim nga autoritetet shtetërore</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Nuk do të kryeni veprime që ngarkojnë artificialisht ose dëmtojnë performancën e serverëve dhe infrastrukturës sonë</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Nuk do të tentoni të mbledhni të dhëna personale të vizitorëve të tjerë të Faqes</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Nuk do ta përdorni Faqen për qëllime të paligjshme ose për të lehtësuar veprime të paligjshme sipas legjislacionit shqiptar ose ndërkombëtar</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Nuk do ta përdorni Faqen për të planifikuar, lehtësuar, justifikuar ose fshehur evazion tatimor, mashtrim financiar, pastrim parash ose çdo vepër tjetër të paligjshme me karakter tatimor ose financiar. Llogaritësit janë mjete informative dhe çdo keqpërdorim i rezultateve të tyre për qëllime të paligjshme është tërësisht nën përgjegjësinë penale dhe civile të përdoruesit.</span></li>
+      </ul>
+      <p>Shkelja e këtyre rregullave mund të rezultojë në bllokimin e aksesit tuaj, si dhe në veprime ligjore nëse shkelet ligji.</p>
+    </div>
+  </div>
+
+  <!-- 9. Analitika -->
+  <div class="legal-card" id="analitika">
+    <div class="legal-card-icon"><i class="fi fi-br-stats"></i></div>
+    <div class="legal-card-title">9. Analitika dhe Matja e Trafikut</div>
+    <div class="legal-card-body">
+      <p>Faqja përdor <strong>Google Analytics 4 (GA4)</strong>, shërbim i ofruar nga Google LLC, për të mbledhur statistika agregate e anonime mbi sjelljen e vizitorëve. Ky shërbim na ndihmon të kuptojmë se si përdoret Faqja dhe të përmirësojmë funksionalitetin e saj.</p>
+      <p>Google Analytics mbledh të dhëna të tilla si:</p>
+      <ul>
+        <li><i class="fi fi-br-chart-line-up"></i><span>Numri i seancave dhe faqeve të vizituara brenda çdo sesioni</span></li>
+        <li><i class="fi fi-br-chart-line-up"></i><span>Kohëzgjatja e vizitës dhe shkalla e braktisjes (bounce rate)</span></li>
+        <li><i class="fi fi-br-chart-line-up"></i><span>Adresa IP e anonimizuar (Google kthen IP-në para ruajtjes)</span></li>
+        <li><i class="fi fi-br-chart-line-up"></i><span>Lloji dhe versioni i shfletuesit, sistemi operativ dhe lloji i pajisjes</span></li>
+        <li><i class="fi fi-br-chart-line-up"></i><span>Vendi/qyteti i vlerësuar nga IP e anonimizuar (niveli i provincës, jo specifik)</span></li>
+        <li><i class="fi fi-br-chart-line-up"></i><span>Burimi i trafikut (motorët e kërkimit, lidhjet direkte, media sociale)</span></li>
+      </ul>
+      <p>Faqja ka implementuar <strong>Google Consent Mode v2</strong>, i cili vendos si parazgjedhje statusin <em>"denied"</em> (refuzuar) për ruajtjen e analytics dhe reklamave, duke respektuar privatësinë e vizitorit deri sa të jepet pëlqimi. Të dhënat e mbledhura para dhënies së pëlqimit janë të modeluara dhe joidentifikuese.</p>
+      <p>Nëse dëshironi të tërhiqeni nga gjurmimi i Google Analytics, mund të instaloni <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" class="legal-link">shtesën zyrtare të shfletuesit të Google Analytics Opt-out</a>. Për më shumë informacion mbi mënyrën se si Google përpunon të dhënat, referojuni <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="legal-link">Politikës së Privatësisë të Google</a>.</p>
+    </div>
+  </div>
+
+  <!-- 10. Reklamat -->
+  <div class="legal-card" id="reklamat">
+    <div class="legal-card-icon"><i class="fi fi-br-ad"></i></div>
+    <div class="legal-card-title">10. Reklamat dhe Palët e Treta Reklamuese</div>
+    <div class="legal-card-body">
+      <p>Faqja mund të shfaqë reklama të ofrimit nga <strong>Google AdSense</strong>, shërbim i ofruar nga Google LLC. Shfaqja e reklamave na mundëson t'i mbajmë llogaritësit falas për të gjithë vizitorët, pa asnjë pagesë anëtarësie.</p>
+      <p>Rreth reklamave të Google AdSense, duhet të dini:</p>
+      <ul>
+        <li><i class="fi fi-br-info"></i><span>Google mund të përdorë cookies dhe teknologji të ngjashme për të shfaqur reklama bazuar në vizitat tuaja të mëparshme në këtë ose faqe të tjera në rrjetin e Google.</span></li>
+        <li><i class="fi fi-br-info"></i><span>Reklamat mund të personalizohen bazuar në interesat e vlerësuara, vetëm nëse keni dhënë pëlqimin tuaj.</span></li>
+        <li><i class="fi fi-br-info"></i><span>perllogarit <strong>nuk ka kontroll</strong> mbi përmbajtjen specifike të reklamave të shfaqura dhe nuk mban përgjegjësi për produktet ose shërbimet e reklamuara.</span></li>
+        <li><i class="fi fi-br-info"></i><span>Klikimi mbi reklama ju drejton te faqe të jashtme, të cilave u zbatohen kushtet dhe politikat e tyre të privatësisë.</span></li>
+      </ul>
+      <p>Mund të menaxhoni preferencat tuaja të reklamave dhe të tërhiqeni nga reklamat e personalizuara duke vizituar <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" class="legal-link">Google Ads Settings</a> ose platformën <a href="https://optout.aboutads.info/" target="_blank" rel="noopener noreferrer" class="legal-link">Digital Advertising Alliance opt-out</a>.</p>
+      <p>perllogarit nuk ka marrëdhënie tregtare të tjera reklamuese përveç Google AdSense dhe nuk publikon reklama të sponsorizuara të pagura direkt nga palë të treta.</p>
+    </div>
+  </div>
+
+  <!-- 11. Lidhjet -->
+  <div class="legal-card" id="lidhjet">
+    <div class="legal-card-icon"><i class="fi fi-br-link"></i></div>
+    <div class="legal-card-title">11. Lidhjet me Burime të Jashtme</div>
+    <div class="legal-card-body">
+      <p>Faqja mund të përmbajë lidhje drejt burimeve të jashtme me qëllim informativ dhe referencial, duke përfshirë:</p>
+      <ul>
+        <li><i class="fi fi-br-globe"></i><span><strong>qbz.gov.al</strong> Qendra Botëzimit të Akteve Normative (baza ligjore zyrtare)</span></li>
+        <li><i class="fi fi-br-globe"></i><span><strong>tatime.gov.al</strong> Drejtoria e Përgjithshme e Tatimeve</span></li>
+        <li><i class="fi fi-br-globe"></i><span><strong>bankofalbania.org</strong> Banka e Shqipërisë (kurset zyrtare të këmbimit)</span></li>
+        <li><i class="fi fi-br-globe"></i><span>Dokumentacione dhe raporte të organizatave profesionale si Eurofast dhe të tjera</span></li>
+      </ul>
+      <p>perllogarit ofron këto lidhje si referencë informative dhe <strong>nuk kontrollon</strong>, nuk miraton dhe nuk mban përgjegjësi për:</p>
+      <ul>
+        <li><i class="fi fi-br-cross-circle"></i><span>Saktësinë, plotësinë ose aktualitetin e informacionit në faqet e jashtme</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Disponueshmërinë teknike ose ndryshimet e adresës URL të burimeve të jashtme</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span>Praktikat e privatësisë dhe mbledhjes së të dhënave të faqeve të lidhura</span></li>
+      </ul>
+      <p>Aksesimi i burimeve të jashtme është tërësisht nën përgjegjësinë tuaj. Rekomandojmë të lexoni Kushtet e Përdorimit dhe Politikat e Privatësisë të faqeve të jashtme para aksesimit.</p>
+    </div>
+  </div>
+
+  <!-- 12. Privatësia -->
+  <div class="legal-card" id="privatesia">
+    <div class="legal-card-icon"><i class="fi fi-br-lock"></i></div>
+    <div class="legal-card-title">12. Privatësia dhe të Dhënat Personale</div>
+    <div class="legal-card-body">
+      <p>Mbrojtja e privatësisë suaj është prioritet i perllogarit. Meqë llogaritjet kryhen tërësisht client-side (në shfletuesin tuaj), <strong>asnjë e dhënë financiare e futur nuk transmetohet ose ruhet</strong> në serverët tanë. Vlerat e pagës, të ardhurave, çmimit të automjetit apo parametrave të tjerë mbeten tërësisht private dhe lokale.</p>
+      <p>Megjithatë, si shumicë e faqeve në internet, Faqja mbledh:</p>
+      <ul>
+        <li><i class="fi fi-br-info"></i><span>Të dhëna anonime statistikore të aksesit (nëpërmjet Google Analytics) të dhëna agregate, jo të lidhura me identitetin personal</span></li>
+        <li><i class="fi fi-br-info"></i><span>Cookies teknike të nevojshme për funksionimin normal të Faqes</span></li>
+        <li><i class="fi fi-br-info"></i><span>Cookies të Google AdSense për shfaqjen e reklamave (me kusht të pëlqimit)</span></li>
+      </ul>
+      <p>Trajtimi i të dhënave bazohet në <strong>Ligjin Nr. 9887/2008 "Për Mbrojtjen e të Dhënave Personale"</strong> dhe aktet nënligjore të Komisionerit për të Drejtën e Informimit dhe Mbrojtjen e të Dhënave Personale (IDP), si dhe në parimet e GDPR-it të BE-së.</p>
+      <p>Për informacion të plotë dhe të detajuar mbi trajtimin e të dhënave, cookies, të drejtat tuaja dhe mënyrat e ushtrimit të tyre, referojuni <a href="politika-e-privatesise.html" class="legal-link">Politikës sonë të Privatësisë</a>, e cila është pjesë integrale e këtyre Kushteve.</p>
+    </div>
+  </div>
+
+  <!-- 13. Disponueshmëria -->
+  <div class="legal-card" id="aksesueshmeria">
+    <div class="legal-card-icon"><i class="fi fi-br-cloud"></i></div>
+    <div class="legal-card-title">13. Disponueshmëria e Shërbimit</div>
+    <div class="legal-card-body">
+      <p>perllogarit synon të ofrojë shërbim të pandërprerë, por <strong>nuk garanton disponueshmëri 100%</strong> të Faqes. Ndërprerjet mund të ndodhin si pasojë e:</p>
+      <ul>
+        <li><i class="fi fi-br-wrench"></i><span>Mirëmbajtjes planifikuese ose emergjente të infrastrukturës</span></li>
+        <li><i class="fi fi-br-wrench"></i><span>Problemeve teknike të jashtme (hosting provider, CDN, rrjeti i internetit)</span></li>
+        <li><i class="fi fi-br-wrench"></i><span>Sulmeve kibernetike ose ngjarjeve të paparashikueshme force majeure</span></li>
+        <li><i class="fi fi-br-wrench"></i><span>Përditësimeve të llogaritësve pas ndryshimeve ligjore</span></li>
+      </ul>
+      <p>Nuk garantojmë se Faqja do të jetë e aksesueshme në çdo kohë, çdo vendndodhje ose me çdo pajisje. perllogarit rezervon të drejtën të ndërpresë, pezullojë ose modifikojë shërbimin në çdo kohë dhe pa njoftim paraprak, pa asnjë detyrim ndaj vizitorëve.</p>
+    </div>
+  </div>
+
+  <!-- 14. Ndryshimet -->
+  <div class="legal-card" id="ndryshimet">
+    <div class="legal-card-icon"><i class="fi fi-br-refresh"></i></div>
+    <div class="legal-card-title">14. Ndryshimet e Kushteve</div>
+    <div class="legal-card-body">
+      <p>perllogarit rezervon të drejtën ekskluzive të modifikojë, azhurnojë ose zëvendësojë këto Kushte në çdo kohë, pa nevojën e njoftimit paraprak individual. Arsyet e ndryshimit mund të përfshijnë:</p>
+      <ul>
+        <li><i class="fi fi-br-info"></i><span>Ndryshime në legjislacionin shqiptar ose europian të aplikueshëm</span></li>
+        <li><i class="fi fi-br-info"></i><span>Shtimi i llogaritësve ose funksionaliteteve të reja</span></li>
+        <li><i class="fi fi-br-info"></i><span>Ndryshime në marrëdhëniet me palët e treta (Google Analytics, AdSense)</span></li>
+        <li><i class="fi fi-br-info"></i><span>Qartësimet e nevojshme bazuar në pyetje ose shqetësime të vizitorëve</span></li>
+      </ul>
+      <p>Çdo ndryshim hyn në fuqi menjëherë pas publikimit të versionit të ri në këtë faqe. Data e "Versionit të fundit" në krye të dokumentit tregon kur janë kryer ndryshimet e fundit. Vazhdimi i aksesimit të Faqes pas publikimit të ndryshimeve konsiderohet pranim i plotë i Kushteve të reja.</p>
+      <p>Ju inkurajojmë të rishikoni periodikisht këtë faqe, veçanërisht pas ndryshimeve legjislative të rëndësishme ose njohjeve publike mbi orarin tatimor.</p>
+    </div>
+  </div>
+
+  <!-- 15. Ligji -->
+  <div class="legal-card" id="ligji">
+    <div class="legal-card-icon"><i class="fi fi-br-balance-scale"></i></div>
+    <div class="legal-card-title">15. Ligji i Zbatueshëm dhe Jurisdiksioni</div>
+    <div class="legal-card-body">
+      <p>Këto Kushte rregullohen, interpretohen dhe zbatohen ekskluzivisht në pajtim me <strong>legjislacionin e Republikës së Shqipërisë</strong>, pavarësisht nga vendi i aksesimit ose kombësia e vizitorit.</p>
+      <p>Çdo mosmarrëveshje, pretendim ose konflikt që rrjedh nga interpretimi, zbatimi ose shkelja e këtyre Kushteve do të zgjidhet:</p>
+      <ul>
+        <li><i class="fi fi-br-handshake"></i><span>Fillimisht nëpërmjet negociatave dashamirëse dhe komunikimit të drejtpërdrejtë</span></li>
+        <li><i class="fi fi-br-balance-scale"></i><span>Nëse negociatat dështojnë, nëpërmjet gjykatave kompetente shqiptare me juridiksion ekskluziv</span></li>
+      </ul>
+      <p>Palët heqin dorë shprehimisht nga çdo pretendim për juridiksion alternativ ose aplikim të ligjit të huaj. Nëse ndonjë dispozitë e këtyre Kushteve vlerësohet e pavlefshme, e pazbatueshme ose e papajtueshme me ligjin shqiptar, dispozita e tillë do të hiqet ose modifikohet minimalisht, ndërsa të gjitha dispozitat e tjera mbeten plotësisht në fuqi dhe të zbatueshme.</p>
+    </div>
+  </div>
+
+  <!-- 16. Kontakti -->
+  <div class="legal-card" id="kontakti">
+    <div class="legal-card-icon"><i class="fi fi-br-envelope"></i></div>
+    <div class="legal-card-title">16. Na Kontaktoni</div>
+    <div class="legal-card-body">
+      <p>Nëse keni pyetje, vërejtje, sqarime ose shqetësime lidhur me këto Kushte të Përdorimit, llogaritjet e ofruara, ose çdo aspekt tjetër të Faqes, mund të na kontaktoni me:</p>
+      <p><strong>Email:</strong> <a href="mailto:feedback@perllogarit.al" class="legal-link">feedback@perllogarit.al</a></p>
+      <p>Përgjigjet jepen brenda 5–10 ditëve pune. Lutemi të specifikoni qartë natyrën e pyetjes suaj dhe, nëse është relevante, llogaritësin specifik të cilit i referoheni. Për çështje urgjente tatimore, ju kujtojmë se autoriteti kompetent është Drejtoria e Përgjithshme e Tatimeve (<strong>tatime.gov.al</strong>).</p>
+    </div>
+  </div>
+
+</div>
+
+<div id="site-footer"></div>
+
+</body>
+</html>

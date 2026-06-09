@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Faqja nuk u gjet · perllogarit</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/shared.js" defer></script>
+  <style>
+    .notfound-wrap {
+      min-height: calc(100vh - 160px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 1.5rem;
+    }
+
+    .notfound-inner { max-width: 520px; width: 100%; }
+
+    .notfound-zero { color: var(--navy); }
+
+    .notfound-code {
+      font-size: clamp(6rem, 22vw, 11rem);
+      font-weight: 900;
+      line-height: 1;
+      color: var(--blue);
+      letter-spacing: -.04em;
+      animation: fadeUp .55s cubic-bezier(.22,1,.36,1) .05s both;
+      text-shadow: 0 0 40px rgba(37,99,235,.45), 0 0 80px rgba(37,99,235,.2);
+    }
+
+    .notfound-title {
+      font-size: clamp(1.3rem, 4vw, 1.8rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin: .5rem 0 1rem;
+      animation: fadeUp .5s ease .2s both;
+    }
+
+    .notfound-desc {
+      font-size: 1rem;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-bottom: 2.25rem;
+      animation: fadeUp .5s ease .32s both;
+    }
+
+    .brand-inv-per     { color: var(--blue); }
+    .brand-inv-llogarit { color: var(--navy); }
+
+    .notfound-desc a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .notfound-desc a strong {
+      color: var(--blue);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-28TE2F8NLS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-28TE2F8NLS');
+  </script>
+</head>
+<body>
+
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+<div class="bg-orb bg-orb-3"></div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <ul class="nav-links">
+      <li><a href="/index.html">Kryefaqe</a></li>
+      <li><a href="/llogaritesit.html">Llogaritësit</a></li>
+      <li><a href="/rreth-nesh.html">Rreth Nesh</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="fab-wrap">
+  <div class="fab-menu" id="nav-mobile">
+    <a href="/index.html" class="fab-item">
+      <span class="fab-label">Kryefaqe</span>
+      <span class="fab-btn"><i class="fi fi-br-home"></i></span>
+    </a>
+    <a href="/llogaritesit.html" class="fab-item">
+      <span class="fab-label">Llogaritësit</span>
+      <span class="fab-btn"><i class="fi fi-br-calculator"></i></span>
+    </a>
+    <a href="/rreth-nesh.html" class="fab-item">
+      <span class="fab-label">Rreth Nesh</span>
+      <span class="fab-btn"><i class="fi fi-br-info"></i></span>
+    </a>
+  </div>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <i class="fi fi-br-menu-burger" id="hamburger-icon"></i>
+  </button>
+</div>
+
+<div class="notfound-wrap">
+  <div class="notfound-inner">
+    <div class="notfound-code" id="notfound-code">000</div>
+    <div class="notfound-title">FAQJA NUK U <span class="brand-inv-per">PER</span><span class="brand-inv-llogarit">LLOGARIT</span>!</div>
+    <p class="notfound-desc">Adresa që kërkuat nuk ekziston, është zhvendosur ose ka ndodhur ndonjë problem tjetër. <a href="#" onclick="history.back();return false;">Kthehu <strong>MBRAPA</strong></a> ose <a href="/index.html">kthehu në <strong>KRYEFAQE</strong></a>.</p>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+
+<script>
+(function() {
+  var el = document.getElementById('notfound-code');
+  var target = 404;
+  var duration = 900;
+  var start = null;
+
+  function ease(t) { return 1 - Math.pow(1 - t, 3); }
+
+  function tick(now) {
+    if (!start) start = now;
+    var t = Math.min((now - start) / duration, 1);
+    var val = Math.round(ease(t) * target);
+    if (t >= 1) {
+      el.innerHTML = '4<span class="notfound-zero">0</span>4';
+    } else {
+      el.textContent = String(val).padStart(3, '0');
+      requestAnimationFrame(tick);
+    }
+  }
+
+  requestAnimationFrame(tick);
+})();
+</script>
+
+</body>
+</html>

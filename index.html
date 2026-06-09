@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>perllogarit - Llogaritësit Financiare për Shqipërinë</title>
+  <meta name="description" content="Llogaritës financiarë falas për shqiptarët. Paga neto, taksa importit të makinës, sigurime vetëpunësimi, TVSH dhe tatim qiraje. Bazuar në ligjin shqiptar. Pa regjistrim.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://perllogarit.al/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://perllogarit.al/">
+  <meta property="og:site_name" content="perllogarit">
+  <meta property="og:locale" content="sq_AL">
+  <meta property="og:title" content="perllogarit - Llogaritësit Financiare për Shqipërinë">
+  <meta property="og:description" content="Llogaritës financiarë falas për shqiptarët. Paga neto, taksa importit të makinës, sigurime vetëpunësimi, TVSH dhe tatim qiraje. Bazuar në ligjin shqiptar. Pa regjistrim.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="perllogarit - Llogaritësit Financiare për Shqipërinë">
+  <meta name="twitter:description" content="Llogaritës financiarë falas për shqiptarët. Paga neto, taksa importit të makinës, sigurime vetëpunësimi, TVSH dhe tatim qiraje. Bazuar në ligjin shqiptar. Pa regjistrim.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/shared.js" defer></script>
+  <script src="js/analytics.js" defer></script>
+  <style>
+    .rates-card {
+      margin-top: 1.2rem;
+      display: flex; align-items: center; gap: .75rem; flex-wrap: wrap;
+      background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.32);
+      border-radius: 1.2rem; -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+      padding: .75rem 1.1rem;
+    }
+    .rates-card-lbl {
+      display: flex; align-items: center; gap: .3rem; white-space: nowrap;
+      font-size: .68rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--navy); opacity: .55;
+    }
+    .rates-pairs { display: flex; align-items: center; gap: .45rem; flex-wrap: wrap; }
+    .rate-chip {
+      display: flex; align-items: baseline; gap: .2rem;
+      background: rgba(255,255,255,.32); border: 1px solid rgba(255,255,255,.55);
+      border-radius: 2rem; padding: .2rem .65rem;
+    }
+    .rate-chip-ccy { font-size: .67rem; font-weight: 700; color: var(--navy); opacity: .5; }
+    .rate-chip-val { font-size: .88rem; font-weight: 800; color: var(--navy); }
+    .rate-chip-unit { font-size: .67rem; font-weight: 600; color: var(--navy); opacity: .45; }
+    .rates-ts { font-size: .62rem; color: var(--gray); opacity: .4; margin-left: auto; white-space: nowrap; }
+
+    /* Hero section entrance */
+    .hero-brand      { animation: fadeUp .65s cubic-bezier(.22,1,.36,1) .05s both; }
+    .hero-sub        { animation: fadeUp .6s  ease .2s  both; }
+    .hero-badges     { animation: fadeUp .55s ease .35s both; }
+    .calc-grid-label { animation: fadeUp .5s  ease .48s both; }
+    .rates-card      { animation: fadeUp .5s  ease .72s both; }
+
+    /* Hero calc cards stagger */
+    .hero-calc-grid .calc-card:nth-child(1) { animation: scaleUp .5s ease .52s both; }
+    .hero-calc-grid .calc-card:nth-child(2) { animation: scaleUp .5s ease .60s both; }
+    .hero-calc-grid .calc-card:nth-child(3) { animation: scaleUp .5s ease .66s both; }
+    .hero-calc-grid .calc-card:nth-child(4) { animation: scaleUp .5s ease .72s both; }
+  </style>
+
+  <!-- Google Analytics 4 (G-28TE2F8NLS) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-28TE2F8NLS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-28TE2F8NLS');
+  </script>
+  <!-- Google AdSense —  ca-pub-1093058889887223 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1093058889887223" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+<div class="bg-orb bg-orb-3"></div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-active">Kryefaqe</a></li>
+      <li><a href="llogaritesit.html">Llogaritësit</a></li>
+      <li><a href="rreth-nesh.html">Rreth Nesh</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="fab-wrap">
+  <div class="fab-menu" id="nav-mobile">
+    <a href="index.html" class="fab-item nav-active">
+      <span class="fab-label">Kryefaqe</span>
+      <span class="fab-btn"><i class="fi fi-br-home"></i></span>
+    </a>
+    <a href="llogaritesit.html" class="fab-item">
+      <span class="fab-label">Llogaritësit</span>
+      <span class="fab-btn"><i class="fi fi-br-calculator"></i></span>
+    </a>
+    <a href="rreth-nesh.html" class="fab-item">
+      <span class="fab-label">Rreth Nesh</span>
+      <span class="fab-btn"><i class="fi fi-br-info"></i></span>
+    </a>
+  </div>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <i class="fi fi-br-menu-burger" id="hamburger-icon"></i>
+  </button>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <h1 class="hero-brand">per<span>llogarit</span></h1>
+    <p class="hero-sub">Llogaritës të saktë, të thjeshtë dhe falas për shqiptarët. Llogarit pagën, taksat e importit dhe shumë kosto të tjera të përditshme në një vend të vetëm.</p>
+    <div class="hero-badges">
+      <span class="hero-badge"><i class="fi fi-br-check"></i> Falas gjithmonë</span>
+      <span class="hero-badge"><i class="fi fi-br-check"></i> Pa regjistrim</span>
+      <span class="hero-badge"><i class="fi fi-br-check"></i> Bazuar në ligj shqiptar</span>
+    </div>
+    <p class="calc-grid-label">Llogaritësit më të përdorur</p>
+    <div class="calc-grid hero-calc-grid">
+
+      <a class="calc-card calc-card--simple" href="calculators/paga.html">
+        <div class="calc-icon"><i class="fi fi-br-user-salary"></i></div>
+        <div class="calc-card-title">Llogaritësi i Pagës</div>
+      </a>
+
+      <a class="calc-card calc-card--simple" href="calculators/sigurime.html">
+        <div class="calc-icon"><i class="fi fi-br-briefcase"></i></div>
+        <div class="calc-card-title">Sigurime Shoqërore për të Vetëpunësuarit</div>
+      </a>
+
+      <a class="calc-card calc-card--simple" href="calculators/makina.html">
+        <div class="calc-icon"><i class="fi fi-br-car"></i></div>
+        <div class="calc-card-title">Taksa e Importit të Makinës</div>
+      </a>
+
+      <a class="calc-card calc-card--simple calc-card--all" href="llogaritesit.html">
+        <div class="calc-icon calc-icon--all"><i class="fi fi-br-grid"></i></div>
+        <div class="calc-card-title">Të gjithë llogaritësit</div>
+      </a>
+
+    </div>
+
+    <div class="rates-card">
+      <span class="rates-card-lbl"><i class="fi fi-br-chart-line-up"></i> Kursi sot</span>
+      <div class="rates-pairs">
+        <div class="rate-chip">
+          <span class="rate-chip-ccy">EUR</span>
+          <span class="rate-chip-val" id="r-eur">…</span>
+          <span class="rate-chip-unit">ALL</span>
+        </div>
+        <div class="rate-chip">
+          <span class="rate-chip-ccy">USD</span>
+          <span class="rate-chip-val" id="r-usd">…</span>
+          <span class="rate-chip-unit">ALL</span>
+        </div>
+        <div class="rate-chip">
+          <span class="rate-chip-ccy">GBP</span>
+          <span class="rate-chip-val" id="r-gbp">…</span>
+          <span class="rate-chip-unit">ALL</span>
+        </div>
+      </div>
+      <span class="rates-ts" id="rates-ts">duke ngarkuar…</span>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script>
+(async function loadRates() {
+  try {
+    const res  = await fetch('https://v6.exchangerate-api.com/v6/607e597871b436c321a387b3/latest/EUR');
+    const data = await res.json();
+    if (data.result !== 'success') throw new Error();
+    const r = data.conversion_rates;
+    document.getElementById('r-eur').textContent = r.ALL.toFixed(2);
+    document.getElementById('r-usd').textContent = (r.ALL / r.USD).toFixed(2);
+    document.getElementById('r-gbp').textContent = (r.ALL / r.GBP).toFixed(2);
+    const now = new Date();
+    document.getElementById('rates-ts').textContent =
+      'aktualizuar ' + now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
+  } catch {
+    ['r-eur','r-usd','r-gbp'].forEach(id => {
+      document.getElementById(id).textContent = '–';
+    });
+    document.getElementById('rates-ts').textContent = '';
+  }
+})();
+</script>
+
+</body>
+</html>

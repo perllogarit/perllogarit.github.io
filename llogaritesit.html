@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Llogaritësit Financiare - perllogarit</title>
+  <meta name="description" content="Të gjithë llogaritësit financiarë falas: paga neto, sigurime vetëpunësimi, TVSH, tatim qiraje, tatim dividendësh dhe taksa importit. Normat e aktualizuara 2026.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://perllogarit.al/llogaritesit.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://perllogarit.al/llogaritesit.html">
+  <meta property="og:site_name" content="perllogarit">
+  <meta property="og:locale" content="sq_AL">
+  <meta property="og:title" content="Llogaritësit Financiare - perllogarit">
+  <meta property="og:description" content="Të gjithë llogaritësit financiarë falas: paga neto, sigurime vetëpunësimi, TVSH, tatim qiraje, tatim dividendësh dhe taksa importit. Normat e aktualizuara 2026.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Llogaritësit Financiare - perllogarit">
+  <meta name="twitter:description" content="Të gjithë llogaritësit financiarë falas: paga neto, sigurime vetëpunësimi, TVSH, tatim qiraje, tatim dividendësh dhe taksa importit. Normat e aktualizuara 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/shared.js" defer></script>
+  <script src="js/analytics.js" defer></script>
+  <style>
+    .llogaritesit-wrap {
+      margin: 2.5rem auto 4rem;
+    }
+    .page-header-inner { text-align: center; }
+    .calc-section { margin-bottom: 3rem; }
+    .calc-section-title {
+      font-size: .7rem; font-weight: 700; letter-spacing: .13em;
+      text-transform: uppercase; color: var(--gray); opacity: .6;
+      margin-bottom: 1rem;
+    }
+    .calc-card:not(.calc-card--soon):hover .calc-icon { transform: none; }
+
+    .calc-card--adsense {
+      padding: 0; overflow: hidden; cursor: default;
+      background: rgba(255,255,255,.18);
+      border-color: rgba(255,255,255,.35);
+      min-height: 200px;
+      align-items: stretch; justify-content: stretch;
+    }
+    .calc-card--adsense:hover {
+      transform: none;
+      box-shadow: var(--shadow-card);
+      border-color: rgba(255,255,255,.35);
+      background: rgba(255,255,255,.18);
+    }
+    .calc-card--adsense .adsbygoogle {
+      flex: 1; width: 100%;
+    }
+  </style>
+
+  <!-- Google Analytics 4 (G-28TE2F8NLS) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-28TE2F8NLS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-28TE2F8NLS');
+  </script>
+  <!-- Google AdSense —  ca-pub-1093058889887223 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1093058889887223" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+<div class="bg-orb bg-orb-3"></div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <ul class="nav-links">
+      <li><a href="index.html">Kryefaqe</a></li>
+      <li><a href="llogaritesit.html" class="nav-active">Llogaritësit</a></li>
+      <li><a href="rreth-nesh.html">Rreth Nesh</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="fab-wrap">
+  <div class="fab-menu" id="nav-mobile">
+    <a href="index.html" class="fab-item">
+      <span class="fab-label">Kryefaqe</span>
+      <span class="fab-btn"><i class="fi fi-br-home"></i></span>
+    </a>
+    <a href="llogaritesit.html" class="fab-item nav-active">
+      <span class="fab-label">Llogaritësit</span>
+      <span class="fab-btn"><i class="fi fi-br-calculator"></i></span>
+    </a>
+    <a href="rreth-nesh.html" class="fab-item">
+      <span class="fab-label">Rreth Nesh</span>
+      <span class="fab-btn"><i class="fi fi-br-info"></i></span>
+    </a>
+  </div>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <i class="fi fi-br-menu-burger" id="hamburger-icon"></i>
+  </button>
+</div>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1>TË GJITHË LLOGARITËSIT</h1>
+  </div>
+</div>
+
+<div class="llogaritesit-wrap container">
+
+  <!-- Paga & Punësimi -->
+  <section class="calc-section">
+    <p class="calc-section-title">Paga &amp; Punësimi</p>
+    <div class="calc-grid">
+
+      <a class="calc-card" href="calculators/paga.html">
+        <div class="calc-icon"><i class="fi fi-br-user-salary"></i></div>
+        <div class="calc-card-title">Llogaritësi i Pagës</div>
+        <div class="calc-card-desc">Llogarit pagën neto nga bruto ose anasjelltas. Mbështet normat 2025 dhe 2026 me tatim progresiv, sigurime shoqërore dhe kostot e punëdhënësit.</div>
+        <div class="calc-card-footer">
+          <span class="calc-card-link">HAP LLOGARITËSIN <i class="fi fi-br-arrow-small-right"></i></span>
+        </div>
+      </a>
+
+      <a class="calc-card" href="calculators/sigurime.html">
+        <div class="calc-icon"><i class="fi fi-br-briefcase"></i></div>
+        <div class="calc-card-title">Sigurime Shoqërore për të Vetëpunësuarit</div>
+        <div class="calc-card-desc">Llogarit kontributet e detyrueshme të sigurimeve shoqërore dhe shëndetësore për të vetëpunësuarit dhe bizneset individuale.</div>
+        <div class="calc-card-footer">
+          <span class="calc-card-link">HAP LLOGARITËSIN <i class="fi fi-br-arrow-small-right"></i></span>
+        </div>
+      </a>
+
+      <div class="calc-card calc-card--adsense">
+        <ins class="adsbygoogle"
+             style="display:block;width:100%;height:100%;min-height:200px"
+             data-ad-client="ca-pub-1093058889887223"
+             data-ad-slot="4297935284"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Tatimi -->
+  <section class="calc-section">
+    <p class="calc-section-title">Tatimi</p>
+    <div class="calc-grid">
+
+      <a class="calc-card" href="calculators/tvsh.html">
+        <div class="calc-icon"><i class="fi fi-br-percentage"></i></div>
+        <div class="calc-card-title">TVSH (20%)</div>
+        <div class="calc-card-desc">Llogarit Tatimin mbi Vlerën e Shtuar për çmimin e një produkti ose shërbimi. Mbështet normën standarde 20% dhe normën e reduktuar 6%.</div>
+        <div class="calc-card-footer">
+          <span class="calc-card-link">HAP LLOGARITËSIN <i class="fi fi-br-arrow-small-right"></i></span>
+        </div>
+      </a>
+
+      <a class="calc-card" href="calculators/dividende.html">
+        <div class="calc-icon"><i class="fi fi-br-chart-line-up"></i></div>
+        <div class="calc-card-title">Tatim mbi Dividentët</div>
+        <div class="calc-card-desc">Llogarit tatimin prej 8% mbi dividentët e shpërndarë nga shoqëritë tregtare për aksionarët ose ortakët.</div>
+        <div class="calc-card-footer">
+          <span class="calc-card-link">HAP LLOGARITËSIN <i class="fi fi-br-arrow-small-right"></i></span>
+        </div>
+      </a>
+
+      <a class="calc-card" href="calculators/qiraja.html">
+        <div class="calc-icon"><i class="fi fi-br-home"></i></div>
+        <div class="calc-card-title">Tatim mbi të Ardhurat nga Qiraja</div>
+        <div class="calc-card-desc">Llogarit tatimin mbi të ardhurat e realizuara nga dhënia me qira e pronave të paluajtshme sipas legjislacionit shqiptar.</div>
+        <div class="calc-card-footer">
+          <span class="calc-card-link">HAP LLOGARITËSIN <i class="fi fi-br-arrow-small-right"></i></span>
+        </div>
+      </a>
+
+      <div class="calc-card calc-card--adsense">
+        <ins class="adsbygoogle"
+             style="display:block;width:100%;height:100%;min-height:200px"
+             data-ad-client="ca-pub-1093058889887223"
+             data-ad-slot="6172750580"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <div class="calc-card calc-card--soon">
+        <div class="calc-icon"><i class="fi fi-br-shop"></i></div>
+        <div class="calc-card-title">Tatim i Thjeshtësuar mbi Fitimin</div>
+        <div class="calc-card-desc">Llogarit tatimin e thjeshtësuar për bizneset e vogla me qarkullim vjetor nën pragun e TVSH-së.</div>
+        <div class="calc-card-footer">
+          <span class="badge-soon">Së shpejti</span>
+        </div>
+      </div>
+
+      <div class="calc-card calc-card--soon">
+        <div class="calc-icon"><i class="fi fi-br-money"></i></div>
+        <div class="calc-card-title">Tatim mbi Fitimin e Korporatave</div>
+        <div class="calc-card-desc">Llogarit tatimin mbi fitimin neto të shoqërive tregtare me normë 15% sipas Ligjit të Tatimit mbi të Ardhurat.</div>
+        <div class="calc-card-footer">
+          <span class="badge-soon">Së shpejti</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Pasuria & Prona -->
+  <section class="calc-section">
+    <p class="calc-section-title">Pasuria &amp; Prona</p>
+    <div class="calc-grid">
+
+      <div class="calc-card calc-card--soon">
+        <div class="calc-icon"><i class="fi fi-br-building"></i></div>
+        <div class="calc-card-title">Tatim mbi Shitjen e Pronës</div>
+        <div class="calc-card-desc">Llogarit tatimin mbi fitimin kapital nga shitja e pasurive të paluajtshme: apartamente, shtëpi dhe truall.</div>
+        <div class="calc-card-footer">
+          <span class="badge-soon">Së shpejti</span>
+        </div>
+      </div>
+
+      <div class="calc-card calc-card--soon">
+        <div class="calc-icon"><i class="fi fi-br-exchange"></i></div>
+        <div class="calc-card-title">Taksa e Kalimit të Pronësisë</div>
+        <div class="calc-card-desc">Llogarit taksën e kalimit të pronësisë që paguhet gjatë blerjes ose shitjes së pasurive të paluajtshme te noteri.</div>
+        <div class="calc-card-footer">
+          <span class="badge-soon">Së shpejti</span>
+        </div>
+      </div>
+
+      <div class="calc-card calc-card--soon">
+        <div class="calc-icon"><i class="fi fi-br-key"></i></div>
+        <div class="calc-card-title">Taksa mbi Pasurinë e Paluajtshme</div>
+        <div class="calc-card-desc">Llogarit taksën vjetore mbi pasurinë e paluajtshme bazuar në sipërfaqen dhe zonën ku ndodhet prona.</div>
+        <div class="calc-card-footer">
+          <span class="badge-soon">Së shpejti</span>
+        </div>
+      </div>
+
+      <div class="calc-card calc-card--adsense">
+        <ins class="adsbygoogle"
+             style="display:block;width:100%;height:100%;min-height:200px"
+             data-ad-client="ca-pub-1093058889887223"
+             data-ad-slot="8663182550"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Kredi & Kursime -->
+  <section class="calc-section">
+    <p class="calc-section-title">Kredi &amp; Kursime</p>
+    <div class="calc-grid">
+
+      <div class="calc-card calc-card--soon">
+        <div class="calc-icon"><i class="fi fi-br-bank"></i></div>
+        <div class="calc-card-title">Llogaritës Krediti / Hipoteke</div>
+        <div class="calc-card-desc">Llogarit këstët mujore, totalin e interesit dhe tabelën e amortizimit për kredi bankare dhe hipoteka.</div>
+        <div class="calc-card-footer">
+          <span class="badge-soon">Së shpejti</span>
+        </div>
+      </div>
+
+      <div class="calc-card calc-card--soon">
+        <div class="calc-icon"><i class="fi fi-br-piggy-bank"></i></div>
+        <div class="calc-card-title">Llogaritës Depozite</div>
+        <div class="calc-card-desc">Llogarit interesin dhe vlerën finale të depozitave bankare duke mbështetur interesin e thjeshtë dhe atë të përbërë.</div>
+        <div class="calc-card-footer">
+          <span class="badge-soon">Së shpejti</span>
+        </div>
+      </div>
+
+      <div class="calc-card calc-card--adsense">
+        <ins class="adsbygoogle"
+             style="display:block;width:100%;height:100%;min-height:200px"
+             data-ad-client="ca-pub-1093058889887223"
+             data-ad-slot="5475285580"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Import & Doganë -->
+  <section class="calc-section">
+    <p class="calc-section-title">Import &amp; Doganë</p>
+    <div class="calc-grid">
+
+      <a class="calc-card" href="calculators/makina.html">
+        <div class="calc-icon"><i class="fi fi-br-car"></i></div>
+        <div class="calc-card-title">Taksa e Importit të Makinës</div>
+        <div class="calc-card-desc">Llogarit TVSH-në e importit mbi vlerën doganore të automjetit, duke përfshirë çmimin, transportin dhe sigurimin.</div>
+        <div class="calc-card-footer">
+          <span class="calc-card-link">HAP LLOGARITËSIN <i class="fi fi-br-arrow-small-right"></i></span>
+        </div>
+      </a>
+
+      <div class="calc-card calc-card--soon">
+        <div class="calc-icon"><i class="fi fi-br-box"></i></div>
+        <div class="calc-card-title">Taksa e Importit të Mallrave</div>
+        <div class="calc-card-desc">Llogarit detyrimet doganore dhe TVSH-në për importin e mallrave të përgjithshme sipas kodit tarifor dhe vlerës doganore.</div>
+        <div class="calc-card-footer">
+          <span class="badge-soon">Së shpejti</span>
+        </div>
+      </div>
+
+      <div class="calc-card calc-card--adsense">
+        <ins class="adsbygoogle"
+             style="display:block;width:100%;height:100%;min-height:200px"
+             data-ad-client="ca-pub-1093058889887223"
+             data-ad-slot="8564483353"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<div id="site-footer"></div>
+
+<script>
+(function() {
+  if (!('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -40px 0px', threshold: 0.08 });
+
+  document.querySelectorAll('.calc-section-title').forEach(el => {
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+
+  document.querySelectorAll('.calc-section').forEach(section => {
+    section.querySelectorAll('.calc-card').forEach((card, i) => {
+      card.classList.add('reveal');
+      card.style.transitionDelay = (i * 0.1) + 's';
+      io.observe(card);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

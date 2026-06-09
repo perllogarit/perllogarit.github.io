@@ -1,0 +1,416 @@
+﻿<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Llogaritësi i Pagës 2026 - perllogarit</title>
+  <meta name="description" content="Llogarit pagën neto nga bruto ose anasjelltas. Tatim progresiv 13% dhe 23%, sigurime shoqërore dhe kosto punëdhënësi. Normat 2025 dhe 2026.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://perllogarit.al/calculators/paga.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://perllogarit.al/calculators/paga.html">
+  <meta property="og:site_name" content="perllogarit">
+  <meta property="og:locale" content="sq_AL">
+  <meta property="og:title" content="Llogaritësi i Pagës 2026 - perllogarit">
+  <meta property="og:description" content="Llogarit pagën neto nga bruto ose anasjelltas. Tatim progresiv 13% dhe 23%, sigurime shoqërore dhe kosto punëdhënësi. Normat 2025 dhe 2026.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Llogaritësi i Pagës 2026 - perllogarit">
+  <meta name="twitter:description" content="Llogarit pagën neto nga bruto ose anasjelltas. Tatim progresiv 13% dhe 23%, sigurime shoqërore dhe kosto punëdhënësi. Normat 2025 dhe 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/calc.css">
+  <link rel="stylesheet" href="../css/embed.css">
+  <script src="../js/shared.js" defer></script>
+  <script src="../js/analytics.js" defer></script>
+  <style>
+    /* ── Paga-specific color tokens ── */
+    :root {
+      --red-mid:       #E53935;
+      --purple:        #6A1B9A;
+      --purple-light:  #F3E5F5;
+      --purple-border: #CE93D8;
+    }
+
+    /* ── Income tax rate chip uses blue (override calc.css red) ── */
+    .ri-tax { background: #E3F2FD; color: #1565C0; }
+
+    /* ── Employer cost collapsible box ── */
+    .emp-box {
+      background: rgba(243,229,245,.65);
+      border: 1.5px solid var(--purple-border);
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+      border-radius: var(--r-md); padding: 1rem 1.2rem; margin-top: 1.25rem;
+    }
+    .emp-box-title {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: .8rem; font-weight: 800; color: var(--purple);
+      text-transform: uppercase; letter-spacing: .5px;
+      cursor: pointer; -webkit-user-select: none; user-select: none; min-height: 32px;
+    }
+    .emp-title-right {
+      display: flex; align-items: center; gap: .45rem;
+      font-size: .88rem; font-weight: 700; letter-spacing: 0;
+      text-transform: none;
+    }
+    .emp-total-preview { opacity: .8; min-width: 80px; display: inline-block; text-align: right; }
+    .emp-chevron {
+      font-size: .78rem; transition: transform .22s ease;
+      line-height: 0; display: inline-flex; align-items: center;
+    }
+    .emp-box--open .emp-chevron { transform: rotate(180deg); }
+    .emp-box-body {
+      display: none; margin-top: .75rem;
+      border-top: 1px solid rgba(206,147,216,.35); padding-top: .35rem;
+    }
+    .emp-box--open .emp-box-body { display: block; }
+    .emp-row {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: .88rem; padding: .32rem 0; border-bottom: 1px solid rgba(206,147,216,.4);
+    }
+    .emp-row:last-child {
+      border-bottom: none; font-weight: 800; font-size: .98rem;
+      color: var(--purple); padding-top: .5rem; margin-top: .15rem;
+    }
+    .emp-row .emp-val { font-weight: 600; }
+
+    /* ── Daily rate section ── */
+    #daily-section { margin-top: 1.25rem; }
+    .days-row {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: .65rem;
+    }
+    .days-label { font-size: .8rem; font-weight: 600; color: var(--gray); }
+    .days-stepper {
+      display: inline-flex; align-items: center; gap: 0;
+      background: rgba(255,255,255,.5);
+      border: 1.5px solid rgba(255,255,255,.65);
+      border-radius: var(--r-pill);
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+      overflow: hidden;
+    }
+    .days-stepper button {
+      width: 30px; height: 30px; border: none; background: transparent;
+      font-size: 1.1rem; font-weight: 700; color: var(--blue);
+      cursor: pointer; font-family: var(--font); transition: background .15s;
+    }
+    .days-stepper button:hover { background: rgba(37,99,235,.1); }
+    .days-stepper input {
+      width: 36px; height: 30px; text-align: center;
+      font-size: .88rem; font-weight: 800; color: var(--navy);
+      font-family: var(--font); border: none;
+      border-left: 1px solid rgba(255,255,255,.7);
+      border-right: 1px solid rgba(255,255,255,.7);
+      background: transparent; outline: none; padding: 0 .2rem;
+    }
+    .days-stepper input::-webkit-inner-spin-button,
+    .days-stepper input::-webkit-outer-spin-button { -webkit-appearance: none; appearance: none; }
+    .days-stepper input[type=number] { -moz-appearance: textfield; appearance: textfield; }
+    .daily-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: .75rem;
+    }
+    .daily-item {
+      background: rgba(255,255,255,.42);
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.65);
+      border-radius: var(--r-md); padding: .75rem 1rem; text-align: center;
+    }
+    .daily-item .di-label { font-size: .78rem; color: var(--gray); }
+    .daily-item .di-val   { font-size: 1.15rem; font-weight: 800; margin-top: .2rem; color: var(--navy); }
+    .daily-item .di-sub   { font-size: .72rem; color: var(--gray); margin-top: .1rem; }
+
+    /* ── Cliff warning: alternative gross result ── */
+    .multi-result {
+      background: rgba(255,243,224,.75); border: 1.5px solid #FFCC80;
+      -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+      border-radius: var(--r-md); padding: .9rem 1.1rem; margin-top: 1.25rem;
+    }
+    .multi-result-title { font-size: .8rem; font-weight: 700; color: var(--orange); margin-bottom: .5rem; }
+    .multi-row { display: flex; justify-content: space-between; font-size: .88rem; padding: .25rem 0; }
+    .multi-row strong { color: var(--navy); }
+
+    /* ── Paga-specific responsive overrides ── */
+    @media (max-width: 520px) {
+      .rates-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 380px) {
+      .result-box .rr-val   { font-size: 1.35rem; }
+      .input-row input      { font-size: 1.1rem; }
+      .rates-grid           { grid-template-columns: repeat(2, 1fr); }
+      .toggle-btn span      { font-size: .68rem; }
+    }
+  </style>
+
+  <!-- Google Analytics 4 (G-28TE2F8NLS) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-28TE2F8NLS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-28TE2F8NLS');
+  </script>
+  <!-- Google AdSense —  ca-pub-1093058889887223 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1093058889887223" crossorigin="anonymous"></script>
+</head>
+<body>
+<script>if(new URLSearchParams(location.search).has('embed'))document.documentElement.classList.add('embed');</script>
+
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+<div class="bg-orb bg-orb-3"></div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <ul class="nav-links">
+      <li><a href="../index.html">Kryefaqe</a></li>
+      <li><a href="../llogaritesit.html">Llogaritësit</a></li>
+      <li><a href="../rreth-nesh.html">Rreth Nesh</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="fab-wrap">
+  <div class="fab-menu" id="nav-mobile">
+    <a href="../index.html" class="fab-item">
+      <span class="fab-label">Kryefaqe</span>
+      <span class="fab-btn"><i class="fi fi-br-home"></i></span>
+    </a>
+    <a href="../llogaritesit.html" class="fab-item nav-active">
+      <span class="fab-label">Llogaritësit</span>
+      <span class="fab-btn"><i class="fi fi-br-calculator"></i></span>
+    </a>
+    <a href="../rreth-nesh.html" class="fab-item">
+      <span class="fab-label">Rreth Nesh</span>
+      <span class="fab-btn"><i class="fi fi-br-info"></i></span>
+    </a>
+  </div>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <i class="fi fi-br-menu-burger" id="hamburger-icon"></i>
+  </button>
+</div>
+
+<div class="page-header">
+  <div class="page-header-inner" style="text-align:center">
+    <h1>LLOGARITËSI I PAGËS</h1>
+    <button type="button" class="embed-trigger" onclick="document.getElementById('embed-dialog').showModal()">
+      <i class="fi fi-br-code-simple"></i> Embed
+    </button>
+  </div>
+</div>
+
+<div class="calc-container">
+
+  <div class="card">
+    <div class="card-body">
+
+      <!-- year -->
+      <div class="year-wrap" style="flex-direction:row;justify-content:center;margin-bottom:.75rem;">
+        <button class="year-btn active" id="btn-2026" onclick="setYear(2026)">2026</button>
+        <button class="year-btn"        id="btn-2025" onclick="setYear(2025)">2025</button>
+      </div>
+
+      <!-- mode -->
+      <div class="toggle-wrap" style="margin-bottom:1.25rem;">
+        <button class="toggle-btn active" id="btn-bruto" onclick="setMode('bruto')">
+          BRUTO
+          <span>Nga paga bruto të neto.</span>
+        </button>
+        <button class="toggle-btn" id="btn-neto" onclick="setMode('neto')">
+          NETO
+          <span>Nga paga neto të bruto.</span>
+        </button>
+      </div>
+
+      <!-- input -->
+      <div class="ccy-label-row">
+        <label class="field-label" id="input-label">Paga Bruto Mujore</label>
+        <div class="ccy-pills">
+          <button class="ccy-pill active" id="opt-all" onclick="setCurrency('ALL')">ALL</button>
+          <button class="ccy-pill"        id="opt-eur" onclick="setCurrency('EUR')">EUR</button>
+        </div>
+      </div>
+      <div class="input-row input-row--ccy">
+        <input type="number" id="salary-input" placeholder="p.sh. 67 420" min="0" step="100" oninput="calculate()">
+        <span class="input-ccy-unit" id="currency-unit">ALL</span>
+      </div>
+
+      <div class="quick-row">
+        <span class="quick-lbl">Bjeri shkurt:</span>
+        <button class="quick-btn" id="btn-minwage-quick" onclick="setMinWage()">Paga Min.</button>
+        <button class="quick-btn" onclick="setTavanSS()">Tavan SS</button>
+      </div>
+
+      <!-- cliff warning -->
+      <div class="warn-box" id="cliff-warn" style="display:none">
+        Kujdes: Për këtë pagë neto ka dy vlera të mundshme bruto (efekti i pragut tatimor). Shfaqen të dyja.
+      </div>
+
+      <!-- result -->
+      <div class="result-box">
+        <div class="rl">
+          <div class="rl-title" id="result-title">Paga Neto</div>
+          <div class="rl-sub"   id="result-sub">Pas të gjitha zbritjeve.</div>
+        </div>
+        <div class="rr">
+          <div class="rr-val"   id="result-val"></div>
+          <div class="rr-daily" id="result-daily">Ditore (div 22):</div>
+        </div>
+      </div>
+
+      <!-- breakdown -->
+      <table class="breakdown">
+        <tbody id="breakdown-body"></tbody>
+      </table>
+
+      <!-- daily -->
+      <div id="daily-section" style="display:none">
+        <div class="days-row">
+          <span class="days-label">DITË PUNE / MUAJ</span>
+          <div class="days-stepper">
+            <button onclick="changeDays(-1)">−</button>
+            <input type="number" id="days-display" value="22" min="1" max="31" oninput="onDaysInput()">
+            <button onclick="changeDays(1)">+</button>
+          </div>
+        </div>
+        <div class="daily-grid" id="daily-grid">
+          <div class="daily-item">
+            <div class="di-label">Paga Bruto Ditore</div>
+            <div class="di-val" id="daily-gross"></div>
+            <div class="di-sub" id="daily-gross-sub">bruto / 22</div>
+          </div>
+          <div class="daily-item">
+            <div class="di-label">Paga Neto Ditore</div>
+            <div class="di-val" id="daily-net"></div>
+            <div class="di-sub" id="daily-net-sub">neto / 22</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- employer -->
+      <div class="emp-box" id="emp-box" style="display:none">
+        <div class="emp-box-title" onclick="toggleEmpBox()">
+          <span>Kostoja e Punëdhënësit</span>
+          <span class="emp-title-right">
+            <span class="emp-total-preview" id="emp-total-preview"></span>
+            <i class="fi fi-br-angle-down emp-chevron"></i>
+          </span>
+        </div>
+        <div class="emp-box-body" id="emp-box-body">
+          <div class="emp-row">
+            <span>Paga Bruto</span>
+            <span class="emp-val" id="emp-gross"></span>
+          </div>
+          <div class="emp-row">
+            <span>Sigurim Shoqëror <span class="badge badge-gray">15%</span></span>
+            <span class="emp-val" id="emp-ss"></span>
+          </div>
+          <div class="emp-row">
+            <span>Sigurim Shëndetsor <span class="badge badge-gray">1.7%</span></span>
+            <span class="emp-val" id="emp-hi"></span>
+          </div>
+          <div class="emp-row">
+            <span>Kostoja Totale</span>
+            <span id="emp-total"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- alternative (cliff case) -->
+      <div class="multi-result" id="multi-result" style="display:none">
+        <div class="multi-result-title">Alternativa e dytë (i njëjti neto, bruto tjetër):</div>
+        <div class="multi-row"><span>Paga Bruto Alt.</span><strong id="alt-gross"></strong></div>
+        <div class="multi-row"><span>Paga Neto (verifikim)</span><strong id="alt-net"></strong></div>
+        <div class="multi-row"><span>Kostoja Totale e Punëdhënësit</span><strong id="alt-cost"></strong></div>
+      </div>
+
+      <div class="embed-badge">
+        <a href="https://perllogarit.al" target="_blank" rel="noopener noreferrer">perllogarit.al</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- rates reference -->
+  <div class="card">
+    <div class="card-header">
+      <i class="fi fi-br-stats"></i>
+      <h2>Normat e Kontributeve &middot; <span id="rates-year-label">2025</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="rates-grid">
+        <div class="rate-item">
+          <div class="ri-lbl">Sig. Shoqëror</div>
+          <div class="ri-val">9.5%</div>
+          <span class="ri-who ri-emp">Punëmarrës</span>
+        </div>
+        <div class="rate-item">
+          <div class="ri-lbl">Sig. Shëndetsor</div>
+          <div class="ri-val">1.7%</div>
+          <span class="ri-who ri-emp">Punëmarrës</span>
+        </div>
+        <div class="rate-item">
+          <div class="ri-lbl">Sig. Shoqëror</div>
+          <div class="ri-val">15%</div>
+          <span class="ri-who ri-empr">Punëdhënës</span>
+        </div>
+        <div class="rate-item">
+          <div class="ri-lbl">Sig. Shëndetsor</div>
+          <div class="ri-val">1.7%</div>
+          <span class="ri-who ri-empr">Punëdhënës</span>
+        </div>
+        <div class="rate-item">
+          <div class="ri-lbl">Tatim mbi të Ardhurat</div>
+          <div class="ri-val">13%</div>
+          <span class="ri-who ri-tax">deri 170,000</span>
+        </div>
+        <div class="rate-item">
+          <div class="ri-lbl">Tatim mbi të Ardhurat</div>
+          <div class="ri-val">23%</div>
+          <span class="ri-who ri-tax">mbi 170,000</span>
+        </div>
+      </div>
+
+      <div class="deduction-note">
+        <strong>Shuma e pataksueshme (mujore):</strong><br>
+        Deri 50,000 ALL &rarr; <strong>nuk paguhet tatim</strong><br>
+        50,001&ndash;60,000 ALL &rarr; <strong>35,000 ALL</strong> pa tatim<br>
+        Mbi 60,000 ALL &rarr; <strong>30,000 ALL</strong> pa tatim<br><br>
+        <strong>Tavan sig. shoqërore:</strong> <span id="note-cap">176,416</span> ALL/muaj &nbsp;
+        <strong>Paga minimale:</strong> <span id="note-minwage">40,000</span> ALL/muaj
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div id="site-footer"></div>
+
+<script src="../js/paga.js" defer></script>
+
+<dialog id="embed-dialog" class="embed-dialog">
+  <h3>Incorporo llogaritësin</h3>
+  <p>Vendos kodin e mëposhtëm në faqen tënde:</p>
+  <pre id="embed-code">&lt;iframe
+  src="https://perllogarit.al/calculators/paga.html?embed=1"
+  width="420"
+  height="640"
+  style="border:none;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,.08);"
+  title="Llogaritësi i Pagës · perllogarit"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</pre>
+  <div class="embed-dialog-actions">
+    <button type="button" onclick="var b=this;navigator.clipboard.writeText(document.getElementById('embed-code').textContent.trim()).then(function(){b.textContent='U kopjua ✓'})">Kopjo</button>
+    <button type="button" onclick="this.closest('dialog').close()">Mbyll</button>
+  </div>
+</dialog>
+</body>
+</html>

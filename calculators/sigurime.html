@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sigurime Shoqërore Vetëpunësimit 2026 - perllogarit</title>
+  <meta name="description" content="Llogarit kontributet e detyrueshme të sigurimeve shoqërore dhe shëndetësore për të vetëpunësuarit dhe bizneset individuale. Normat 2025 dhe 2026.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://perllogarit.al/calculators/sigurime.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://perllogarit.al/calculators/sigurime.html">
+  <meta property="og:site_name" content="perllogarit">
+  <meta property="og:locale" content="sq_AL">
+  <meta property="og:title" content="Sigurime Shoqërore Vetëpunësimit 2026 - perllogarit">
+  <meta property="og:description" content="Llogarit kontributet e detyrueshme të sigurimeve shoqërore dhe shëndetësore për të vetëpunësuarit dhe bizneset individuale. Normat 2025 dhe 2026.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sigurime Shoqërore Vetëpunësimit 2026 - perllogarit">
+  <meta name="twitter:description" content="Llogarit kontributet e detyrueshme të sigurimeve shoqërore dhe shëndetësore për të vetëpunësuarit dhe bizneset individuale. Normat 2025 dhe 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/calc.css">
+  <link rel="stylesheet" href="../css/embed.css">
+  <script src="../js/shared.js" defer></script>
+  <script src="../js/analytics.js" defer></script>
+
+  <!-- Google Analytics 4 (G-28TE2F8NLS) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-28TE2F8NLS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-28TE2F8NLS');
+  </script>
+  <!-- Google AdSense —  ca-pub-1093058889887223 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1093058889887223" crossorigin="anonymous"></script>
+</head>
+<body>
+<script>if(new URLSearchParams(location.search).has('embed'))document.documentElement.classList.add('embed');</script>
+
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+<div class="bg-orb bg-orb-3"></div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <ul class="nav-links">
+      <li><a href="../index.html">Kryefaqe</a></li>
+      <li><a href="../llogaritesit.html">Llogaritësit</a></li>
+      <li><a href="../rreth-nesh.html">Rreth Nesh</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="fab-wrap">
+  <div class="fab-menu" id="nav-mobile">
+    <a href="../index.html" class="fab-item">
+      <span class="fab-label">Kryefaqe</span>
+      <span class="fab-btn"><i class="fi fi-br-home"></i></span>
+    </a>
+    <a href="../llogaritesit.html" class="fab-item nav-active">
+      <span class="fab-label">Llogaritësit</span>
+      <span class="fab-btn"><i class="fi fi-br-calculator"></i></span>
+    </a>
+    <a href="../rreth-nesh.html" class="fab-item">
+      <span class="fab-label">Rreth Nesh</span>
+      <span class="fab-btn"><i class="fi fi-br-info"></i></span>
+    </a>
+  </div>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <i class="fi fi-br-menu-burger" id="hamburger-icon"></i>
+  </button>
+</div>
+
+<div class="page-header">
+  <div class="page-header-inner" style="text-align:center">
+    <h1>SIGURIME SHOQËRORE<br>PËR TË VETËPUNËSUARIT</h1>
+    <button type="button" class="embed-trigger" onclick="document.getElementById('embed-dialog').showModal()">
+      <i class="fi fi-br-code-simple"></i> Embed
+    </button>
+  </div>
+</div>
+
+<div class="calc-container">
+
+  <!-- ═══════════════════════════════════════════
+       CALCULATOR CARD
+  ═══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="card-body">
+
+      <!-- Year -->
+      <div class="year-wrap">
+        <button class="year-btn active" id="btn-2026" onclick="setYear(2026)">2026</button>
+        <button class="year-btn"        id="btn-2025" onclick="setYear(2025)">2025</button>
+      </div>
+
+      <!-- SS base input -->
+      <div class="ccy-label-row">
+        <label class="field-label" for="base-input">Baza e Deklaruar për Sigurime Shoqërore</label>
+        <div class="ccy-pills">
+          <button class="ccy-pill active" id="opt-all" onclick="setCurrency('ALL')">ALL</button>
+          <button class="ccy-pill"        id="opt-eur" onclick="setCurrency('EUR')">EUR</button>
+        </div>
+      </div>
+      <div class="input-row input-row--ccy">
+        <input type="number" id="base-input" placeholder="p.sh. 67 420" min="0" step="1000" oninput="calculate()">
+        <span class="input-ccy-unit" id="currency-unit">ALL</span>
+      </div>
+      <div class="quick-row">
+        <span class="quick-lbl">Bjeri shkurt:</span>
+        <button class="quick-btn" id="btn-minwage" onclick="setMinWage()">Paga Minimale</button>
+        <button class="quick-btn" onclick="setMaxBase()">Tavan SS</button>
+      </div>
+
+      <!-- Unpaid family workers -->
+      <div class="family-row">
+        <div>
+          <div class="family-label">Punonjës të papaguar të familjes
+            <span class="tip" data-tip="Anëtarë të familjes që punojnë bashkë me të vetëpunësuarin pa marrë pagë. Për secilin paguhet kontribut i veçantë bazuar në pagën minimale.">?</span>
+          </div>
+          <div class="family-sub">Anëtarë familjare që punojnë pa pagë</div>
+        </div>
+        <div class="stepper">
+          <button onclick="changeFamily(-1)">−</button>
+          <input type="number" id="family-count" value="0" min="0" max="10" oninput="onFamilyInput()">
+          <button onclick="changeFamily(1)">+</button>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div class="result-box">
+        <div class="rl">
+          <div class="rl-title">Kontributi Mujor Total</div>
+          <div class="rl-sub" id="result-sub">Sigurime shoqërore dhe shëndetësore</div>
+        </div>
+        <div class="rr">
+          <div class="rr-val" id="result-val"></div>
+        </div>
+      </div>
+
+      <!-- Below-minimum warning -->
+      <div class="warn-box" id="min-warn" style="display:none">
+        Baza e deklaruar është nën pagën minimale. Kontributi llogaritet mbi minimumin e detyrueshëm: <strong id="min-wage-lbl"></strong> ALL.
+      </div>
+
+      <!-- Breakdown -->
+      <table class="breakdown">
+        <tbody id="breakdown-body"></tbody>
+      </table>
+
+      <!-- Period grid -->
+      <div class="period-grid" id="period-grid" style="display:none">
+        <div class="period-item">
+          <div class="pi-label">Mujore</div>
+          <div class="pi-val" id="period-monthly"></div>
+          <div class="pi-sub">× 1 muaj</div>
+        </div>
+        <div class="period-item">
+          <div class="pi-label">Tremujore</div>
+          <div class="pi-val" id="period-quarterly"></div>
+          <div class="pi-sub">× 3 muaj</div>
+        </div>
+        <div class="period-item">
+          <div class="pi-label">Vjetore</div>
+          <div class="pi-val" id="period-annual"></div>
+          <div class="pi-sub">× 12 muaj</div>
+        </div>
+      </div>
+
+      <div class="embed-badge">
+        <a href="https://perllogarit.al" target="_blank" rel="noopener noreferrer">perllogarit.al</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       REFERENCE RATES CARD
+  ═══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="card-header">
+      <i class="fi fi-br-stats"></i>
+      <h2>Normat e Kontributeve &middot; <span id="rates-year-label">2026</span></h2>
+    </div>
+    <div class="card-body">
+      <div class="rates-grid">
+        <div class="rate-item">
+          <div class="ri-lbl">Sig. Shoqëror</div>
+          <div class="ri-val">23%</div>
+          <span class="ri-who ri-ss">Mbi bazën</span>
+        </div>
+        <div class="rate-item">
+          <div class="ri-lbl">Sig. Shëndetësor</div>
+          <div class="ri-val">3.4%</div>
+          <span class="ri-who ri-hi">Mbi 2×min</span>
+        </div>
+        <div class="rate-item">
+          <div class="ri-lbl">Paga Minimale</div>
+          <div class="ri-val" id="ref-minwage">50,000</div>
+          <span class="ri-who ri-ss">ALL/muaj</span>
+        </div>
+        <div class="rate-item">
+          <div class="ri-lbl">Tavan SS</div>
+          <div class="ri-val" id="ref-sscap">186K</div>
+          <span class="ri-who ri-hi">ALL/muaj</span>
+        </div>
+      </div>
+
+      <div class="deduction-note">
+        <strong>Si llogariten kontributet (bazuar në VKM nr.77, dt.28.01.2015):</strong><br>
+        <strong>Sig. Shoqëror:</strong> 23% &times; baza e deklaruar<br>
+        &nbsp;&nbsp;&nbsp;Baza min. = paga minimale &nbsp;|&nbsp; Baza max. = tavani i SS<br>
+        <strong>Sig. Shëndetësor:</strong> 3.4% &times; (2 &times; paga minimale) (<em>shumë fikse</em>)<br><br>
+        <strong>Punonjës të papaguar të familjes:</strong> Për secilin, paguhet SS = 23% &times; paga minimale dhe HI = 3.4% &times; (2 &times; paga minimale).<br><br>
+        <strong>Kontribut minimal mujor (<span id="note-year">2026</span>, vetëm vetëpunësuari):</strong><br>
+        SS: 23% &times; <span id="note-minwage">50,000</span> = <strong><span id="note-ss-min"></span> ALL</strong><br>
+        HI: 3.4% &times; <span id="note-hi-base"></span> = <strong><span id="note-hi-val"></span> ALL</strong><br>
+        <strong>Totali minimal: <span id="note-total-min"></span> ALL/muaj</strong>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div id="site-footer"></div>
+
+<script src="../js/sig.js" defer></script>
+
+<dialog id="embed-dialog" class="embed-dialog">
+  <h3>Incorporo llogaritësin</h3>
+  <p>Vendos kodin e mëposhtëm në faqen tënde:</p>
+  <pre id="embed-code">&lt;iframe
+  src="https://perllogarit.al/calculators/sigurime.html?embed=1"
+  width="420"
+  height="480"
+  style="border:none;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,.08);"
+  title="Sigurime Shoqërore për të Vetëpunësuarit · perllogarit"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</pre>
+  <div class="embed-dialog-actions">
+    <button type="button" onclick="var b=this;navigator.clipboard.writeText(document.getElementById('embed-code').textContent.trim()).then(function(){b.textContent='U kopjua ✓'})">Kopjo</button>
+    <button type="button" onclick="this.closest('dialog').close()">Mbyll</button>
+  </div>
+</dialog>
+</body>
+</html>

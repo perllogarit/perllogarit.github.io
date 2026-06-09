@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politika e Privatësisë - perllogarit</title>
+  <meta name="description" content="Politika e privatësisë së perllogarit. Të dhënat financiare nuk largohen kurrë nga shfletuesi juaj. Shpjegim i plotë mbi cookies, Google Analytics dhe të drejtat tuaja.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://perllogarit.al/politika-e-privatesise.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://perllogarit.al/politika-e-privatesise.html">
+  <meta property="og:site_name" content="perllogarit">
+  <meta property="og:locale" content="sq_AL">
+  <meta property="og:title" content="Politika e Privatësisë - perllogarit">
+  <meta property="og:description" content="Politika e privatësisë së perllogarit. Të dhënat financiare nuk largohen kurrë nga shfletuesi juaj. Shpjegim i plotë mbi cookies, Google Analytics dhe të drejtat tuaja.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Politika e Privatësisë - perllogarit">
+  <meta name="twitter:description" content="Politika e privatësisë së perllogarit. Të dhënat financiare nuk largohen kurrë nga shfletuesi juaj. Shpjegim i plotë mbi cookies, Google Analytics dhe të drejtat tuaja.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/shared.js" defer></script>
+  <script src="js/analytics.js" defer></script>
+  <style>
+    .legal-wrap {
+      margin: 2.5rem auto 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .legal-card {
+      background: rgba(255,255,255,.45);
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
+      border: 1.5px solid rgba(255,255,255,.65);
+      border-radius: var(--r-lg);
+      padding: 2rem 2.25rem;
+    }
+
+    .legal-card-icon {
+      font-size: 1.4rem;
+      color: var(--blue);
+      margin-bottom: .75rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .legal-card-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: .65rem;
+      line-height: 1.25;
+    }
+
+    .legal-card-body {
+      font-size: .92rem;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    .legal-card-body p + p { margin-top: .75rem; }
+
+    .legal-card-body strong { color: var(--navy); }
+
+    .legal-card-body ul {
+      list-style: none;
+      padding: 0;
+      margin: .75rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: .45rem;
+    }
+
+    .legal-card-body ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: .55rem;
+      font-size: .88rem;
+      color: #555;
+      line-height: 1.55;
+    }
+
+    .legal-card-body ul li i {
+      color: var(--blue);
+      flex-shrink: 0;
+      line-height: 0;
+      display: inline-flex;
+      align-items: center;
+      margin-top: .2rem;
+    }
+
+    .legal-card-icon .fi {
+      line-height: 0;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .legal-meta {
+      font-size: .78rem;
+      color: var(--gray);
+      margin-bottom: 1.75rem;
+      opacity: .7;
+    }
+
+    .legal-disclaimer {
+      background: rgba(37,99,235,.06);
+      border: 1.5px solid rgba(37,99,235,.18);
+      border-radius: var(--r-lg);
+      padding: 1.5rem 2rem;
+      font-size: .88rem;
+      line-height: 1.75;
+      color: #444;
+    }
+
+    .legal-disclaimer strong { color: var(--navy); }
+
+    .legal-toc {
+      background: rgba(255,255,255,.35);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border: 1.5px solid rgba(255,255,255,.55);
+      border-radius: var(--r-lg);
+      padding: 1.5rem 2rem;
+    }
+
+    .legal-toc-title {
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: .85rem;
+    }
+
+    .legal-toc ol {
+      margin: 0;
+      padding-left: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: .3rem;
+    }
+
+    .legal-toc ol li {
+      font-size: .82rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .legal-toc ol li a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .legal-toc ol li a:hover { text-decoration: underline; }
+
+    .note-box {
+      background: rgba(37,99,235,.05);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 8px 8px 0;
+      padding: .75rem 1rem;
+      margin-top: .85rem;
+      font-size: .85rem;
+      color: #555;
+      line-height: 1.65;
+    }
+
+    .cookie-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: .85rem;
+      font-size: .83rem;
+    }
+
+    .cookie-table th {
+      background: rgba(37,99,235,.08);
+      color: var(--navy);
+      font-weight: 700;
+      text-align: left;
+      padding: .6rem .85rem;
+      border-bottom: 2px solid rgba(37,99,235,.15);
+    }
+
+    .cookie-table td {
+      padding: .55rem .85rem;
+      border-bottom: 1px solid rgba(0,0,0,.06);
+      color: #555;
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    .cookie-table tr:last-child td { border-bottom: none; }
+
+    .cookie-table tr:nth-child(even) td { background: rgba(255,255,255,.4); }
+
+    .badge {
+      display: inline-block;
+      font-size: .72rem;
+      font-weight: 700;
+      padding: .15rem .5rem;
+      border-radius: 20px;
+      line-height: 1.4;
+    }
+
+    .badge-necessary {
+      background: rgba(22,163,74,.12);
+      color: #166534;
+    }
+
+    .badge-analytics {
+      background: rgba(37,99,235,.12);
+      color: #1e40af;
+    }
+
+    .badge-advertising {
+      background: rgba(217,119,6,.12);
+      color: #92400e;
+    }
+
+    .rights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .65rem;
+      margin-top: .85rem;
+    }
+
+    .rights-item {
+      background: rgba(255,255,255,.5);
+      border: 1px solid rgba(255,255,255,.7);
+      border-radius: 10px;
+      padding: .75rem 1rem;
+    }
+
+    .rights-item-title {
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: .3rem;
+    }
+
+    .rights-item-body {
+      font-size: .78rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .legal-link {
+      color: var(--blue);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .legal-link:hover { text-decoration: underline; }
+
+    .table-scroll {
+      overflow-x: auto;
+      margin-top: .85rem;
+    }
+
+    @media (max-width: 620px) {
+      .rights-grid { grid-template-columns: 1fr; }
+      .cookie-table { font-size: .76rem; }
+      .cookie-table th,
+      .cookie-table td { padding: .45rem .6rem; }
+    }
+
+    @media (max-width: 520px) {
+      .legal-card { padding: 1.5rem 1.25rem; }
+      .legal-disclaimer { padding: 1.25rem 1rem; }
+      .legal-toc { padding: 1.25rem 1rem; }
+    }
+  </style>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-28TE2F8NLS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-28TE2F8NLS');
+  </script>
+  <!-- Google AdSense ca-pub-1093058889887223 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1093058889887223" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+<div class="bg-orb bg-orb-3"></div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <ul class="nav-links">
+      <li><a href="index.html">Kryefaqe</a></li>
+      <li><a href="llogaritesit.html">Llogaritësit</a></li>
+      <li><a href="rreth-nesh.html">Rreth Nesh</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner" style="text-align:center">
+    <h1>POLITIKA E PRIVATËSISË</h1>
+  </div>
+</div>
+
+<div class="legal-wrap container">
+
+  <p class="legal-meta">Hyrë në fuqi: 1 Janar 2026 &nbsp;&middot;&nbsp; Versioni i fundit: Qershor 2026 &nbsp;&middot;&nbsp; Versioni: 2.0</p>
+
+  <!-- Intro box -->
+  <div class="legal-disclaimer">
+    <strong>Angazhimi ynë ndaj privatësisë:</strong> perllogarit është ndërtuar që nga themelet me parimin <em>"privacy by design"</em>. Të gjitha llogaritjet kryhen tërësisht në shfletuesin tuaj asnjë e dhënë financiare nuk dërgohet ose ruhet në serverët tanë. Kjo politikë shpjegon transparentisht çfarë të dhënash mbledhim (dhe çfarë <strong>nuk</strong> mbledhim), si i përdorim dhe cilat janë të drejtat tuaja.
+  </div>
+
+  <!-- Tabela e Përmbajtjes -->
+  <div class="legal-toc">
+    <div class="legal-toc-title">Tabela e Përmbajtjes</div>
+    <ol>
+      <li><a href="#kontrollues">Identiteti i Kontrolluesit të të Dhënave</a></li>
+      <li><a href="#bazat">Bazat Ligjore të Përpunimit</a></li>
+      <li><a href="#llojet">Llojet e të Dhënave që Mbledhim</a></li>
+      <li><a href="#client-side">Llogaritjet Client-Side Çfarë nuk mbledhim</a></li>
+      <li><a href="#analytics">Google Analytics 4 Analitika e Trafikut</a></li>
+      <li><a href="#adsense">Google AdSense Reklamat</a></li>
+      <li><a href="#cookies">Cookies Tabela e Plotë</a></li>
+      <li><a href="#consent">Consent Mode dhe Menaxhimi i Preferencave</a></li>
+      <li><a href="#transfertat">Transfertat Ndërkombëtare të të Dhënave</a></li>
+      <li><a href="#ruajtja">Periudha e Ruajtjes së të Dhënave</a></li>
+      <li><a href="#siguria">Siguria e të Dhënave</a></li>
+      <li><a href="#te-drejtat">Të Drejtat Tuaja</a></li>
+      <li><a href="#femijte">Aksesi pa Kufizim Moshe</a></li>
+      <li><a href="#palë-treta">Lidhjet me Faqe të Palëve të Treta</a></li>
+      <li><a href="#ndryshimet">Ndryshimet e Politikës</a></li>
+      <li><a href="#kontakti">Kontakti dhe DPO</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. Kontrollues -->
+  <div class="legal-card" id="kontrollues">
+    <div class="legal-card-icon"><i class="fi fi-br-building"></i></div>
+    <div class="legal-card-title">1. Identiteti i Kontrolluesit të të Dhënave</div>
+    <div class="legal-card-body">
+      <p>Kontrollues i të dhënave të mbledhura nëpërmjet faqes <strong>perllogarit.al</strong> është operatori i platformës perllogarit, i aksesueshëm në adresën e mëposhtme elektronike për çdo çështje të lidhur me privatësinë:</p>
+      <p><strong>Email:</strong> <a href="mailto:feedback@perllogarit.al" class="legal-link">feedback@perllogarit.al</a></p>
+      <p>perllogarit operon si platformë dixhitale e pavarur me fokus në ofrimin e mjeteve llogaritëse tatimore dhe financiare për publikun shqiptar. Platforma nuk ka statut juridik të personit juridik të regjistruar aktualisht, por vepron me standarde të plota të transparencës dhe mbrojtjes së të dhënave.</p>
+      <p>Kjo Politikë e Privatësisë rregullohet nga <strong>Ligji Nr. 9887, datë 10.03.2008 "Për Mbrojtjen e të Dhënave Personale"</strong> i Republikës së Shqipërisë, si i ndryshuar, dhe aktet nënligjore të nxjerra nga <strong>Komisioneri për të Drejtën e Informimit dhe Mbrojtjen e të Dhënave Personale (IDP)</strong>. Standardet tona respektojnë gjithashtu parimet e <strong>Rregullores (BE) 2016/679 (GDPR)</strong>, duke pasur parasysh trafikun ndërkombëtar të vizitorëve.</p>
+    </div>
+  </div>
+
+  <!-- 2. Bazat ligjore -->
+  <div class="legal-card" id="bazat">
+    <div class="legal-card-icon"><i class="fi fi-br-balance-scale"></i></div>
+    <div class="legal-card-title">2. Bazat Ligjore të Përpunimit</div>
+    <div class="legal-card-body">
+      <p>Çdo aktivitet përpunimi i të dhënave që kryejmë mbështetet në një bazë ligjore specifike:</p>
+      <ul>
+        <li><i class="fi fi-br-check"></i><span><strong>Interesi legjitim (Art. 6(1)(f) GDPR / Neni 5 Ligji 9887):</strong> Analitika anonime e trafikut (pa identifikim personal) për të kuptuar si përdoret Faqja dhe për ta përmirësuar.</span></li>
+        <li><i class="fi fi-br-check"></i><span><strong>Pëlqimi (Art. 6(1)(a) GDPR / Neni 5 Ligji 9887):</strong> Cookies analitike dhe reklamuese të Google mbledhja bëhet vetëm pas dhënies eksplicite të pëlqimit tuaj nëpërmjet consent mode.</span></li>
+        <li><i class="fi fi-br-check"></i><span><strong>Nevojshmëria kontraktuale / teknike:</strong> Cookies teknikisht të nevojshme për funksionimin bazë të Faqes (pa to Faqja nuk do të funksiononte saktë).</span></li>
+      </ul>
+      <p>Nuk kryejmë asnjë aktivitet përpunimi bazuar vetëm në interes ekonomik ose profilizim pa bazë ligjore. Të dhënat financiare që futni në llogaritës nuk janë objekt i asnjë baze ligjore përpunimi sepse <strong>nuk dërgohen kurrë tek ne</strong>.</p>
+    </div>
+  </div>
+
+  <!-- 3. Llojet e të dhënave -->
+  <div class="legal-card" id="llojet">
+    <div class="legal-card-icon"><i class="fi fi-br-list"></i></div>
+    <div class="legal-card-title">3. Llojet e të Dhënave që Mbledhim</div>
+    <div class="legal-card-body">
+      <p>perllogarit mbledh vetëm të dhënat minimum të nevojshme. Ja tabelja e plotë e kategorive:</p>
+
+      <p><strong>A. Të dhëna teknike të aksesit (të mbledhura automatikisht)</strong></p>
+      <ul>
+        <li><i class="fi fi-br-computer"></i><span>Adresa IP e anonimizuar (të fundit dy oktetat hiqen para çdo ruajtjeje)</span></li>
+        <li><i class="fi fi-br-computer"></i><span>Lloji dhe versioni i shfletuesit (p.sh. Chrome 124, Safari 17)</span></li>
+        <li><i class="fi fi-br-computer"></i><span>Sistemi operativ dhe lloji i pajisjes (desktop / mobile / tablet)</span></li>
+        <li><i class="fi fi-br-computer"></i><span>Rezolucioni i ekranit dhe gjuha e preferuar e shfletuesit</span></li>
+        <li><i class="fi fi-br-computer"></i><span>Faqet e vizituara brenda perllogarit.al dhe kohëzgjatja e seancës</span></li>
+        <li><i class="fi fi-br-computer"></i><span>Burimi i aksesit (motor kërkimi, lidhje direkte, referral nga faqe tjetër)</span></li>
+        <li><i class="fi fi-br-computer"></i><span>Zona gjeografike e vlerësuar (nivel shteti/province jo adresë specifike)</span></li>
+      </ul>
+
+      <p><strong>B. Të dhëna reklamuese (vetëm me pëlqim)</strong></p>
+      <ul>
+        <li><i class="fi fi-br-ad"></i><span>Identifikues pseudonimizues të Google AdSense (cookie ID) për paraqitjen e reklamave relevante</span></li>
+        <li><i class="fi fi-br-ad"></i><span>Interesa të vlerësuara bazuar në historikun e shfletimit (vetëm nëse keni pranuar reklamat e personalizuara)</span></li>
+      </ul>
+
+      <p><strong>C. Të dhëna të komunikimit (vetëm kur na kontaktoni)</strong></p>
+      <ul>
+        <li><i class="fi fi-br-envelope"></i><span>Adresa juaj e emailit dhe çdo informacion që zgjidhni të ndani me ne nëpërmjet emailit të kontaktit</span></li>
+      </ul>
+
+      <div class="note-box">
+        <strong>Çfarë nuk mbledhim kurrë:</strong> emër, mbiemër, NIPT/NID, numër telefoni, adresë fizike, të dhëna biometrike, preferencë politike ose fetare, apo çdo kategori speciale të dhënash sipas GDPR.
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Client-side -->
+  <div class="legal-card" id="client-side">
+    <div class="legal-card-icon"><i class="fi fi-br-shield-check"></i></div>
+    <div class="legal-card-title">4. Llogaritjet Client-Side Çfarë nuk Mbledhim</div>
+    <div class="legal-card-body">
+      <p>Ky seksion shpjegon aspektin teknik më të rëndësishëm të privatësisë suaj mbi perllogarit: <strong>asnjë e dhënë financiare e futur nuk lë kurrë pajisjen tuaj</strong>.</p>
+      <p>Kur futni pagën, shumën e qirasë, vlerën e automjetit apo çdo parametër tjetër në llogaritësit tanë:</p>
+      <ul>
+        <li><i class="fi fi-br-check"></i><span>I gjithë kodi i llogaritjes është JavaScript i shkarkuar plotësisht tek ju dhe ekzekutohet lokalisht nga CPU-ja e pajisjes suaj</span></li>
+        <li><i class="fi fi-br-check"></i><span>Të dhënat e futura nuk shkojnë kurrë drejt serverëve tanë, bazave të të dhënave, ose çdo sistemi tjetër të jashtëm</span></li>
+        <li><i class="fi fi-br-check"></i><span>Rezultatet llogariten dhe shfaqen menjëherë në faqe pa asnjë request rrjeti për llogaritjen</span></li>
+        <li><i class="fi fi-br-check"></i><span>Nëse mbyllni Faqen ose fshini historikun e shfletuesit, çdo gjë zhduket ne nuk mbajmë asnjë kopje</span></li>
+      </ul>
+      <p>Kursi i këmbimit EUR/ALL shkarkohet nga një API publike financiare (p.sh. feeds të Bankës së Shqipërisë) dhe kjo kërkesë specifike bëhet anonimisht nuk dërgon asnjë parametër të futur nga ju, vetëm kërkon kursin aktual të ditës.</p>
+      <div class="note-box">
+        Kjo qasje arkitekturore (client-side processing) u zgjodh qëllimisht për dy arsye: (1) mbrojtje maksimale e privatësisë financiare, dhe (2) performancë llogaritjet janë të menjëhershme pa vonesë rrjeti.
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Google Analytics -->
+  <div class="legal-card" id="analytics">
+    <div class="legal-card-icon"><i class="fi fi-br-chart-line-up"></i></div>
+    <div class="legal-card-title">5. Google Analytics 4 Analitika e Trafikut</div>
+    <div class="legal-card-body">
+      <p>Faqja integron <strong>Google Analytics 4 (GA4)</strong>, shërbim i ofruar nga Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, SHBA. ID e proprietarit tonë është <strong>G-28TE2F8NLS</strong>.</p>
+
+      <p><strong>Çfarë mbledh Google Analytics:</strong></p>
+      <ul>
+        <li><i class="fi fi-br-stats"></i><span>Numri i vizitave, seancave aktive dhe vizitorëve unikë (metrika agregate)</span></li>
+        <li><i class="fi fi-br-stats"></i><span>Faqet e vizituara dhe rrjedhja e navigimit brenda Faqes</span></li>
+        <li><i class="fi fi-br-stats"></i><span>Shkalla e braktisjes, kohëzgjatja mesatare e seancës dhe ngjarjet e bashkëveprimit</span></li>
+        <li><i class="fi fi-br-stats"></i><span>Burimi i trafikut: organik (Google, Bing), direkt, social, referral</span></li>
+        <li><i class="fi fi-br-stats"></i><span>Lloji i pajisjes, shfletuesit dhe sistemi operativ</span></li>
+        <li><i class="fi fi-br-stats"></i><span>Shteti dhe rajoni i gjerë (jo adresë specifike) i vlerësuar nga IP-ja e anonimizuar</span></li>
+      </ul>
+
+      <p><strong>Garancitë e privatësisë të GA4:</strong></p>
+      <ul>
+        <li><i class="fi fi-br-shield-check"></i><span><strong>IP Anonymization:</strong> GA4 anonimizimi i IP-së është aktivizuar adresa IP shkurtohet para çdo ruajtjeje dhe nuk ruhet kurrë e plotë.</span></li>
+        <li><i class="fi fi-br-shield-check"></i><span><strong>Consent Mode v2:</strong> Analytics aktivizohet vetëm pas dhënies eksplicite të pëlqimit. Parazgjedhja është <code>analytics_storage: denied</code>.</span></li>
+        <li><i class="fi fi-br-shield-check"></i><span><strong>Data Retention:</strong> Kemi konfiguruar ruajtjen e të dhënave GA4 në periudhën minimale të disponueshme (14 muaj).</span></li>
+        <li><i class="fi fi-br-shield-check"></i><span><strong>Shared Device Signals:</strong> Kemi çaktivizuar ndarjen e të dhënave me Google për modele reklamuese.</span></li>
+      </ul>
+
+      <p>Mund të tërhiqeni nga gjurmimi i Google Analytics duke instaluar <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" class="legal-link">Google Analytics Opt-out Browser Add-on</a>. Informacion i mëtejshëm mbi mënyrën se si Google përpunon të dhënat gjendet tek <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="legal-link">Politika e Privatësisë e Google</a>.</p>
+    </div>
+  </div>
+
+  <!-- 6. AdSense -->
+  <div class="legal-card" id="adsense">
+    <div class="legal-card-icon"><i class="fi fi-br-ad"></i></div>
+    <div class="legal-card-title">6. Google AdSense Reklamat</div>
+    <div class="legal-card-body">
+      <p>Faqja shfaq reklama nëpërmjet <strong>Google AdSense</strong>, shërbim i Google LLC. ID-ja jonë e botuesit është <strong>ca-pub-1093058889887223</strong>. Reklamat na mundësojnë të mbajmë llogaritësit plotësisht falas pa asnjë model abonimi.</p>
+
+      <p><strong>Si funksionon AdSense:</strong></p>
+      <ul>
+        <li><i class="fi fi-br-info"></i><span>Google mund të shfaqë reklama bazuar në kontentutin e Faqes (reklamat kontekstuale) dhe/ose bazuar në interesat e vlerësuara të vizitorit (reklamat të personalizuara vetëm me pëlqim).</span></li>
+        <li><i class="fi fi-br-info"></i><span>Google përdor cookie-n <code>DSID</code>, <code>IDE</code> dhe cookies të tjera për të identifikuar shfletuesin e vizitorit dhe për të shërbyer reklamat.</span></li>
+        <li><i class="fi fi-br-info"></i><span>Nëse jeni i kyçur në llogarinë Google, reklamat mund të lidhen me profilin tuaj Google Ads kjo ndodh nëpërmjet sistemeve të Google, jo perllogarit.</span></li>
+        <li><i class="fi fi-br-info"></i><span>perllogarit nuk ka akses në të dhënat e mbledhura nga Google AdSense dhe nuk i sheh vlerat individuale të cookies reklamuese.</span></li>
+      </ul>
+
+      <p><strong>Nën Consent Mode v2, AdSense operon si vijon:</strong></p>
+      <ul>
+        <li><i class="fi fi-br-shield-check"></i><span>Nëse nuk keni dhënë pëlqim: Google shfaq reklama jopersonalizuara (bazuar vetëm në kontekstin e Faqes, jo profilin tuaj)</span></li>
+        <li><i class="fi fi-br-shield-check"></i><span>Nëse keni dhënë pëlqim për reklamat: Google mund të shfaqë reklama të personalizuara bazuar në historikun e shfletimit</span></li>
+      </ul>
+
+      <p>Mund të menaxhoni preferencat e reklamave ose të tërhiqeni nga reklamat e personalizuara tek:</p>
+      <ul>
+        <li><i class="fi fi-br-settings"></i><span><a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" class="legal-link">Google Ads Settings</a> menaxhoni preferencat e reklamave Google</span></li>
+        <li><i class="fi fi-br-settings"></i><span><a href="https://optout.aboutads.info/" target="_blank" rel="noopener noreferrer" class="legal-link">Digital Advertising Alliance (DAA) opt-out</a></span></li>
+        <li><i class="fi fi-br-settings"></i><span><a href="https://optout.networkadvertising.org/" target="_blank" rel="noopener noreferrer" class="legal-link">Network Advertising Initiative (NAI) opt-out</a></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 7. Cookies -->
+  <div class="legal-card" id="cookies">
+    <div class="legal-card-icon"><i class="fi fi-br-cookie"></i></div>
+    <div class="legal-card-title">7. Cookies Tabela e Plotë</div>
+    <div class="legal-card-body">
+      <p>Cookies janë skedarë të vegjël teksti të ruajtur nga shfletuesi juaj. Ja lista e plotë e cookies që mund të gjenden në perllogarit.al:</p>
+
+      <div class="table-scroll">
+        <table class="cookie-table">
+          <thead>
+            <tr>
+              <th>Emri</th>
+              <th>Ofruesi</th>
+              <th>Qëllimi</th>
+              <th>Lloji</th>
+              <th>Skadimi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>_ga</code></td>
+              <td>Google Analytics</td>
+              <td>Dallon vizitorë unikë duke ruajtur një ID seance anonim</td>
+              <td><span class="badge badge-analytics">Analitika</span></td>
+              <td>2 vjet</td>
+            </tr>
+            <tr>
+              <td><code>_ga_[ID]</code></td>
+              <td>Google Analytics</td>
+              <td>Ruajtja e gjendjes së seancës GA4 për Property ID-n specifik</td>
+              <td><span class="badge badge-analytics">Analitika</span></td>
+              <td>2 vjet</td>
+            </tr>
+            <tr>
+              <td><code>_gid</code></td>
+              <td>Google Analytics</td>
+              <td>Dallon vizitorët në nivel sesioni, rivendoset çdo ditë</td>
+              <td><span class="badge badge-analytics">Analitika</span></td>
+              <td>24 orë</td>
+            </tr>
+            <tr>
+              <td><code>IDE</code></td>
+              <td>Google (doubleclick.net)</td>
+              <td>Gjurmimi i konvertimeve të reklamave dhe ofrimi i reklamave relevante</td>
+              <td><span class="badge badge-advertising">Reklamat</span></td>
+              <td>13 muaj</td>
+            </tr>
+            <tr>
+              <td><code>DSID</code></td>
+              <td>Google (doubleclick.net)</td>
+              <td>Identifikim i llogarisë Google të kyçur për reklamat e personalizuara</td>
+              <td><span class="badge badge-advertising">Reklamat</span></td>
+              <td>2 javë</td>
+            </tr>
+            <tr>
+              <td><code>test_cookie</code></td>
+              <td>Google (doubleclick.net)</td>
+              <td>Verifikimi nëse shfletuesi mbështet cookies (cookie diagnostike)</td>
+              <td><span class="badge badge-necessary">Teknike</span></td>
+              <td>15 minuta</td>
+            </tr>
+            <tr>
+              <td><code>NID</code></td>
+              <td>Google</td>
+              <td>Ruajtja e preferencave të shfletuesit dhe personalizimi i shërbimeve Google</td>
+              <td><span class="badge badge-advertising">Reklamat</span></td>
+              <td>6 muaj</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Mund të menaxhoni ose fshini cookies direkt nga cilësimet e shfletuesit tuaj. Fshirja e cookies analitike ose reklamuese nuk do të ndikojë funksionimin e llogaritësve ata punojnë plotësisht pa cookies.</p>
+
+      <div class="note-box">
+        Udhëzime specifike për menaxhimin e cookies: <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" class="legal-link">Chrome</a> &middot; <a href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop" target="_blank" rel="noopener noreferrer" class="legal-link">Firefox</a> &middot; <a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" target="_blank" rel="noopener noreferrer" class="legal-link">Safari</a> &middot; <a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener noreferrer" class="legal-link">Edge</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Consent Mode -->
+  <div class="legal-card" id="consent">
+    <div class="legal-card-icon"><i class="fi fi-br-toggle-on"></i></div>
+    <div class="legal-card-title">8. Consent Mode dhe Menaxhimi i Preferencave</div>
+    <div class="legal-card-body">
+      <p>perllogarit ka implementuar <strong>Google Consent Mode v2</strong>, standardi i ri i menaxhimit të pëlqimit të Google. Kjo teknologji siguron që:</p>
+      <ul>
+        <li><i class="fi fi-br-shield-check"></i><span><strong>Parazgjedhja është privatësia:</strong> Që nga momenti i parë i vizitës suaj, të gjitha cookies jo-thelbësore (analitika, reklamat) janë të bllokuara automatikisht deri sa të veproni.</span></li>
+        <li><i class="fi fi-br-shield-check"></i><span><strong>Modelim i të dhënave pa identifikim:</strong> Google mund të përdorë modele statistikore agregate (pa identifikuar individë) kur pëlqimi mungon, vetëm për raportim të pasaktë të trafikut të sajtit.</span></li>
+        <li><i class="fi fi-br-shield-check"></i><span><strong>Ndryshimi i preferencave:</strong> Mund të ndryshoni preferencat e cookies në çdo moment duke fshirë cookies ekzistuese nga shfletuesi dhe duke ri-aksesuar Faqen.</span></li>
+      </ul>
+      <p>Statuset e konfiguruar si parazgjedhje në Consent Mode janë:</p>
+      <ul>
+        <li><i class="fi fi-br-cross-circle"></i><span><code>analytics_storage: denied</code> cookies analitike janë bllokuar</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span><code>ad_storage: denied</code> cookies reklamuese janë bllokuar</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span><code>ad_user_data: denied</code> të dhënat e përdoruesit për reklamat janë bllokuara</span></li>
+        <li><i class="fi fi-br-cross-circle"></i><span><code>ad_personalization: denied</code> personalizimi i reklamave është bllokuar</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 9. Transfertat -->
+  <div class="legal-card" id="transfertat">
+    <div class="legal-card-icon"><i class="fi fi-br-globe"></i></div>
+    <div class="legal-card-title">9. Transfertat Ndërkombëtare të të Dhënave</div>
+    <div class="legal-card-body">
+      <p>Disa nga palët e treta me të cilat punojmë (Google) janë të vendosura ose operojnë jashtë Shqipërisë dhe Bashkimit Europian, veçanërisht në Shtetet e Bashkuara të Amerikës. Kjo nënkupton se të dhënat e mbledhura nëpërmjet Google Analytics dhe Google AdSense mund të transferohen dhe përpunohen në SHBA.</p>
+      <p>Google LLC është e çertifikuar nën <strong>EU-U.S. Data Privacy Framework</strong> (ish-Privacy Shield), i cili siguron mbrojtje adekuate për transfertat e të dhënave nga BE/EEA. Për transfertat jashtë mekanizmave të çertifikimit, Google mbështetet gjithashtu në <strong>Klauzolat Standarde Kontraktuale (SCC)</strong> të miratuara nga Komisioni Europian.</p>
+      <p>Informacion të mëtejshëm mbi politikat e transfertave ndërkombëtare të Google gjendet tek <a href="https://policies.google.com/privacy/frameworks" target="_blank" rel="noopener noreferrer" class="legal-link">Google Privacy Frameworks</a>.</p>
+    </div>
+  </div>
+
+  <!-- 10. Ruajtja -->
+  <div class="legal-card" id="ruajtja">
+    <div class="legal-card-icon"><i class="fi fi-br-time-past"></i></div>
+    <div class="legal-card-title">10. Periudha e Ruajtjes së të Dhënave</div>
+    <div class="legal-card-body">
+      <p>perllogarit aplikon parimin e minimizimit të ruajtjes: të dhënat ruhen vetëm aq gjatë sa nevojitet për qëllimin e deklaruar.</p>
+      <ul>
+        <li><i class="fi fi-br-clock"></i><span><strong>Të dhënat financiare të futura në llogaritës:</strong> Zero nuk ruhen kurrë. Zhduken sapo mbyllni tab-in.</span></li>
+        <li><i class="fi fi-br-clock"></i><span><strong>Të dhënat e Google Analytics:</strong> 14 muaj nga data e mbledhjes (konfigurimi minimal i disponueshëm në GA4).</span></li>
+        <li><i class="fi fi-br-clock"></i><span><strong>Cookies analitike (_ga, _gid):</strong> Shih tabelën e cookies maksimumi 2 vjet, por mund t'i fshini kurdo.</span></li>
+        <li><i class="fi fi-br-clock"></i><span><strong>Cookies reklamuese (IDE, DSID):</strong> Shih tabelën e cookies menaxhohen nga Google sipas politikave të tyre.</span></li>
+        <li><i class="fi fi-br-clock"></i><span><strong>Emailet e kontaktit:</strong> Ruhen deri sa zgjidhet çështja e ngritur (d.m.th. deri kur pyetja është përgjigjet dhe nuk ka komunikim të mëtejshëm në pritje nga asnjëra palë), pastaj fshihen brenda 90 ditëve kalendarike nga ajo datë.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 11. Siguria -->
+  <div class="legal-card" id="siguria">
+    <div class="legal-card-icon"><i class="fi fi-br-shield-check"></i></div>
+    <div class="legal-card-title">11. Siguria e të Dhënave</div>
+    <div class="legal-card-body">
+      <p>perllogarit zbaton masat teknike dhe organizative të mëposhtme për mbrojtjen e të dhënave:</p>
+      <ul>
+        <li><i class="fi fi-br-lock"></i><span><strong>HTTPS/TLS:</strong> Gjithë komunikimi mes shfletuesit tuaj dhe serverëve tanë është i enkriptuar me TLS (HTTPS). Treguesja e kyçit jeshil në adresë është e detyrueshme.</span></li>
+        <li><i class="fi fi-br-lock"></i><span><strong>Client-side processing:</strong> Mënyra arkitekturore më e sigurt pa server-side storage nënkupton zero risk shkelje të të dhënave financiare nga ne.</span></li>
+        <li><i class="fi fi-br-lock"></i><span><strong>Minimizimi i të dhënave:</strong> Mbledhim vetëm të dhënat e domosdoshme çdo e dhënë e pakolektuara nuk mund të humbasë ose të keqpërdoret.</span></li>
+        <li><i class="fi fi-br-lock"></i><span><strong>Anonimizimi:</strong> Të dhënat analitike janë anonimizuara dhe agregate nuk lejojnë identifikimin e individëve.</span></li>
+      </ul>
+      <p>Nëse dyshoni se të dhënat tuaja janë kompromentuar ose keni identifikuar ndonjë dobësi sigurie, ju lutemi na njoftoni menjëherë në <a href="mailto:feedback@perllogarit.al" class="legal-link">feedback@perllogarit.al</a>. Marrim seriozisht çdo raport sigurie dhe do t'i adresojmë brenda 48 orëve.</p>
+    </div>
+  </div>
+
+  <!-- 12. Të Drejtat -->
+  <div class="legal-card" id="te-drejtat">
+    <div class="legal-card-icon"><i class="fi fi-br-user-shield"></i></div>
+    <div class="legal-card-title">12. Të Drejtat Tuaja</div>
+    <div class="legal-card-body">
+      <p>Sipas Ligjit Nr. 9887/2008 dhe parimeve GDPR, ju gëzoni të drejtat e mëposhtme ndaj të dhënave tuaja personale:</p>
+
+      <div class="rights-grid">
+        <div class="rights-item">
+          <div class="rights-item-title">E drejta e aksesit</div>
+          <div class="rights-item-body">Keni të drejtë të merrni konfirmim nëse kemi të dhëna personale tuajat dhe, nëse po, të merrni një kopje.</div>
+        </div>
+        <div class="rights-item">
+          <div class="rights-item-title">E drejta e korrigjimit</div>
+          <div class="rights-item-body">Keni të drejtë të kërkoni korrigjimin e të dhënave të pasakta ose plotësimin e të dhënave jo të plota.</div>
+        </div>
+        <div class="rights-item">
+          <div class="rights-item-title">E drejta e fshirjes ("të harrohesh")</div>
+          <div class="rights-item-body">Keni të drejtë të kërkoni fshirjen e të dhënave tuaja personale kur nuk ekziston më baza ligjore e përpunimit.</div>
+        </div>
+        <div class="rights-item">
+          <div class="rights-item-title">E drejta e kufizimit</div>
+          <div class="rights-item-body">Keni të drejtë të kërkoni kufizimin e përpunimit gjatë periudhës së verifikimit të saktësisë ose ankimimit.</div>
+        </div>
+        <div class="rights-item">
+          <div class="rights-item-title">E drejta e kundërshtimit</div>
+          <div class="rights-item-body">Keni të drejtë të kundërshtoni përpunimin e bazuar në interes legjitim ose për qëllime marketingu direkt.</div>
+        </div>
+        <div class="rights-item">
+          <div class="rights-item-title">E drejta e portabilitetit</div>
+          <div class="rights-item-body">Keni të drejtë të merrni të dhënat e dhëna nga ju në format të strukturuar dhe të lexueshëm nga makina.</div>
+        </div>
+      </div>
+
+      <p>Për të ushtruar cilëndo nga këto të drejta, dërgoni kërkesën tuaj me email në <a href="mailto:feedback@perllogarit.al" class="legal-link">feedback@perllogarit.al</a>. Do t'ju përgjigjemi brenda 30 ditëve kalendarike. Nëse nuk jeni të kënaqur me trajtimin e kërkesës suaj, keni të drejtë të paraqisni ankesë tek:</p>
+      <p><strong>Komisioneri për të Drejtën e Informimit dhe Mbrojtjen e të Dhënave Personale (IDP)</strong><br>
+      Bulevardi "Gjergj Fishta", Nr. 44, Tiranë, Shqipëri<br>
+      <a href="https://www.idp.al" target="_blank" rel="noopener noreferrer" class="legal-link">www.idp.al</a></p>
+    </div>
+  </div>
+
+  <!-- 13. Fëmijët -->
+  <div class="legal-card" id="femijte">
+    <div class="legal-card-icon"><i class="fi fi-br-child-head"></i></div>
+    <div class="legal-card-title">13. Aksesi pa Kufizim Moshe</div>
+    <div class="legal-card-body">
+      <p>perllogarit <strong>nuk aplikon asnjë kufizim moshe</strong> dhe mund të aksesohet nga çdo person, pavarësisht moshës. Meqë të gjitha llogaritjet kryhen tërësisht client-side dhe asnjë e dhënë financiare nuk transmetohet ose ruhet në serverët tanë, nuk ekziston rrezik specifik i mbrojtjes së të dhënave të lidhur me moshën e vizitorit.</p>
+      <p>Të dhënat e vetme që mund të mbledhim janë të dhënat analitike agregate dhe anonime të trafikut nëpërmjet Google Analytics me Consent Mode, të cilat nuk përmbajnë informacion identifikues personal pavarësisht moshës.</p>
+      <p>Google AdSense operon nën politikat e veta mbi reklamat dhe moshën. Nëse jeni prind ose kujdestar dhe keni shqetësime mbi reklamat e shfaqura, Google ofron kontroll prindëror nëpërmjet <a href="https://families.google.com/familylink/" target="_blank" rel="noopener noreferrer" class="legal-link">Google Family Link</a>.</p>
+    </div>
+  </div>
+
+  <!-- 14. Palë të Treta -->
+  <div class="legal-card" id="palë-treta">
+    <div class="legal-card-icon"><i class="fi fi-br-link"></i></div>
+    <div class="legal-card-title">14. Lidhjet me Faqe të Palëve të Treta</div>
+    <div class="legal-card-body">
+      <p>Faqja mund të përmbajë lidhje me faqe autoriteti si qbz.gov.al, tatime.gov.al dhe faqe të tjera informative. Kur klikoni mbi këto lidhje dhe largoheni nga perllogarit.al:</p>
+      <ul>
+        <li><i class="fi fi-br-info"></i><span>Faqet e jashtme kanë politikat e tyre të privatësisë, të cilat janë tërësisht jashtë kontrollit tonë</span></li>
+        <li><i class="fi fi-br-info"></i><span>Kjo Politikë e Privatësisë nuk zbatohet për informacionin e mbledhur nga faqe të jashtme</span></li>
+        <li><i class="fi fi-br-info"></i><span>Aksesimi i burimeve të jashtme bëhet nën përgjegjësinë tuaj të plotë</span></li>
+      </ul>
+      <p>Inkurajojmë leximin e politikave të privatësisë të çdo faqeje të jashtme para ofrimit të çfarëdo të dhëne personale.</p>
+    </div>
+  </div>
+
+  <!-- 15. Ndryshimet -->
+  <div class="legal-card" id="ndryshimet">
+    <div class="legal-card-icon"><i class="fi fi-br-refresh"></i></div>
+    <div class="legal-card-title">15. Ndryshimet e Politikës</div>
+    <div class="legal-card-body">
+      <p>perllogarit rezervon të drejtën të azhurnojë këtë Politikë të Privatësisë periodikisht. Ndryshimet mund të ndodhin si pasojë e:</p>
+      <ul>
+        <li><i class="fi fi-br-info"></i><span>Ndryshimeve në legjislacionin shqiptar ose europian mbi mbrojtjen e të dhënave</span></li>
+        <li><i class="fi fi-br-info"></i><span>Azhurnimeve në shërbimet e Google Analytics ose AdSense dhe politikat e tyre</span></li>
+        <li><i class="fi fi-br-info"></i><span>Shtimit të funksionaliteteve të reja ose palëve të treta të reja</span></li>
+        <li><i class="fi fi-br-info"></i><span>Rekomandimeve të autoriteteve mbikëqyrëse (IDP ose EDPB)</span></li>
+      </ul>
+      <p>Çdo ndryshim material do të pasqyrohet në versionin e ri të kësaj faqe, me datën e azhurnimit të përditësuar. Për ndryshime shumë materiale që prekin të drejtat tuaja, do të bëjmë çdo mundësi t'ju njoftojmë nëpërmjet njoftimit të dukshëm në Faqe.</p>
+      <p>Vazhdimi i aksesimit të Faqes pas ndryshimeve konsiderohet pranim i versionit të ri. Ju inkurajojmë të rishikoni periodikisht këtë faqe.</p>
+    </div>
+  </div>
+
+  <!-- 16. Kontakti DPO -->
+  <div class="legal-card" id="kontakti">
+    <div class="legal-card-icon"><i class="fi fi-br-envelope"></i></div>
+    <div class="legal-card-title">16. Kontakti dhe Zyrtari i Mbrojtjes së të Dhënave</div>
+    <div class="legal-card-body">
+      <p>Për çdo çështje lidhur me privatësinë, ushtrimin e të drejtave tuaja, pyetje rreth cookies, raporte të shkeljes së privatësisë ose çdo shqetësim tjetër mbi trajtimin e të dhënave tuaja, mund të na kontaktoni:</p>
+      <p><strong>Email i Privatësisë:</strong> <a href="mailto:feedback@perllogarit.al" class="legal-link">feedback@perllogarit.al</a></p>
+      <p>Lutemi të specifikoni në email subjektin si <strong>"Privatësia / GDPR"</strong> për të lehtësuar trajtimin e shpejtë. Angazhohemi të përgjigjemi brenda <strong>30 ditëve kalendarike</strong> nga marrja e kërkesës.</p>
+      <p>Nëse nuk jeni të kënaqur me mënyrën e trajtimit të shqetësimit tuaj, keni të drejtë të ushtroni ankesë tek autoriteti mbikëqyrës:</p>
+      <p>
+        <strong>Komisioneri për të Drejtën e Informimit dhe Mbrojtjen e të Dhënave Personale</strong><br>
+        Adresa: Bulevardi "Gjergj Fishta", Nr. 44, Tiranë<br>
+        Tel: +355 4 223 5995<br>
+        Email: <a href="mailto:info@idp.al" class="legal-link">info@idp.al</a> &nbsp;&middot;&nbsp;
+        Web: <a href="https://www.idp.al" target="_blank" rel="noopener noreferrer" class="legal-link">www.idp.al</a>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<div id="site-footer"></div>
+
+</body>
+</html>

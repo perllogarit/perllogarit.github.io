@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /embed-test.html
+
+Sitemap: https://perllogarit.al/sitemap.xml

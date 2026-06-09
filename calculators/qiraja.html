@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tatim mbi të Ardhurat nga Qiraja - perllogarit</title>
+  <meta name="description" content="Llogarit tatimin mbi të ardhurat nga qiraja e pronave. Norma 15%, me pasqyrim mujor, tremujor dhe vjetor. Bazuar në ligjin shqiptar.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://perllogarit.al/calculators/qiraja.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://perllogarit.al/calculators/qiraja.html">
+  <meta property="og:site_name" content="perllogarit">
+  <meta property="og:locale" content="sq_AL">
+  <meta property="og:title" content="Tatim mbi të Ardhurat nga Qiraja - perllogarit">
+  <meta property="og:description" content="Llogarit tatimin mbi të ardhurat nga qiraja e pronave. Norma 15%, me pasqyrim mujor, tremujor dhe vjetor. Bazuar në ligjin shqiptar.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tatim mbi të Ardhurat nga Qiraja - perllogarit">
+  <meta name="twitter:description" content="Llogarit tatimin mbi të ardhurat nga qiraja e pronave. Norma 15%, me pasqyrim mujor, tremujor dhe vjetor. Bazuar në ligjin shqiptar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/calc.css">
+  <link rel="stylesheet" href="../css/embed.css">
+  <script src="../js/shared.js" defer></script>
+  <script src="../js/analytics.js" defer></script>
+
+  <!-- Google Analytics 4 (G-28TE2F8NLS) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-28TE2F8NLS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-28TE2F8NLS');
+  </script>
+  <!-- Google AdSense —  ca-pub-1093058889887223 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1093058889887223" crossorigin="anonymous"></script>
+</head>
+<body>
+<script>if(new URLSearchParams(location.search).has('embed'))document.documentElement.classList.add('embed');</script>
+
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+<div class="bg-orb bg-orb-3"></div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <ul class="nav-links">
+      <li><a href="../index.html">Kryefaqe</a></li>
+      <li><a href="../llogaritesit.html">Llogaritësit</a></li>
+      <li><a href="../rreth-nesh.html">Rreth Nesh</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="fab-wrap">
+  <div class="fab-menu" id="nav-mobile">
+    <a href="../index.html" class="fab-item">
+      <span class="fab-label">Kryefaqe</span>
+      <span class="fab-btn"><i class="fi fi-br-home"></i></span>
+    </a>
+    <a href="../llogaritesit.html" class="fab-item nav-active">
+      <span class="fab-label">Llogaritësit</span>
+      <span class="fab-btn"><i class="fi fi-br-calculator"></i></span>
+    </a>
+    <a href="../rreth-nesh.html" class="fab-item">
+      <span class="fab-label">Rreth Nesh</span>
+      <span class="fab-btn"><i class="fi fi-br-info"></i></span>
+    </a>
+  </div>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <i class="fi fi-br-menu-burger" id="hamburger-icon"></i>
+  </button>
+</div>
+
+<div class="page-header">
+  <div class="page-header-inner" style="text-align:center">
+    <h1>TATIM MBI TË ARDHURAT<br>NGA QIRAJA</h1>
+    <button type="button" class="embed-trigger" onclick="document.getElementById('embed-dialog').showModal()">
+      <i class="fi fi-br-code-simple"></i> Embed
+    </button>
+  </div>
+</div>
+
+<div class="calc-container">
+
+  <!-- ═══════════════════════════════════════════
+       CALCULATOR CARD
+  ═══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="card-body">
+
+      <!-- Bruto / Neto toggle -->
+      <div class="toggle-wrap">
+        <button class="toggle-btn active" id="btn-bruto" onclick="setMode('bruto')">
+          BRUTO
+          <span>Nga qiraja bruto tek neto.</span>
+        </button>
+        <button class="toggle-btn" id="btn-neto" onclick="setMode('neto')">
+          NETO
+          <span>Sa bruto të kërkosh për neto.</span>
+        </button>
+      </div>
+
+      <!-- Rent input -->
+      <div class="ccy-label-row">
+        <label class="field-label" id="rent-label" for="rent-input">Qiraja Mujore Bruto</label>
+        <div class="ccy-pills">
+          <button class="ccy-pill active" id="opt-all" onclick="setCurrency('ALL')">ALL</button>
+          <button class="ccy-pill"        id="opt-eur" onclick="setCurrency('EUR')">EUR</button>
+        </div>
+      </div>
+      <div class="input-row input-row--ccy">
+        <input type="number" id="rent-input" placeholder="p.sh. 67 420" min="0" step="1000" oninput="calculate()">
+        <span class="input-ccy-unit" id="currency-unit">ALL</span>
+      </div>
+      <div class="quick-row" id="quick-amounts">
+        <span class="quick-lbl">Bjeri shkurt:</span>
+        <button class="quick-btn" onclick="setAmount(30000)">30,000</button>
+        <button class="quick-btn" onclick="setAmount(50000)">50,000</button>
+        <button class="quick-btn" onclick="setAmount(100000)">100,000</button>
+      </div>
+
+      <!-- Months stepper -->
+      <div class="family-row">
+        <div>
+          <div class="family-label">Periudha e llogaritjes në muaj
+            <span class="tip" data-tip="Numri i muajve për të cilët llogaritet qiraja. Ndikon vetëm në totalin e periudhës.">?</span>
+          </div>
+          <div class="quick-row" style="margin:.4rem 0 0;">
+            <span class="quick-lbl">Bjeri shkurt:</span>
+            <button class="quick-btn" style="min-width:2.5rem;text-align:center;padding-left:0;padding-right:0;" onclick="setMonths(1)">1</button>
+            <button class="quick-btn" style="min-width:2.5rem;text-align:center;padding-left:0;padding-right:0;" onclick="setMonths(3)">3</button>
+            <button class="quick-btn" style="min-width:2.5rem;text-align:center;padding-left:0;padding-right:0;" onclick="setMonths(6)">6</button>
+            <button class="quick-btn" style="min-width:2.5rem;text-align:center;padding-left:0;padding-right:0;" onclick="setMonths(12)">12</button>
+          </div>
+        </div>
+        <div class="stepper">
+          <button onclick="changeMonths(-1)">&#8722;</button>
+          <input type="number" id="months-input" value="1" min="1" max="120" oninput="onMonthsInput()">
+          <button onclick="changeMonths(1)">+</button>
+        </div>
+      </div>
+
+      <!-- Result: primary -->
+      <div class="result-box">
+        <div class="rl">
+          <div class="rl-title" id="result-primary-title">Të ardhura neto totale</div>
+          <div class="rl-sub" id="result-sub-net">Pas tatimit 15% &middot; 12 muaj</div>
+        </div>
+        <div class="rr">
+          <div class="rr-val" id="result-net"></div>
+        </div>
+      </div>
+
+      <!-- Result: tax due -->
+      <div class="result-box result-tax">
+        <div class="rl">
+          <div class="rl-title">Tatimi total i detyrueshëm</div>
+          <div class="rl-sub" id="result-sub-tax">15% &middot; 12 muaj</div>
+        </div>
+        <div class="rr">
+          <div class="rr-val" id="result-tax-val"></div>
+        </div>
+      </div>
+
+      <!-- Breakdown -->
+      <table class="breakdown">
+        <tbody id="breakdown-body"></tbody>
+      </table>
+
+      <!-- Period grid -->
+      <div class="period-grid" id="period-grid" style="display:none">
+        <div class="period-item">
+          <div class="pi-label" id="pg-lbl-m">Neto mujore</div>
+          <div class="pi-val" id="pg-net-m"></div>
+          <div class="pi-sub" id="pg-tax-m"></div>
+        </div>
+        <div class="period-item">
+          <div class="pi-label" id="pg-lbl-q">Neto tremujore</div>
+          <div class="pi-val" id="pg-net-q"></div>
+          <div class="pi-sub" id="pg-tax-q"></div>
+        </div>
+        <div class="period-item">
+          <div class="pi-label" id="pg-lbl-y">Neto vjetore</div>
+          <div class="pi-val" id="pg-net-y"></div>
+          <div class="pi-sub" id="pg-tax-y"></div>
+        </div>
+      </div>
+
+      <div class="embed-badge">
+        <a href="https://perllogarit.al" target="_blank" rel="noopener noreferrer">perllogarit.al</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       INFO CARD
+  ═══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="card-header">
+      <i class="fi fi-br-info" style="display:flex; align-items:center; line-height:0;"></i>
+      <h2>Shpjegime</h2>
+    </div>
+    <div class="card-body">
+
+      <div class="rates-grid">
+        <div class="rate-item">
+          <div class="ri-lbl">Norma e tatimit</div>
+          <div class="ri-val">15%</div>
+          <span class="ri-who ri-tax">Mbi të ardhurat</span>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <strong>Kur qiramarrësi është biznes ose person juridik:</strong><br>
+        Tatimi mbahet në burim nga qiramarrësi dhe derdhet drejtpërdrejt te Administrata Tatimore. Qiradhënësi merr qiranë neto (pas tatimit).<br><br>
+        <strong>Kur qiramarrësi është individ:</strong><br>
+        Qiradhënësi deklaron vetë të ardhurat nga qiraja nëpërmjet deklaratës vjetore individuale të të ardhurave, ku kjo zbatohet.
+      </div>
+
+      <div class="deduction-note">
+        <strong>Si llogaritet tatimi (Ligji nr. 29/2023, Nenet 24, 58–59):</strong><br>
+        Norma: <strong>15%</strong> mbi të ardhurat bruto nga qiraja.<br>
+        Qiraja bruto &times; 15% = Tatim i detyrueshëm<br>
+        Qiraja bruto &minus; Tatimi = Të ardhura neto<br><br>
+        Tatimi aplikohet mbi të ardhurat bruto pa zbritje shpenzimesh (për individët fizikë).
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div id="site-footer"></div>
+
+<script src="../js/qir.js" defer></script>
+
+<dialog id="embed-dialog" class="embed-dialog">
+  <h3>Incorporo llogaritësin</h3>
+  <p>Vendos kodin e mëposhtëm në faqen tënde:</p>
+  <pre id="embed-code">&lt;iframe
+  src="https://perllogarit.al/calculators/qiraja.html?embed=1"
+  width="420"
+  height="500"
+  style="border:none;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,.08);"
+  title="Tatim mbi të Ardhurat nga Qiraja · perllogarit"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</pre>
+  <div class="embed-dialog-actions">
+    <button type="button" onclick="var b=this;navigator.clipboard.writeText(document.getElementById('embed-code').textContent.trim()).then(function(){b.textContent='U kopjua ✓'})">Kopjo</button>
+    <button type="button" onclick="this.closest('dialog').close()">Mbyll</button>
+  </div>
+</dialog>
+</body>
+</html>

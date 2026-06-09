@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rreth Nesh - perllogarit</title>
+  <meta name="description" content="perllogarit u krijua per t'i bere llogaritjet financiare te arritshme per cdo shqiptar. Falas, pa regjistrim, bazuar drejperdrejt ne legjislacionin shqiptar.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://perllogarit.al/rreth-nesh.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://perllogarit.al/rreth-nesh.html">
+  <meta property="og:site_name" content="perllogarit">
+  <meta property="og:locale" content="sq_AL">
+  <meta property="og:title" content="Rreth Nesh - perllogarit">
+  <meta property="og:description" content="perllogarit u krijua per t'i bere llogaritjet financiare te arritshme per cdo shqiptar. Falas, pa regjistrim, bazuar drejperdrejt ne legjislacionin shqiptar.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Rreth Nesh - perllogarit">
+  <meta name="twitter:description" content="perllogarit u krijua per t'i bere llogaritjet financiare te arritshme per cdo shqiptar. Falas, pa regjistrim, bazuar drejperdrejt ne legjislacionin shqiptar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/shared.js" defer></script>
+  <script src="js/analytics.js" defer></script>
+  <style>
+    .about-wrap {
+      margin: 2.5rem auto 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* ── About card ── */
+    .about-card {
+      background: rgba(255,255,255,.45);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1.5px solid rgba(255,255,255,.65);
+      border-radius: var(--r-lg);
+      padding: 2rem 2.25rem;
+    }
+
+    .about-card-icon {
+      font-size: 1.6rem;
+      color: var(--blue);
+      margin-bottom: .9rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .about-card-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: .75rem;
+      line-height: 1.25;
+    }
+
+    .about-card-body {
+      font-size: .95rem;
+      line-height: 1.75;
+      color: #444;
+    }
+
+    .about-card-body p + p {
+      margin-top: .85rem;
+    }
+
+    .about-card-body strong {
+      color: var(--navy);
+    }
+
+    /* ── Stats row ── */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .75rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat-item {
+      background: rgba(255,255,255,.5);
+      border: 1px solid rgba(255,255,255,.7);
+      border-radius: var(--r-md);
+      padding: 1rem .75rem;
+      text-align: center;
+    }
+
+    .stat-val {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--blue);
+      line-height: 1;
+    }
+
+    .stat-lbl {
+      font-size: .75rem;
+      color: var(--gray);
+      margin-top: .35rem;
+      line-height: 1.3;
+    }
+
+    /* ── Source list ── */
+    .source-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    .source-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      font-size: .88rem;
+      color: #555;
+      line-height: 1.45;
+    }
+
+    .source-list li i {
+      color: var(--blue);
+      flex-shrink: 0;
+      margin-top: .15rem;
+    }
+
+    .source-list a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .source-list a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Support card ── */
+    .support-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .75rem;
+      margin-top: 1.25rem;
+    }
+
+    .support-actions .kofi-btn {
+      margin-top: 0;
+    }
+
+    .kofi-btn-lg {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .75rem 1.4rem;
+      background: #FF5E5B;
+      color: white;
+      border-radius: var(--r-pill);
+      font-family: var(--font);
+      font-size: .9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity .15s;
+    }
+
+    .kofi-btn-lg:hover { opacity: .88; }
+
+    .kofi-btn-lg img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    .feedback-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .38rem 1.4rem;
+      border: 1.5px solid rgba(255,255,255,.65);
+      background: rgba(255,255,255,.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: var(--r-pill);
+      font-family: var(--font);
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--navy);
+      text-decoration: none;
+      transition: background .15s;
+    }
+
+    .feedback-btn:hover { background: rgba(255,255,255,.65); }
+    .feedback-btn .fi { line-height: 0; display: inline-flex; align-items: center; }
+
+    @media (max-width: 520px) {
+      .about-card { padding: 1.5rem 1.25rem; }
+      .stats-row  { grid-template-columns: repeat(3, 1fr); }
+      .stat-val   { font-size: 1.3rem; }
+    }
+
+    @media (max-width: 380px) {
+      .stats-row { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+
+  <!-- Google Analytics 4 (G-28TE2F8NLS) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-28TE2F8NLS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-28TE2F8NLS');
+  </script>
+  <!-- Google AdSense —  ca-pub-1093058889887223 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1093058889887223" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+<div class="bg-orb bg-orb-3"></div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <ul class="nav-links">
+      <li><a href="index.html">Kryefaqe</a></li>
+      <li><a href="llogaritesit.html">Llogaritësit</a></li>
+      <li><a href="rreth-nesh.html" class="nav-active">Rreth Nesh</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="fab-wrap">
+  <div class="fab-menu" id="nav-mobile">
+    <a href="index.html" class="fab-item">
+      <span class="fab-label">Kryefaqe</span>
+      <span class="fab-btn"><i class="fi fi-br-home"></i></span>
+    </a>
+    <a href="llogaritesit.html" class="fab-item">
+      <span class="fab-label">Llogaritësit</span>
+      <span class="fab-btn"><i class="fi fi-br-calculator"></i></span>
+    </a>
+    <a href="rreth-nesh.html" class="fab-item nav-active">
+      <span class="fab-label">Rreth Nesh</span>
+      <span class="fab-btn"><i class="fi fi-br-info"></i></span>
+    </a>
+  </div>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <i class="fi fi-br-menu-burger" id="hamburger-icon"></i>
+  </button>
+</div>
+
+<div class="page-header">
+  <div class="page-header-inner" style="text-align:center">
+    <h1>RRETH NESH</h1>
+  </div>
+</div>
+
+<div class="about-wrap container">
+
+  <!-- Misioni -->
+  <div class="about-card">
+    <div class="about-card-icon"><i class="fi fi-br-target"></i></div>
+    <div class="about-card-title">Llogaritje të thjeshta, për të gjithë</div>
+    <div class="about-card-body">
+      <p>Llogaritjet financiare në Shqipëri janë shpesh të shpërndara nëpër ligje dhe vendime që ndryshojnë çdo vit. Por edhe kur i gjen, informacioni është i shpërndarë nëpër faqe të ndryshme që shpesh herë nuk pajtohen me njëra-tjetrën, dhe nuk e di sa të besueshme janë. Për shumë njerëz, gjetja e përgjigjes së saktë kërkon orë kërkimi ose një vizitë te specialisti.</p>
+      <p><strong>perllogarit</strong> u krijua me një qëllim të thjeshtë: t'i bëjë këto llogaritje të arritshme për çdo shqiptar. Pa regjistrim, pa pagesë dhe gjithmonë të aktualizuara me normat më të fundit.</p>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-val">6</div>
+        <div class="stat-lbl">Llogaritës aktivë</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">100%</div>
+        <div class="stat-lbl">Falas gjithmonë</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">0</div>
+        <div class="stat-lbl">Regjistrime të nevojshme</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Metodologjia -->
+  <div class="about-card">
+    <div class="about-card-icon"><i class="fi fi-br-document"></i></div>
+    <div class="about-card-title">Bazuar në legjislacionin shqiptar</div>
+    <div class="about-card-body">
+      <p>Çdo llogaritës ndërtohet drejtpërdrejt mbi ligjet dhe vendimet në fuqi. Normat dhe formulat janë gjithmonë të dukshme brenda çdo llogaritësi, kështu që mund të verifikoni çdo rezultat.</p>
+
+      <p>WIP</p>
+
+      <p style="margin-top:1rem; font-size:.82rem; color:#888;">perllogarit ofron llogaritje informative. Për vendime specifike financiare ose tatimore, konsultohuni me një specialist të licencuar.</p>
+    </div>
+  </div>
+
+  <!-- Mbështete -->
+  <div class="about-card">
+    <div class="about-card-icon"><i class="fi fi-br-heart"></i></div>
+    <div class="about-card-title">Na mbështet</div>
+    <div class="about-card-body">
+      <p>perllogarit është dhe do të mbetet plotësisht falas. Nëse e gjeni të dobishme, mund të na ndihmoni me një kontribut modest. Çdo kontribut shkon direkt për mbajtjen dhe zgjerimin e faqes me llogaritës të rinj.</p>
+      <p>Keni sugjerime, gabime për të raportuar ose llogaritës që dëshironi të shihni? Na shkruani.</p>
+    </div>
+    <div class="support-actions">
+      <a class="kofi-btn" href="https://ko-fi.com/vensi" target="_blank" rel="noopener">
+        <img src="icons/zg/ic-kofi.png" alt="" class="kofi-icon"> NA BLI NJE KAFE
+      </a>
+      <a class="feedback-btn" href="mailto:feedback@perllogarit.al">
+        <i class="fi fi-br-envelope"></i> NA SHKRUANI
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div id="site-footer"></div>
+
+<script>
+(function() {
+  if (!('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -40px 0px', threshold: 0.08 });
+
+  document.querySelectorAll('.about-card').forEach((card, i) => {
+    card.classList.add('reveal');
+    card.style.transitionDelay = (0.08 + i * 0.15) + 's';
+    io.observe(card);
+  });
+})();
+</script>
+
+</body>
+</html>

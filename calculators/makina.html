@@ -1,0 +1,374 @@
+﻿<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taksa e Importit të Makinës 2026 - perllogarit</title>
+  <meta name="description" content="Llogarit taksën e importit të makinës: akciza, TVSH doganore dhe tarifat e regjistrimit. Bazuar në kapacitetin motorik dhe vitin e prodhimit.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://perllogarit.al/calculators/makina.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://perllogarit.al/calculators/makina.html">
+  <meta property="og:site_name" content="perllogarit">
+  <meta property="og:locale" content="sq_AL">
+  <meta property="og:title" content="Taksa e Importit të Makinës 2026 - perllogarit">
+  <meta property="og:description" content="Llogarit taksën e importit të makinës: akciza, TVSH doganore dhe tarifat e regjistrimit. Bazuar në kapacitetin motorik dhe vitin e prodhimit.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Taksa e Importit të Makinës 2026 - perllogarit">
+  <meta name="twitter:description" content="Llogarit taksën e importit të makinës: akciza, TVSH doganore dhe tarifat e regjistrimit. Bazuar në kapacitetin motorik dhe vitin e prodhimit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/calc.css">
+  <link rel="stylesheet" href="../css/embed.css">
+  <script src="../js/shared.js" defer></script>
+  <script src="../js/analytics.js" defer></script>
+  <style>
+    /* ── Makina-specific color tokens ── */
+    :root {
+      --amber:        #F57F17;
+      --amber-light:  #FFFDE7;
+      --amber-border: #FDD835;
+    }
+
+    /* ── CC category buttons ── */
+    .cc-grid {
+      display: flex; gap: .5rem; margin-bottom: 1.25rem;
+    }
+    .cc-btn {
+      flex: 1; min-width: 0;
+      padding: .4rem 1rem; min-height: 40px;
+      border: 1.5px solid rgba(255,255,255,.6); border-radius: var(--r-pill);
+      background: rgba(255,255,255,.45); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+      cursor: pointer; font-family: var(--font);
+      font-size: .83rem; font-weight: 700; color: var(--gray);
+      transition: all .15s; text-align: center; line-height: 1.3;
+    }
+    .cc-btn span { display: block; font-size: .67rem; font-weight: 500; opacity: .75; margin-top: .06rem; }
+    .cc-btn.active          { border-color: var(--blue);   color: var(--blue);   background: rgba(37,99,235,.12); }
+    .cc-btn.active.cc--luks { border-color: var(--orange); color: var(--orange); background: rgba(230,81,0,.08); }
+    .cc-btn.cc--luks        { border-color: rgba(230,81,0,.3); color: var(--orange); }
+
+    /* ── Select inside input-row (year dropdown) ── */
+    .input-row select {
+      flex: 1; padding: .8rem 2.4rem .8rem 1rem; border: none; outline: none;
+      font-family: var(--font); font-size: 1.15rem; font-weight: 700;
+      color: var(--navy); background: transparent;
+      appearance: none; -webkit-appearance: none; cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 1rem center;
+    }
+
+    /* ── Breakdown row types specific to customs ── */
+    .breakdown .row-base  td { font-weight: 700; color: var(--navy); }
+    .breakdown .row-tvsh  td:last-child { color: var(--red); font-weight: 700; }
+    .breakdown .row-luks  td            { color: var(--orange); }
+    .breakdown .row-luks  td:last-child { font-weight: 700; }
+    .breakdown .row-admin td:last-child { color: var(--gray); }
+
+    /* ── RETRO section ── */
+    .retro-box {
+      background: rgba(224,247,240,.72); border: 1.5px solid rgba(0,150,136,.22);
+      -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+      border-radius: var(--r-lg); padding: 1.4rem 1.5rem; margin-top: 1.25rem;
+    }
+    .retro-box-heading {
+      font-size: 1.05rem; font-weight: 800; color: #00695C;
+      margin-bottom: .35rem;
+      padding-bottom: .55rem; border-bottom: 1.5px solid rgba(0,150,136,.2);
+    }
+    .retro-box-desc {
+      font-size: .84rem; color: #37474F; line-height: 1.65;
+      margin: .75rem 0 1rem;
+    }
+    .retro-box-desc strong { color: #004D40; }
+    .retro-cards {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: .75rem; margin-bottom: .9rem;
+    }
+    .retro-card-inner {
+      background: rgba(255,255,255,.45); border: 1px solid rgba(255,255,255,.7);
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+      border-radius: var(--r-md); padding: .9rem 1rem; text-align: center;
+    }
+    .retro-card-inner.g { background: rgba(102,187,106,.1); border-color: rgba(102,187,106,.25); }
+    .retro-card-inner.a { background: rgba(255,167,38,.08); border-color: rgba(255,167,38,.25); }
+    .retro-card-inner.b { background: rgba(66,165,245,.08);  border-color: rgba(66,165,245,.25); }
+    .retro-card-title {
+      font-size: .82rem; font-weight: 800; margin-bottom: .38rem; line-height: 1.3;
+      display: flex; align-items: center; justify-content: center; gap: .38rem;
+    }
+    .retro-card-title .fi { font-size: .9rem; flex-shrink: 0; }
+    .retro-card-title.g { color: #2e7d32; }
+    .retro-card-title.a { color: #e65100; }
+    .retro-card-title.b { color: #1565C0; }
+    .retro-card-inner p { font-size: .79rem; color: #37474F; line-height: 1.55; margin: 0; }
+    .retro-card-inner p strong { color: var(--navy); }
+    .retro-box-note { font-size: .75rem; color: rgba(0,77,64,.55); font-style: italic; margin: 0; }
+
+    /* ── Reference grid (customs minimums table) ── */
+    .ref-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: .75rem; margin-bottom: 1rem;
+    }
+    .ref-item {
+      background: rgba(255,255,255,.42); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.65);
+      border-radius: var(--r-md); padding: .8rem .75rem; text-align: center;
+    }
+    .ref-item.ref--luks { border-color: rgba(230,81,0,.3); background: rgba(255,243,224,.35); }
+    .ri-lbl { font-size: .72rem; color: var(--gray); line-height: 1.3; }
+    .ri-val { font-size: 1.25rem; font-weight: 900; color: var(--blue); margin: .22rem 0; }
+    .ri-val--luks { color: var(--orange); }
+    .ri-sub { font-size: .67rem; color: var(--gray); }
+
+
+    .currency-rate-hint {
+      font-size: .72rem; color: #666;
+      margin: .4rem 0 -.2rem;
+      opacity: 0; height: 0; overflow: hidden;
+      transition: opacity .2s, height .2s;
+    }
+    .currency-rate-hint.visible { opacity: .8; height: 1.1em; }
+
+    @media (max-width: 480px) { .retro-cards { grid-template-columns: 1fr; } }
+    @media (max-width: 380px) { .input-row input { font-size: 1.1rem; } }
+  </style>
+
+  <!-- Google Analytics 4 (G-28TE2F8NLS) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-28TE2F8NLS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-28TE2F8NLS');
+  </script>
+  <!-- Google AdSense —  ca-pub-1093058889887223 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1093058889887223" crossorigin="anonymous"></script>
+</head>
+<body>
+<script>if(new URLSearchParams(location.search).has('embed'))document.documentElement.classList.add('embed');</script>
+
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+<div class="bg-orb bg-orb-3"></div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <ul class="nav-links">
+      <li><a href="../index.html">Kryefaqe</a></li>
+      <li><a href="../llogaritesit.html">Llogaritësit</a></li>
+      <li><a href="../rreth-nesh.html">Rreth Nesh</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="fab-wrap">
+  <div class="fab-menu" id="nav-mobile">
+    <a href="../index.html" class="fab-item">
+      <span class="fab-label">Kryefaqe</span>
+      <span class="fab-btn"><i class="fi fi-br-home"></i></span>
+    </a>
+    <a href="../llogaritesit.html" class="fab-item nav-active">
+      <span class="fab-label">Llogaritësit</span>
+      <span class="fab-btn"><i class="fi fi-br-calculator"></i></span>
+    </a>
+    <a href="../rreth-nesh.html" class="fab-item">
+      <span class="fab-label">Rreth Nesh</span>
+      <span class="fab-btn"><i class="fi fi-br-info"></i></span>
+    </a>
+  </div>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <i class="fi fi-br-menu-burger" id="hamburger-icon"></i>
+  </button>
+</div>
+
+<div class="page-header">
+  <div class="page-header-inner" style="text-align:center">
+    <h1>TAKSA E IMPORTIT TË MAKINËS</h1>
+    <button type="button" class="embed-trigger" onclick="document.getElementById('embed-dialog').showModal()">
+      <i class="fi fi-br-code-simple"></i> Embed
+    </button>
+  </div>
+</div>
+
+<div class="calc-container">
+
+  <div class="card">
+    <div class="card-body">
+
+      <!-- ── Cilindrata (CC category buttons) ──────────────────── -->
+      <label class="field-label">Cilindrata (Motorri)</label>
+      <div class="cc-grid">
+        <button class="cc-btn active" id="cc-1400" onclick="setCC('1400')">
+          ≤ 1400 cc
+        </button>
+        <button class="cc-btn" id="cc-1900" onclick="setCC('1900')">
+          1401 – 1900 cc
+        </button>
+        <button class="cc-btn" id="cc-2500" onclick="setCC('2500')">
+          1901 – 2500 cc
+        </button>
+        <button class="cc-btn" id="cc-2999" onclick="setCC('2999')">
+          2501 – 2999 cc
+        </button>
+        <button class="cc-btn cc--luks" id="cc-3000" onclick="setCC('3000')">
+          ≥ 3000 cc<span>+ Taksë Luksi</span>
+        </button>
+      </div>
+
+      <!-- ── Viti i Prodhimit ───────────────────────────────────── -->
+      <label class="field-label" style="margin-top:.15rem">Viti i Prodhimit</label>
+      <div class="input-row" style="margin-bottom:.5rem">
+        <input type="text" id="sel-year" value="2026" placeholder="p.sh. 67 420" inputmode="numeric" oninput="calculate()">
+      </div>
+      <div class="quick-row">
+        <span class="quick-lbl">Bjeri shkurt:</span>
+        <button class="quick-btn" onclick="setYearQuick('2026')">2026</button>
+        <button class="quick-btn" onclick="setYearQuick('retro')">RETRO</button>
+      </div>
+
+      <!-- ── Vlera në Faturë ────────────────────────────────────── -->
+      <div class="ccy-label-row">
+        <label class="field-label">
+          Vlera në Faturë
+          <span class="tip" data-tip="Çmimi i deklaruar i faturës ose i kontratës. Dogana mund të verifikojë nëse ky çmim është nën referencën minimale dhe të llogarisë TVSH mbi një bazë më të lartë.">?</span>
+        </label>
+        <div class="ccy-pills">
+          <button class="ccy-pill active" id="opt-all" onclick="setCurrency('ALL')">ALL</button>
+          <button class="ccy-pill" id="opt-eur" onclick="setCurrency('EUR')">EUR</button>
+
+        </div>
+      </div>
+      <div class="input-row input-row--ccy">
+        <input type="number" id="inp-price" placeholder="p.sh. 67 420" min="0" step="100" oninput="calculate()">
+        <span class="input-ccy-unit" id="currency-unit">ALL</span>
+      </div>
+      <div class="currency-rate-hint" id="rate-note-line">1 € = <span id="live-rate">95.30</span> ALL</div>
+
+      <!-- ── Warning (reference check) ────────────────────────── -->
+      <div class="warn-box" id="warn-ref" style="display:none"></div>
+
+      <!-- ── Result box ─────────────────────────────────────────── -->
+      <div class="result-box" id="result-box">
+        <div class="rl">
+          <div class="rl-title" id="res-title">TVSH E IMPORTIT</div>
+          <div class="rl-sub"   id="res-sub">Taksa parashikuese doganore (20%)</div>
+        </div>
+        <div class="rr">
+          <div class="rr-val" id="res-val"></div>
+          <div class="rr-sub" id="res-total"></div>
+        </div>
+      </div>
+
+      <!-- ── Breakdown table ────────────────────────────────────── -->
+      <table class="breakdown" id="breakdown" style="display:none">
+        <tbody id="breakdown-body"></tbody>
+      </table>
+
+      <!-- ── RETRO section ─────────────────────────────────────── -->
+      <div class="retro-box" id="retro-box" style="display:none">
+        <div class="retro-box-heading">Kategoria RETRO Shqipëri: Rregullat &amp; Përfitimet</div>
+        <p class="retro-box-desc">Makinat që mbajnë statusin <strong>RETRO</strong> gëzojnë mbrojtje si trashëgimi kulturore dhe kanë lehtësi fiskale. Për t'u certifikuar, mjeti duhet të regjistrohet pranë <strong>Retro Albania</strong> dhe të pajises me targa të veçanta (targat kalese).</p>
+        <div class="retro-cards">
+          <div class="retro-card-inner g">
+            <div class="retro-card-title g"><i class="fi fi-br-shield-check"></i> Taksa &amp; TVSH:</div>
+            <p>Përjashtim nga <strong>Taksa Vjetore</strong> e mjeteve të përdorura dhe lehtësi në llogaritjen e TVSH-së në doganë.</p>
+          </div>
+          <div class="retro-card-inner a">
+            <div class="retro-card-title a"><i class="fi fi-br-time-past"></i> Kushti i Moshës:</div>
+            <p>Mjeti duhet të jetë prodhuar të paktën <strong>30 vite më parë</strong> dhe të ruajë originalitetin e pjesëve motorike e estetike.</p>
+          </div>
+          <div class="retro-card-inner b">
+            <div class="retro-card-title b"><i class="fi fi-br-road"></i> Limit Qarkullimi:</div>
+            <p>Mjetet Retro nuk janë për përdorim të përditshëm. Lejohen të qarkullojnë deri në <strong>180 ditë në vit</strong>.</p>
+          </div>
+        </div>
+        <p class="retro-box-note">*Shënim: Certifikimi si mjet historik bëhet vetëm pas verifikimit nga komisioni i DPSHTRR.</p>
+      </div>
+
+      <div class="embed-badge">
+        <a href="https://perllogarit.al" target="_blank" rel="noopener noreferrer">perllogarit.al</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Reference values card ──────────── -->
+  <div class="card">
+    <div class="card-header">
+      <i class="fi fi-br-stats"></i>
+      <h2>Pragu Minimal i Referencës &nbsp; Dogana 2026</h2>
+    </div>
+    <div class="card-body">
+      <div class="ref-grid">
+        <div class="ref-item">
+          <div class="ri-lbl">Deri në 1400 cc</div>
+          <div class="ri-val" id="ref-eur-1400">~1,705 €</div>
+          <div class="ri-sub" id="ref-all-1400">162,500 ALL</div>
+        </div>
+        <div class="ref-item">
+          <div class="ri-lbl">1401 – 1900 cc</div>
+          <div class="ri-val" id="ref-eur-1900">~2,623 €</div>
+          <div class="ri-sub" id="ref-all-1900">250,000 ALL</div>
+        </div>
+        <div class="ref-item">
+          <div class="ri-lbl">1901 – 2500 cc</div>
+          <div class="ri-val" id="ref-eur-2500">~4,260 €</div>
+          <div class="ri-sub" id="ref-all-2500">406,000 ALL</div>
+        </div>
+        <div class="ref-item">
+          <div class="ri-lbl">2501 – 2999 cc</div>
+          <div class="ri-val" id="ref-eur-2999">~5,246 €</div>
+          <div class="ri-sub" id="ref-all-2999">500,000 ALL</div>
+        </div>
+        <div class="ref-item ref--luks">
+          <div class="ri-lbl">≥ 3000 cc</div>
+          <div class="ri-val ri-val--luks" id="ref-eur-3000">~6,558 €</div>
+          <div class="ri-sub" id="ref-all-3000">625,000 ALL · Luks</div>
+        </div>
+      </div>
+
+      <div class="deduction-note">
+        <strong>Si funksionon referenca:</strong><br>
+        Dogana Shqiptare ka vlera minimale referuese për çdo kategori cilindrate. Nëse çmimi i deklaruar i faturës është nën këtë vlerë, TVSH (20%) llogaritet mbi vlerën referuese, jo mbi çmimin e faturës.<br><br>
+        <strong>Moshë &amp; zhvlerësim:</strong> Referencat e mësiperme janë për vitin 2026 (I ri). Për çdo vit më të vjetër, vlera referuese zbritet me një koeficient zhvlerësimi.<br><br>
+        <strong>Taksë Luksi vjetore:</strong> <span id="info-luxury">~21,000 ALL</span> &nbsp;&middot;&nbsp;
+        <strong>Admin &amp; Regjistrim:</strong> <span id="info-admin">~17,631 ALL</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div id="site-footer"></div>
+
+<script src="../js/mak.js" defer></script>
+
+<dialog id="embed-dialog" class="embed-dialog">
+  <h3>Incorporo llogaritësin</h3>
+  <p>Vendos kodin e mëposhtëm në faqen tënde:</p>
+  <pre id="embed-code">&lt;iframe
+  src="https://perllogarit.al/calculators/makina.html?embed=1"
+  width="420"
+  height="520"
+  style="border:none;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,.08);"
+  title="Taksa e Importit të Makinës · perllogarit"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</pre>
+  <div class="embed-dialog-actions">
+    <button type="button" onclick="var b=this;navigator.clipboard.writeText(document.getElementById('embed-code').textContent.trim()).then(function(){b.textContent='U kopjua ✓'})">Kopjo</button>
+    <button type="button" onclick="this.closest('dialog').close()">Mbyll</button>
+  </div>
+</dialog>
+</body>
+</html>
