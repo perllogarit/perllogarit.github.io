@@ -10,21 +10,23 @@ on:
 jobs:
   update-rate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch EUR/ALL rate
-        env:
-          API_KEY: ${{ secrets.EXCHANGERATE_API_KEY }}
+      - name: Fetch rates from Wise
         run: |
-          RATE=$(curl -sf "https://v6.exchangerate-api.com/v6/${API_KEY}/latest/EUR" \
-            | python3 -c "import sys,json; d=json.load(sys.stdin); print(round(d['conversion_rates']['ALL'], 2))")
-          echo "{\"rate\":$RATE,\"updated\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}" > data/eur-rate.json
+          EUR=$(curl -sf "https://wise.com/rates/history+live?source=EUR&target=ALL&length=1&resolution=hourly&unit=day" | python3 -c "import sys,json; d=json.load(sys.stdin); print(round(d[-1]['value'],2))")
+          USD=$(curl -sf "https://wise.com/rates/history+live?source=USD&target=ALL&length=1&resolution=hourly&unit=day" | python3 -c "import sys,json; d=json.load(sys.stdin); print(round(d[-1]['value'],2))")
+          GBP=$(curl -sf "https://wise.com/rates/history+live?source=GBP&target=ALL&length=1&resolution=hourly&unit=day" | python3 -c "import sys,json; d=json.load(sys.stdin); print(round(d[-1]['value'],2))")
+          TS=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          echo "{\"eur\":$EUR,\"usd\":$USD,\"gbp\":$GBP,\"updated\":\"$TS\"}" > data/eur-rate.json
 
       - name: Commit if changed
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/eur-rate.json
-          git diff --cached --quiet || git commit -m "chore: update EUR/ALL rate"
+          git diff --cached --quiet || git commit -m "chore: update exchange rates"
           git push

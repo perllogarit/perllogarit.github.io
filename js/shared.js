@@ -67,8 +67,9 @@ window.PL = {
   try {
     const res  = await fetch(path);
     const data = await res.json();
-    if (!data.rate) throw new Error();
-    PL.setEurRate(parseFloat(data.rate.toFixed(2)));
+    const rate = data.eur ?? data.rate;
+    if (!rate) throw new Error();
+    PL.setEurRate(parseFloat(rate.toFixed(2)));
     if (typeof window.onEurRateLoaded === 'function') window.onEurRateLoaded(PL.eurRate);
   } catch { /* keep fallback */ }
 })();

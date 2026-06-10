@@ -110,7 +110,7 @@
       <span class="fab-btn"><i class="fi fi-br-info"></i></span>
     </a>
   </div>
-  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+  <button type="button" class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
     <i class="fi fi-br-menu-burger" id="hamburger-icon"></i>
   </button>
 </div>
@@ -178,16 +178,15 @@
 <script>
 (async function loadRates() {
   try {
-    const res  = await fetch('https://v6.exchangerate-api.com/v6/607e597871b436c321a387b3/latest/EUR');
+    const res  = await fetch('data/eur-rate.json');
     const data = await res.json();
-    if (data.result !== 'success') throw new Error();
-    const r = data.conversion_rates;
-    document.getElementById('r-eur').textContent = r.ALL.toFixed(2);
-    document.getElementById('r-usd').textContent = (r.ALL / r.USD).toFixed(2);
-    document.getElementById('r-gbp').textContent = (r.ALL / r.GBP).toFixed(2);
-    const now = new Date();
+    if (!data.eur) throw new Error();
+    document.getElementById('r-eur').textContent = data.eur.toFixed(2);
+    document.getElementById('r-usd').textContent = data.usd.toFixed(2);
+    document.getElementById('r-gbp').textContent = data.gbp.toFixed(2);
+    const upd = new Date(data.updated);
     document.getElementById('rates-ts').textContent =
-      'aktualizuar ' + now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
+      'aktualizuar ' + upd.getHours().toString().padStart(2,'0') + ':' + upd.getMinutes().toString().padStart(2,'0');
   } catch {
     ['r-eur','r-usd','r-gbp'].forEach(id => {
       document.getElementById(id).textContent = '–';
