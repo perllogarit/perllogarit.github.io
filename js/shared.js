@@ -5,7 +5,7 @@ const _embed = document.documentElement.classList.contains('embed');
 function gtrack() {}
 
 /* ============================================================
-   shared.js — Loaded by every page that has a nav / FAB.
+   shared.js Loaded by every page that has a nav / FAB.
    Root pages:       <script src="js/shared.js" defer>
    Calculator pages: <script src="../js/shared.js" defer>
    ============================================================ */
@@ -15,7 +15,6 @@ window.PL = {
   eurRate: 95.30,
   setEurRate: function(r) { PL.eurRate = r; },
   toALL:   function(v, ccy) { return ccy === 'EUR' ? v * PL.eurRate : v; },
-  fromALL: function(v, ccy) { return ccy === 'EUR' ? v / PL.eurRate : v; },
   fmtEurEquiv: function(allVal) {
     return '≈ ' + (allVal / PL.eurRate).toLocaleString('sq-AL', {
       minimumFractionDigits: 2, maximumFractionDigits: 2
@@ -44,23 +43,10 @@ window.PL = {
   },
   fmtNum: function(n) {
     return Math.round(n).toLocaleString('sq-AL');
-  },
-  /* Currency-aware formatting — kept for backwards compatibility */
-  fmt: function(n, currency) {
-    if (currency === 'EUR') {
-      return n.toLocaleString('sq-AL', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' EUR';
-    }
-    return Math.round(n).toLocaleString('sq-AL') + ' ALL';
-  },
-  fmtN: function(n, currency) {
-    if (currency === 'EUR') {
-      return n.toLocaleString('sq-AL', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    }
-    return Math.round(n).toLocaleString('sq-AL');
   }
 };
 
-/* ── EUR/ALL rate — loaded from static file updated daily by GitHub Actions ── */
+/* ── EUR/ALL rate loaded from static file updated daily by GitHub Actions ── */
 (async function loadSharedRate() {
   var sub = /\/calculators\//.test(window.location.pathname);
   var path = (sub ? '../' : '') + 'data/eur-rate.json';
@@ -74,7 +60,7 @@ window.PL = {
   } catch { /* keep fallback */ }
 })();
 
-/* ── Mobile hamburger — called via onclick="toggleMenu()" in HTML ── */
+/* ── Mobile hamburger called via onclick="toggleMenu()" in HTML ── */
 function toggleMenu() {
   var menu = document.getElementById('nav-mobile');
   var icon = document.getElementById('hamburger-icon');
@@ -112,66 +98,6 @@ document.addEventListener('click', function(e) {
   });
   if (tip) { tip.classList.toggle('tip--open'); e.stopPropagation(); }
 });
-
-/* ── Cookie consent banner (Consent Mode v2) ── */
-/* DISABLED: replaced by Google's certified CMP (IAB TCF required for personalized ads).
-   To restore: uncomment this block and the matching CSS section in style.css.
-(function() {
-  var KEY = 'pl_consent';
-  var stored = localStorage.getItem(KEY);
-
-  function updateConsent(granted) {
-    if (typeof gtag !== 'function') return;
-    var val = granted ? 'granted' : 'denied';
-    gtag('consent', 'update', {
-      analytics_storage: val,
-      ad_storage: val,
-      ad_user_data: val,
-      ad_personalization: val
-    });
-  }
-
-  if (stored === 'granted') { updateConsent(true); return; }
-  if (stored === 'denied')  { return; }
-
-  var sub = /\/calculators\//.test(window.location.pathname);
-  var r = sub ? '../' : '';
-
-  var banner = document.createElement('div');
-  banner.id = 'consent-banner';
-  banner.setAttribute('role', 'dialog');
-  banner.setAttribute('aria-label', 'Cookies dhe privatësia');
-  banner.innerHTML =
-    '<div class="consent-inner">' +
-    '<div class="consent-body">' +
-    '<div class="consent-header">' +
-    '<span class="consent-icon-wrap"><i class="fi fi-br-cookie"></i></span>' +
-    '<span class="consent-title">Cookies &amp; Privatësia</span>' +
-    '</div>' +
-    '<p class="consent-text">Përdorim cookies nga Google Analytics për të kuptuar si vizitorët shfrytëzojnë faqen, ' +
-    'dhe nga Google AdSense për të shfaqur reklama të personalizuara. ' +
-    'Të dhënat mblidhen në mënyrë anonime dhe nuk ndahen me palë të treta jashtë Google. ' +
-    'Mund të refuzoni pa pasur ndonjë kufizim në përdorimin e llogaritësve. ' +
-    'Lexoni <a href="' + r + 'kushtet-e-perdorimit.html">Kushtet e Përdorimit</a> për më shumë detaje.</p>' +
-    '</div>' +
-    '<div class="consent-btns">' +
-    '<button id="consent-accept" class="consent-btn consent-btn--accept">Pranoj të gjitha</button>' +
-    '<button id="consent-reject" class="consent-btn consent-btn--reject">Refuzoj</button>' +
-    '</div>' +
-    '</div>';
-  document.body.appendChild(banner);
-
-  document.getElementById('consent-accept').addEventListener('click', function() {
-    localStorage.setItem(KEY, 'granted');
-    updateConsent(true);
-    banner.remove();
-  });
-  document.getElementById('consent-reject').addEventListener('click', function() {
-    localStorage.setItem(KEY, 'denied');
-    banner.remove();
-  });
-})();
-*/
 
 /* ── Shared footer ── */
 if (!_embed) (function() {

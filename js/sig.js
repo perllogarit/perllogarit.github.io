@@ -113,7 +113,7 @@ function calculate() {
   }
 
   const r = calc(rawALL, familyCount);
-  const { ssCap, minWage: mw } = getYD();
+  const { minWage: mw } = getYD();
 
   const eurEquiv = currency === 'EUR' ? ' <span class="eur-equiv">' + PL.fmtEurEquiv(r.monthly) + '</span>' : '';
   document.getElementById("result-val").innerHTML          = PL.fmtALL(r.monthly) + eurEquiv;

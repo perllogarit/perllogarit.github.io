@@ -532,7 +532,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--navy);
 }
 .footer-logo-row .kofi-btn { margin-top: 0; }
-/* button now lives below tagline — remove the overide */
+/* button now lives below tagline remove the overide */
 .kofi-icon { width: 18px; height: 18px; object-fit: contain; display: block; }
 .footer-logo span { color: var(--blue); }
 
@@ -606,7 +606,7 @@ a { color: inherit; text-decoration: none; }
 .footer-bottom-links a:hover { opacity: 1; }
 
 /* ============================================================
-   Accessibility — keyboard focus
+   Accessibility keyboard focus
    ============================================================ */
 :focus-visible {
   outline: 2px solid var(--blue);
@@ -728,7 +728,7 @@ a { color: inherit; text-decoration: none; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: .75rem; }
 }
 
-/* -- Tablets portrait+ (≥768px) — restore nav -------------- */
+/* -- Tablets portrait+ (≥768px) restore nav -------------- */
 @media (min-width: 768px) {
   .nav-links { display: flex; }
 }
@@ -739,7 +739,7 @@ a { color: inherit; text-decoration: none; }
   .hero        { padding: 2rem 1.5rem 1.5rem; }
 }
 
-/* -- Touch devices — prevent stuck hover states ------------ */
+/* -- Touch devices prevent stuck hover states ------------ */
 @media (hover: none) and (pointer: coarse) {
   .calc-card:hover {
     transform: none;
@@ -760,10 +760,10 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* -- Cookie consent banner ---------------------------------
-   DISABLED: JS in shared.js is commented out — Google's CMP handles consent now.
+   DISABLED: JS in shared.js is commented out Google's CMP handles consent now.
    To restore: uncomment the banner block in shared.js (CSS here is harmless when inactive). */
 
-/* Base — desktop floating card (bottom-right) */
+/* Base desktop floating card (bottom-right) */
 #consent-banner {
   position: fixed;
   bottom: 1.5rem;

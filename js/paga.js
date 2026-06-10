@@ -135,7 +135,7 @@ function setMode(m) {
 }
 
 function clearUI() {
-  ["result-val","result-daily","emp-gross","emp-ss","emp-hi","emp-total","emp-total-preview","daily-gross","daily-net"]
+  ["result-val","result-daily","emp-gross","emp-ss","emp-hi","emp-total","emp-total-preview","daily-gross","daily-net","daily-gross-sub","daily-net-sub"]
     .forEach(id => { document.getElementById(id).textContent = ""; });
   document.getElementById("breakdown-body").innerHTML = "";
   document.getElementById("cliff-warn"   ).style.display = "none";

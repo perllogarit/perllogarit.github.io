@@ -14,7 +14,7 @@ function gtrack(name, params) {
   gtag('event', name, params);
 }
 
-// homepage calc suggestion — swap in + badge the user's most-used calculator
+// homepage calc suggestion swap in + badge the user's most-used calculator
 (function() {
   var p = window.location.pathname;
   if (p !== '/' && p !== '/index.html' && p !== '/index') return;
@@ -42,7 +42,7 @@ function gtrack(name, params) {
     var slots = grid.querySelectorAll('.calc-card:not(.calc-card--all)');
 
     if (DEFAULT_SLOTS.indexOf(top) === -1) {
-      // top calc not in grid — replace the least-used default slot
+      // top calc not in grid replace the least-used default slot
       var leastIdx = 0, leastN = usage(DEFAULT_SLOTS[0]);
       for (var i = 1; i < DEFAULT_SLOTS.length; i++) {
         var n = usage(DEFAULT_SLOTS[i]);
@@ -58,7 +58,7 @@ function gtrack(name, params) {
   });
 })();
 
-// scroll_depth — 25/50/75/100% milestones, homepage only
+// scroll_depth 25/50/75/100% milestones, homepage only
 (function() {
   var p = window.location.pathname;
   if (p !== '/' && p !== '/index.html' && p !== '/index') return;
@@ -74,7 +74,7 @@ function gtrack(name, params) {
   }, { passive: true });
 })();
 
-// tooltip_opened — fires after shared.js has already toggled tip--open
+// tooltip_opened fires after shared.js has already toggled tip--open
 document.addEventListener('click', function(e) {
   var tip = e.target.closest('.tip');
   if (!tip || !tip.classList.contains('tip--open')) return;
@@ -85,7 +85,7 @@ document.addEventListener('click', function(e) {
   });
 });
 
-// calc_card_click — only active on llogaritesit.html (harmless elsewhere)
+// calc_card_click only active on llogaritesit.html (harmless elsewhere)
 document.querySelectorAll('.calc-card').forEach(function(card) {
   if (card.classList.contains('calc-card--adsense')) return;
   card.addEventListener('click', function() {

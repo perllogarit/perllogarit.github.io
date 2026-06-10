@@ -3,7 +3,7 @@
 const CALC_NAME = 'makina';
 
 /* ================================================================
-   CONFIG — update when official values change
+   CONFIG update when official values change
 ================================================================ */
 const CFG = {
   VAT_RATE:          0.20,
@@ -25,8 +25,7 @@ const CFG = {
 let selectedCC = '1400';
 let currency   = 'ALL';
 
-function fmtALL(allVal) { return Math.round(allVal).toLocaleString('sq-AL') + ' ALL'; }
-function fmtALLApprox(allVal) { return '~' + fmtALL(allVal); }
+function fmtALLApprox(allVal) { return '~' + PL.fmtALL(allVal); }
 
 function updateRefGrid() {
   ['1400','1900','2500','2999','3000'].forEach(cc => {
@@ -105,10 +104,9 @@ function calculate() {
   const isLuxury = cc === '3000' && !isRetro;
 
   document.getElementById('retro-box').style.display = isRetro ? 'block' : 'none';
-  document.getElementById('res-title').textContent   = isRetro ? 'TVSH E IMPORTIT RETRO' : 'TVSH E IMPORTIT';
 
   const yearNum = parseInt(yearStr, 10);
-  if (!yearStr || (yearStr !== 'retro' && (isNaN(yearNum) || yearNum < 1900 || yearNum > 2026))) { clearResults(); return; }
+  if (!yearStr || (yearStr !== 'retro' && (isNaN(yearNum) || yearNum < 1900 || yearNum > CFG.CURRENT_YEAR))) { clearResults(); return; }
   if (!price || price <= 0 || isNaN(price)) { clearResults(); return; }
 
   const priceAll  = PL.toALL(price, currency);
@@ -124,7 +122,7 @@ function calculate() {
   const warnEl = document.getElementById('warn-ref');
   if (belowRef) {
     warnEl.style.display = 'block';
-    warnEl.innerHTML = `⚠ <strong>Kujdes nga Dogana:</strong> Çmimi juaj është nën Referencën Minimale ${yearStr === '2026' ? '2026' : yearStr}. Shteti do ju taksojë mbi vlerën <strong>${fmtALL(refAll)}</strong>.`;
+    warnEl.innerHTML = `⚠ <strong>Kujdes nga Dogana:</strong> Çmimi juaj është nën Referencën Minimale ${yearStr === '2026' ? '2026' : yearStr}. Shteti do ju taksojë mbi vlerën <strong>${PL.fmtALL(refAll)}</strong>.`;
   } else {
     warnEl.style.display = 'none';
   }
@@ -139,7 +137,7 @@ function calculate() {
   const eurEquivTvsh  = currency === 'EUR' ? ' <span class="eur-equiv">' + PL.fmtEurEquiv(tvshAll) + '</span>' : '';
   const eurEquivTotal = currency === 'EUR' ? ' <span class="eur-equiv">' + PL.fmtEurEquiv(totalAll) + '</span>' : '';
 
-  document.getElementById('res-val').innerHTML   = fmtALL(tvshAll) + eurEquivTvsh;
+  document.getElementById('res-val').innerHTML   = PL.fmtALL(tvshAll) + eurEquivTvsh;
   document.getElementById('res-total').innerHTML = 'Totali me kosto: ' + fmtALLApprox(totalAll) + (currency === 'EUR' ? ' ' + PL.fmtEurEquiv(totalAll) : '');
 
   const tbody = document.getElementById('breakdown-body');
@@ -149,14 +147,14 @@ function calculate() {
     rows += `<tr class="row-base">
       <td>Vlera Doganore (referenca minimale)<span class="tip" data-tip="Çmimi juaj është nën referencën minimale. Dogana llogarit TVSH mbi këtë vlerë.">?</span></td>
       <td></td>
-      <td>${fmtALL(taxAll)}</td>
+      <td>${PL.fmtALL(taxAll)}</td>
     </tr>`;
   }
 
   rows += `<tr class="row-tvsh">
     <td>TVSH (20%) <span class="badge badge-red">20%</span></td>
-    <td>${fmtALL(taxAll)} &times; 20%</td>
-    <td>${fmtALL(tvshAll)}</td>
+    <td>${PL.fmtALL(taxAll)} &times; 20%</td>
+    <td>${PL.fmtALL(tvshAll)}</td>
   </tr>`;
 
   if (isLuxury) {
@@ -181,7 +179,6 @@ function calculate() {
   tbody.innerHTML = rows;
   gtrack('calculate', { calculator: CALC_NAME, currency: currency, cc: selectedCC, is_retro: isRetro });
   document.getElementById('breakdown').style.display = '';
-  document.getElementById('retro-box').style.display = isRetro ? 'block' : 'none';
 }
 
 document.getElementById('inp-price').addEventListener('keydown', e => {

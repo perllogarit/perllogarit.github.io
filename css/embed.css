@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════
-   embed.css — Embed mode overrides.
+   embed.css Embed mode overrides.
    Activated by <html class="embed"> set via ?embed=1.
    ═══════════════════════════════════════════════════════ */
 
@@ -47,7 +47,7 @@ html.embed .embed-badge a {
 
 html.embed .embed-badge a:hover { text-decoration: underline; }
 
-/* ── Embed trigger button — shown on main site, hidden in embed ── */
+/* ── Embed trigger button shown on main site, hidden in embed ── */
 .embed-trigger {
   display: inline-flex;
   align-items: center;
