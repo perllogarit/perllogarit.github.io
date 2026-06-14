@@ -107,7 +107,6 @@ function calculate() {
   document.getElementById('result-sub-tax').textContent       = '15% · ' + months + ' muaj';
   document.getElementById('result-net').innerHTML             = PL.fmtALL(primaryVal) + eurEquivPrimary;
   document.getElementById('result-tax-val').innerHTML         = PL.fmtALL(totalTax) + eurEquivTax;
-  gtrack('calculate', { calculator: CALC_NAME, mode: mode, currency: currency });
 
   const pgVal    = mode === 'bruto' ? monthlyNet   : monthlyBruto;
   const pgLbl    = mode === 'bruto' ? 'Neto'       : 'Bruto';
@@ -154,6 +153,7 @@ function calculate() {
       <td colspan="2">Të ardhura neto totale</td>
       <td>${PL.fmtALL(totalNet)}</td>
     </tr>`;
+  gtrack('calculate', { calculator: CALC_NAME, mode: mode, currency: currency });
 }
 
 document.getElementById('rent-input').addEventListener('keydown', e => {

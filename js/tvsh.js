@@ -95,7 +95,6 @@ function calculate() {
   document.getElementById('res-green-val').innerHTML     = PL.fmtALL(greenVal) + eurEquivGreen;
   document.getElementById('res-red-title').textContent   = 'TVSH ' + rPct;
   document.getElementById('res-red-val').innerHTML       = PL.fmtALL(tvsh) + eurEquivTvsh;
-  gtrack('calculate', { calculator: CALC_NAME, mode: mode, currency: currency });
 
   document.getElementById('breakdown-body').innerHTML = `
     <tr>
@@ -112,6 +111,7 @@ function calculate() {
       <td colspan="2">Çmimi me TVSH</td>
       <td>${PL.fmtALL(priceWith)}</td>
     </tr>`;
+  gtrack('calculate', { calculator: CALC_NAME, mode: mode, currency: currency });
 }
 
 document.getElementById('price-input').addEventListener('keydown', e => {

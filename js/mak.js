@@ -122,7 +122,7 @@ function calculate() {
   const warnEl = document.getElementById('warn-ref');
   if (belowRef) {
     warnEl.style.display = 'block';
-    warnEl.innerHTML = `⚠ <strong>Kujdes nga Dogana:</strong> Çmimi juaj është nën Referencën Minimale ${yearStr === '2026' ? '2026' : yearStr}. Shteti do ju taksojë mbi vlerën <strong>${PL.fmtALL(refAll)}</strong>.`;
+    warnEl.innerHTML = `⚠ <strong>Kujdes nga Dogana:</strong> Çmimi juaj është nën Referencën Minimale ${yearNum}. Shteti do ju taksojë mbi vlerën <strong>${PL.fmtALL(refAll)}</strong>.`;
   } else {
     warnEl.style.display = 'none';
   }
@@ -177,8 +177,8 @@ function calculate() {
   </tr>`;
 
   tbody.innerHTML = rows;
-  gtrack('calculate', { calculator: CALC_NAME, currency: currency, cc: selectedCC, is_retro: isRetro });
   document.getElementById('breakdown').style.display = '';
+  gtrack('calculate', { calculator: CALC_NAME, currency: currency, cc: selectedCC, is_retro: isRetro });
 }
 
 document.getElementById('inp-price').addEventListener('keydown', e => {

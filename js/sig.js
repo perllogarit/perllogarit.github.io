@@ -121,7 +121,6 @@ function calculate() {
   document.getElementById("period-quarterly").textContent  = PL.fmtNum(r.monthly * 3)   + " ALL";
   document.getElementById("period-annual").textContent     = PL.fmtNum(r.monthly * 12)  + " ALL";
   document.getElementById("period-grid").style.display     = "grid";
-  gtrack('calculate', { calculator: CALC_NAME, currency: currency, year: selectedYear });
 
   const belowMinNote = rawALL < mw
     ? ` <span class="badge badge-gray">llogaritet mbi ${PL.fmtNum(mw)} ALL</span>`
@@ -160,6 +159,7 @@ function calculate() {
       <td colspan="2">KONTRIBUTI MUJOR TOTAL</td>
       <td>${PL.fmtALL(r.monthly)}</td>
     </tr>`;
+  gtrack('calculate', { calculator: CALC_NAME, currency: currency, year: selectedYear });
 }
 
 document.getElementById("base-input").addEventListener("keydown", e => {

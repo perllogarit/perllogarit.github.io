@@ -57,6 +57,7 @@ window.PL = {
     if (!rate) throw new Error();
     PL.setEurRate(parseFloat(rate.toFixed(2)));
     if (typeof window.onEurRateLoaded === 'function') window.onEurRateLoaded(PL.eurRate);
+    else if (typeof window.calculate === 'function') window.calculate();
   } catch { /* keep fallback */ }
 })();
 

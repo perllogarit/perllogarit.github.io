@@ -79,7 +79,6 @@ function calculate() {
   document.getElementById('result-sub-net').textContent       = primarySub;
   document.getElementById('result-net').innerHTML             = PL.fmtALL(primaryVal) + eurEquivPrimary;
   document.getElementById('result-tax-val').innerHTML         = PL.fmtALL(tax) + eurEquivTax;
-  gtrack('calculate', { calculator: CALC_NAME, mode: mode, currency: currency });
 
   document.getElementById('breakdown-body').innerHTML = `
     <tr>
@@ -96,6 +95,7 @@ function calculate() {
       <td colspan="2">Dividenti neto</td>
       <td>${PL.fmtALL(neto)}</td>
     </tr>`;
+  gtrack('calculate', { calculator: CALC_NAME, mode: mode, currency: currency });
 }
 
 document.getElementById('div-input').addEventListener('keydown', e => {
